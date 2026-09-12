@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "note": "Sample advisory structure. In production this is populated from IDSP bulletins and state health department alerts."
+  },
+  "alerts": [
+    {
+      "id": "alert_dengue_demo",
+      "title": {"en": "Dengue: Seasonal Advisory", "hi": "डेंगू: मौसमी सलाह"},
+      "regions": ["ALL"],
+      "severity": "advisory",
+      "body": {
+        "en": "Monsoon season raises dengue risk. Remove stagnant water weekly, use mosquito nets and repellents, wear full-sleeve clothes. If you have high fever with severe headache or body pain, get tested early.",
+        "hi": "बरसात के मौसम में डेंगू का खतरा बढ़ जाता है। हर सप्ताह जमा पानी हटाएँ, मच्छरदानी और रिपेलेंट का उपयोग करें, पूरी बाँह के कपड़े पहनें। तेज़ बुखार के साथ सिरदर्द या बदन दर्द हो तो जल्दी जाँच कराएँ।"
+      },
+      "source": {"name": "NVBDCP, MoHFW (sample)", "tier": 1}
+    }
+  ]
+}

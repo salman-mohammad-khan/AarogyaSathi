@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "note": "Illustrative advisories based on well-known seasonal disease patterns. Sample data - replace/update with real IDSP and state health department bulletins. 'active' toggles visibility.",
+    "languages": ["en", "hi"]
+  },
+  "outbreaks": [
+    {
+      "id": "dengue_monsoon",
+      "disease": "dengue",
+      "states": ["Delhi", "Uttar Pradesh", "Haryana", "Rajasthan", "Maharashtra", "West Bengal", "Karnataka"],
+      "districts": [],
+      "severity": "advisory",
+      "active": true,
+      "advisory": {
+        "en": "Post-monsoon dengue transmission is elevated. Remove stagnant water weekly, use mosquito nets and repellents. Seek testing early for high fever with severe headache or body pain.",
+        "hi": "मानसून के बाद डेंगू का प्रसार बढ़ा हुआ है। हर सप्ताह जमा पानी हटाएँ, मच्छरदानी और रिपेलेंट का उपयोग करें। तेज़ बुखार के साथ सिरदर्द या बदन दर्द हो तो जल्दी जाँच कराएँ।"
+      },
+      "source": {"name": "NVBDCP, MoHFW", "tier": 1}
+    },
+    {
+      "id": "malaria_monsoon",
+      "disease": "malaria",
+      "states": ["Odisha", "Chhattisgarh", "Jharkhand", "Bihar", "West Bengal"],
+      "districts": [],
+      "severity": "advisory",
+      "active": true,
+      "advisory": {
+        "en": "Seasonal malaria transmission in high-burden areas. Sleep under insecticide-treated nets and complete the full medicine course if tested positive.",
+        "hi": "अधिक-प्रभावित क्षेत्रों में मौसमी मलेरिया का प्रसार। कीटनाशक-युक्त मच्छरदानी में सोएँ और पॉज़िटिव आने पर दवा का पूरा कोर्स पूरा करें।"
+      },
+      "source": {"name": "NVBDCP, MoHFW", "tier": 1}
+    },
+    {
+      "id": "chikungunya_peak",
+      "disease": "chikungunya",
+      "states": ["Delhi", "Karnataka", "Maharashtra"],
+      "districts": [],
+      "severity": "advisory",
+      "active": true,
+      "advisory": {
+        "en": "Chikungunya cases reported - high fever with severe joint pain. Rest, fluids and paracetamol; joint pain can persist for weeks.",
+        "hi": "चिकनगुनिया के मामले सामने आए हैं - तेज़ बुखार के साथ जोड़ों में गंभीर दर्द। आराम, तरल पदार्थ और पैरासिटामोल; जोड़ों का दर्द हफ्तों रह सकता है।"
+      },
+      "source": {"name": "NVBDCP, MoHFW", "tier": 1}
+    },
+    {
+      "id": "chickenpox_winter",
+      "disease": "chickenpox",
+      "states": ["Uttar Pradesh", "Bihar", "Rajasthan", "Madhya Pradesh"],
+      "districts": [],
+      "severity": "advisory",
+      "active": true,
+      "advisory": {
+        "en": "Chickenpox spreads in cooler months. Isolate infected children, keep hydrated, avoid scratching, and consult a doctor for high fever.",
+        "hi": "ठंडे महीनों में चिकनपॉक्स फैलता है। संक्रमित बच्चों को अलग रखें, हाइड्रेट रखें, खुजली से बचें और तेज़ बुखार पर डॉक्टर से मिलें।"
+      },
+      "source": {"name": "WHO", "tier": 1}
+    },
+    {
+      "id": "heatwave_summer",
+      "disease": "heatstroke",
+      "states": ["Rajasthan", "Gujarat", "Delhi", "Uttar Pradesh", "Odisha", "Maharashtra"],
+      "districts": [],
+      "severity": "advisory",
+      "active": true,
+      "advisory": {
+        "en": "Heatwave warning active. Avoid outdoor work 11 AM - 4 PM, drink ORS/lassi/buttermilk, wear light clothes and cover the head.",
+        "hi": "लू की चेतावनी जारी है। सुबह 11 से शाम 4 बजे तक बाहर काम न करें, ORS/लस्सी/छाछ पिएँ, हल्के कपड़े पहनें और सिर ढकें।"
+      },
+      "source": {"name": "NDMA", "tier": 1}
+    },
+    {
+      "id": "jaundice_waterborne",
+      "disease": "hepatitis",
+      "states": ["Kerala", "Tamil Nadu", "West Bengal"],
+      "districts": [],
+      "severity": "advisory",
+      "active": true,
+      "advisory": {
+        "en": "Water-borne hepatitis A/E risk elevated. Drink only boiled or filtered water and wash hands before eating.",
+        "hi": "पानी से फैलने वाले हेपेटाइटिस A/E का खतरा बढ़ा है। केवल उबला या फ़िल्टर किया पानी पिएँ और खाने से पहले हाथ धोएँ।"
+      },
+      "source": {"name": "NVHCP, MoHFW", "tier": 1}
+    },
+    {
+      "id": "diarrhoea_monsoon",
+      "disease": "diarrhoea",
+      "states": ["Bihar", "Uttar Pradesh", "Odisha", "West Bengal"],
+      "districts": [],
+      "severity": "advisory",
+      "active": true,
+      "advisory": {
+        "en": "Monsoon diarrhoea surge. Give ORS after every loose stool, continue feeding, and seek care for blood in stool or dehydration.",
+        "hi": "मानसून में दस्त के मामले बढ़े हैं। हर दस्त के बाद ORS दें, भोजन जारी रखें और मल में खून या पानी की कमी पर चिकित्सा सहायता लें।"
+      },
+      "source": {"name": "IDSP, MoHFW", "tier": 1}
+    },
+    {
+      "id": "measles_sporadic",
+      "disease": "measles",
+      "states": ["Maharashtra", "Bihar", "Jharkhand"],
+      "districts": [],
+      "severity": "watch",
+      "active": true,
+      "advisory": {
+        "en": "Sporadic measles clusters reported. Ensure children receive both MR vaccine doses at 9-12 and 16-24 months.",
+        "hi": "खसरे के छिटपुट मामले सामने आए हैं। सुनिश्चित करें कि बच्चों को MR टीके की दोनों खुराकें 9-12 और 16-24 महीने पर लगें।"
+      },
+      "source": {"name": "WHO", "tier": 1}
+    }
+  ]
+}

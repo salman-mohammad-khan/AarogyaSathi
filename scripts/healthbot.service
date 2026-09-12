@@ -1,0 +1,14 @@
+[Unit]
+Description=AarogyaSathi Health Chatbot (FastAPI)
+After=network.target ollama.service
+Wants=ollama.service
+
+[Service]
+WorkingDirectory=/opt/healthbot
+Environment=PYTHONPATH=/opt/healthbot
+ExecStart=/opt/healthbot/venv/bin/python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

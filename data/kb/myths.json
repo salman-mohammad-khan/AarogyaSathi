@@ -1,0 +1,1484 @@
+{
+  "meta": {
+    "note": "Verdicts curated from PIB Fact Check, WHO, MoHFW, CDC and ICMR guidance. Source tiers: 1 = government/global health authority, 2 = reputed medical institution/journal.",
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "verdict_labels": {
+      "en": {
+        "TRUE": "VERIFIED",
+        "MYTH": "MYTH",
+        "PARTLY_TRUE": "PARTLY TRUE",
+        "UNVERIFIABLE": "UNVERIFIABLE"
+      },
+      "hi": {
+        "TRUE": "सत्य",
+        "MYTH": "भ्रांति",
+        "PARTLY_TRUE": "आंशिक सत्य",
+        "UNVERIFIABLE": "पुष्टि असंभव"
+      }
+    }
+  },
+  "myths": [
+    {
+      "id": "vaccine_autism",
+      "claim": {
+        "en": "Vaccines cause autism in children.",
+        "hi": "टीकों से बच्चों में ऑटिज़्म होता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "vaccination"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "Extensive studies on millions of children have found no link between any vaccine and autism. The original claim came from a discredited, retracted 1998 study. Vaccines are safe and save millions of lives yearly.",
+        "hi": "लाखों बच्चों पर हुए व्यापक अध्ययनों में किसी भी टीके और ऑटिज़्म के बीच कोई संबंध नहीं मिला। यह दावा 1998 के एक बदनाम, वापस लिए गए अध्ययन से आया था। टीके सुरक्षित हैं और हर साल लाखों जानें बचाते हैं।"
+      },
+      "sources": [
+        {
+          "name": "WHO Vaccine Safety",
+          "tier": 1
+        },
+        {
+          "name": "CDC Vaccine Safety",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "covid_vaccine_infertility",
+      "claim": {
+        "en": "COVID vaccines cause infertility in men and women.",
+        "hi": "कोविड के टीके पुरुषों और महिलाओं में बांझपन पैदा करते हैं।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "vaccination",
+        "covid"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "No scientific evidence links COVID vaccines to infertility in men or women. Studies show vaccinated women conceive at normal rates. This rumour was repeatedly debunked by PIB Fact Check.",
+        "hi": "कोविड टीकों और बांझपन के बीच कोई वैज्ञानिक प्रमाण नहीं है। अध्ययन बताते हैं कि टीका लगवा चुकी महिलाएँ सामान्य दर से गर्भधारण करती हैं। PIB फैक्ट चेक ने इस अफवाह को बार-बार खारिज किया है।"
+      },
+      "sources": [
+        {
+          "name": "PIB Fact Check",
+          "tier": 1
+        },
+        {
+          "name": "WHO COVID-19 Vaccine Safety",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "polio_drops_infertility",
+      "claim": {
+        "en": "Polio drops make children infertile / reduce future fertility.",
+        "hi": "पोलियो की खुराक से बच्चे बांझ हो जाते हैं।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "vaccination"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "Polio drops are completely safe - they contain only weakened virus and nothing that affects fertility. This old rumour resurfaces during every Pulse Polio campaign. India was declared polio-free in 2014 because of these drops.",
+        "hi": "पोलियो की खुराक पूरी तरह सुरक्षित है - इनमें केवल कमज़ोर किया गया वायरस होता है, ऐसा कुछ नहीं जो प्रजनन क्षमता को प्रभावित करे। यह पुरानी अफवाह हर पल्स पोलियो अभियान में फैलाई जाती है। इन्हीं खुराकों की वजह से 2014 में भारत पोलियो-मुक्त घोषित हुआ।"
+      },
+      "sources": [
+        {
+          "name": "PIB Fact Check",
+          "tier": 1
+        },
+        {
+          "name": "WHO Polio Eradication",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "covid_bioweapon",
+      "claim": {
+        "en": "COVID-19 was deliberately created as a bioweapon.",
+        "hi": "कोविड-19 को जानबूझकर जैविक हथियार के रूप में बनाया गया था।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "covid",
+        "conspiracy"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "Scientific evidence from genomic studies shows the virus evolved naturally. The WHO-led global scientific review concluded that all available evidence points to a natural origin of SARS-CoV-2. No credible scientific body has endorsed the bioweapon theory.",
+        "hi": "जीनोमिक अध्ययनों के वैज्ञानिक प्रमाण बताते हैं कि यह वायरस प्राकृतिक रूप से विकसित हुआ। WHO की वैश्विक वैज्ञानिक समीक्षा के अनुसार सभी उपलब्ध प्रमाण SARS-CoV-2 के प्राकृतिक उत्पत्ति की ओर इशारा करते हैं। किसी भी विश्वसनीय वैज्ञानिक संस्था ने बायोवेपन सिद्धांत का समर्थन नहीं किया।"
+      },
+      "sources": [
+        {
+          "name": "WHO Origins Study",
+          "tier": 1
+        },
+        {
+          "name": "Nature (peer-reviewed)",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "5g_covid",
+      "claim": {
+        "en": "5G towers spread corona virus and COVID-19.",
+        "hi": "5G मोबाइल टावर कोविड-19 फैलाते हैं।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "covid",
+        "conspiracy"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "Viruses cannot travel through radio waves. COVID-19 spreads through respiratory droplets and air. Mobile networks were present in countries with and without outbreaks alike. The WHO has explicitly debunked this claim.",
+        "hi": "वायरस रेडियो तरंगों से नहीं फैल सकते। कोविड-19 श्वसन बूँदों और हवा से फैलता है। मोबाइल नेटवर्क तो उन देशों में भी थे जहाँ कोई प्रकोप नहीं था। WHO ने इस दावे को स्पष्ट रूप से खारिज किया है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Mythbusters",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "phone_radiation_cancer",
+      "claim": {
+        "en": "Mobile phone radiation causes brain cancer.",
+        "hi": "मोबाइल फोन के रेडिएशन से ब्रेन कैंसर होता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "technology"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "Decades of studies involving millions of users, reviewed by WHO, have found no established link between mobile phone use and brain cancer. Phone radio waves are non-ionizing - too weak to damage DNA.",
+        "hi": "WHO द्वारा समीक्षित लाखों उपयोगकर्ताओं पर दशकों के अध्ययनों में मोबाइल फोन और ब्रेन कैंसर के बीच कोई स्थापित संबंध नहीं मिला। फोन की रेडियो तरंगें नॉन-आयनाइज़िंग होती हैं - इतनी कमज़ोर कि DNA को नुकसान नहीं पहुँचा सकतीं।"
+      },
+      "sources": [
+        {
+          "name": "WHO Electromagnetic Fields",
+          "tier": 1
+        },
+        {
+          "name": "NCI (US NIH)",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "garlic_cures_dengue",
+      "claim": {
+        "en": "Eating raw garlic cloves cures dengue.",
+        "hi": "कच्चा लहसुन खाने से डेंगू ठीक हो जाता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "home_remedy",
+        "dengue"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Garlic has no antiviral effect against dengue virus. There is no cure for dengue - treatment is supportive: rest, fluids and fever management. Believing such remedies delays proper care and can be dangerous.",
+        "hi": "लहसुन में डेंगू वायरस के खिलाफ कोई एंटीवायरल प्रभाव नहीं है। डेंगू का कोई इलाज नहीं है - उपचार सहायक होता है: आराम, तरल पदार्थ और बुखार का प्रबंधन। ऐसे नुस्खों पर भरोसा करने से सही इलाज में देरी होती है और खतरा बढ़ सकता है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Dengue Treatment Guidance",
+          "tier": 1
+        },
+        {
+          "name": "NVBDCP, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "papaya_leaf_platelets",
+      "claim": {
+        "en": "Papaya leaf juice increases platelets and cures dengue.",
+        "hi": "पपीते के पत्ते का रस प्लेटलेट्स बढ़ाता है और डेंगू ठीक करता है।"
+      },
+      "verdict": "PARTLY_TRUE",
+      "tags": [
+        "home_remedy",
+        "dengue"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Small studies suggest papaya leaf extract may support platelet recovery in dengue, but it is NOT a cure and is not a standard treatment. The real treatment is hydration, rest and medical monitoring. Never rely on this alone - see a doctor.",
+        "hi": "छोटे अध्ययनों में पपीते के पत्ते का अर्क डेंगू में प्लेटलेट सुधार में सहायक हो सकता है, पर यह इलाज नहीं है और मानक उपचार नहीं है। असली इलाज है हाइड्रेशन, आराम और चिकित्सकीय निगरानी। केवल इसी पर निर्भर न रहें - डॉक्टर को दिखाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO Dengue Guidance",
+          "tier": 1
+        },
+        {
+          "name": "NIH studies (small trials)",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "dengue_mosquito_night",
+      "claim": {
+        "en": "Dengue mosquitoes bite only at night.",
+        "hi": "डेंगू का मच्छर केवल रात में काटता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "dengue",
+        "prevention"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "The Aedes aegypti mosquito that spreads dengue bites mainly during the day - especially early morning and before sunset. Protection is needed in daytime too.",
+        "hi": "डेंगू फैलाने वाला एडीज एजिप्टी मच्छर मुख्यतः दिन में काटता है - खासकर सुबह जल्दी और शाम से पहले। दिन में भी बचाव ज़रूरी है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Dengue Fact Sheet",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "newborn_honey",
+      "claim": {
+        "en": "Giving honey or ghutti to newborns is good for their health.",
+        "hi": "नवजात को शहद या घुट्टी देना स्वास्थ्य के लिए अच्छा है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "child_health",
+        "dangerous"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Honey can contain spores that cause infant botulism - a serious poisoning in babies under 1 year. Only mother's milk is needed for the first 6 months. Giving honey/ghutti is dangerous and delays breastfeeding.",
+        "hi": "शहद में ऐसे बीजाणु हो सकते हैं जो शिशु बोटुलिज़्म का कारण बनते हैं - 1 वर्ष से कम उम्र के बच्चों में गंभीर विषाक्तता। पहले 6 महीने केवल माँ का दूध ज़रूरी है। शहद/घुट्टी देना खतरनाक है और स्तनपान में देरी करता है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Infant Feeding",
+          "tier": 1
+        },
+        {
+          "name": "CDC Infant Botulism",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "tb_touch_spread",
+      "claim": {
+        "en": "TB spreads by touching or sharing utensils with a TB patient.",
+        "hi": "टीबी छूने से या टीबी मरीज़ के बर्तन साझा करने से फैलती है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "tb"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "TB spreads only through air when a patient with lung TB coughs or sneezes - not by touch, food, utensils or clothes. Family members should not avoid or stigmatize TB patients; instead ensure ventilation and support their full treatment.",
+        "hi": "टीबी केवल हवा से फैलती है, जब फेफड़े की टीबी का मरीज़ खाँसता या छींकता है - छूने, खाने, बर्तन या कपड़ों से नहीं। परिवार को टीबी मरीज़ से दूरी या भेदभाव नहीं करना चाहिए; बल्कि हवादार कमरा रखें और पूरे इलाज में साथ दें।"
+      },
+      "sources": [
+        {
+          "name": "WHO TB Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "NTEP, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "cold_water_cancer",
+      "claim": {
+        "en": "Drinking cold water after hot food causes cancer.",
+        "hi": "गर्म खाने के बाद ठंडा पानी पीने से कैंसर होता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "diet",
+        "cancer"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "No scientific evidence links cold water after food to cancer. The stomach warms or cools contents quickly; temperature of drinks does not cause cancer. This is a widely circulated dietary myth.",
+        "hi": "गर्म भोजन के बाद ठंडे पानी और कैंसर के बीच कोई वैज्ञानिक प्रमाण नहीं है। पेट भोजन का तापमान जल्दी सामान्य कर लेता है; पेय का तापमान कैंसर नहीं करता। यह एक व्यापक रूप से फैली आहार-भ्रांति है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Cancer Prevention",
+          "tier": 1
+        },
+        {
+          "name": "PIB Fact Check",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "turmeric_cures_cancer",
+      "claim": {
+        "en": "Turmeric (haldi) cures cancer.",
+        "hi": "हल्दी कैंसर ठीक कर देती है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "home_remedy",
+        "cancer"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Curcumin (in turmeric) is being studied in laboratories for anti-inflammatory properties, but there is NO clinical evidence that turmeric cures cancer. Relying on turmeric instead of chemotherapy, surgery, or radiation is medically dangerous and delays life-saving care.",
+        "hi": "हल्दी में मौजूद करक्यूमिन पर प्रयोगशालाओं में शोध हो रहा है, पर इसका कोई वैज्ञानिक प्रमाण नहीं कि हल्दी कैंसर ठीक करती है। कीमोथेरेपी, सर्जरी या रेडिएशन की जगह हल्दी पर निर्भर रहना जानलेवा हो सकता है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Cancer Guidance",
+          "tier": 1
+        },
+        {
+          "name": "NCI (US NIH)",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "sugar_causes_diabetes",
+      "claim": {
+        "en": "Eating sugar causes diabetes.",
+        "hi": "चीनी खाने से डायबिटीज़ (मधुमेह) होता है।"
+      },
+      "verdict": "PARTLY_TRUE",
+      "tags": [
+        "diet",
+        "diabetes"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Sugar alone does not directly cause diabetes. Type 2 diabetes results from genetics, overweight, inactivity and diet. However, excess sugar causes weight gain, which increases diabetes risk. Reducing sugar is healthy advice.",
+        "hi": "अकेले चीनी सीधे डायबिटीज़ नहीं करती। टाइप 2 मधुमेह आनुवंशिकता, मोटापा, शारीरिक निष्क्रियता और आहार से होता है। फिर भी, अधिक चीनी से वज़न बढ़ता है, जिससे मधुमेह का खतरा बढ़ता है। चीनी कम करना स्वास्थ्य के लिए अच्छी सलाह है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Diabetes Fact Sheet",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "only_fat_people_diabetes",
+      "claim": {
+        "en": "Only overweight people get diabetes.",
+        "hi": "केवल मोटे लोगों को ही डायबिटीज़ होता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "diabetes"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Slim people can also develop diabetes, especially with family history or abdominal fat. In India, many diabetics are not overweight. Regular testing matters for everyone with risk factors.",
+        "hi": "दुबले लोगों को भी मधुमेह हो सकता है, खासकर परिवार में इतिहास हो या पेट पर चर्बी हो। भारत में कई मधुमेह रोगी मोटे नहीं होते। जोखिम वाले सभी लोगों को नियमित जाँच करानी चाहिए।"
+      },
+      "sources": [
+        {
+          "name": "WHO Diabetes",
+          "tier": 1
+        },
+        {
+          "name": "ICMR INDIAB Study",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "insulin_addictive",
+      "claim": {
+        "en": "Insulin is addictive - once started, you can never stop it.",
+        "hi": "इंसुलिन की लत लग जाती है - एक बार शुरू करने पर कभी बंद नहीं कर सकते।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "diabetes",
+        "medicine"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "Insulin is a hormone the body needs - not an addictive drug. When prescribed, it corrects a deficiency just like thyroid medicine. Delaying insulin due to this myth causes serious complications.",
+        "hi": "इंसुलिन शरीर के लिए ज़रूरी हार्मोन है - कोई नशीली दवा नहीं। यह थायरॉइड की दवा की तरह शरीर की कमी पूरी करती है। इस भ्रांति के कारण इंसुलिन शुरू करने में देरी से गंभीर जटिलताएँ होती हैं।"
+      },
+      "sources": [
+        {
+          "name": "WHO Diabetes Management",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "bp_medicine_stop",
+      "claim": {
+        "en": "Stop BP medicine once blood pressure reads normal.",
+        "hi": "BP सामान्य दिखने पर BP की दवा बंद कर देनी चाहिए।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "hypertension",
+        "dangerous"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "BP is normal BECAUSE the medicine is working. Stopping it suddenly can cause dangerous BP spikes, stroke or heart attack. Any change in dose must be decided only by a doctor.",
+        "hi": "BP सामान्य इसलिए है क्योंकि दवा काम कर रही है। अचानक बंद करने से BP खतरनाक रूप से बढ़ सकता है, पक्षाघात या हार्ट अटैक हो सकता है। खुराक में बदलाव केवल डॉक्टर ही कर सकते हैं।"
+      },
+      "sources": [
+        {
+          "name": "WHO Hypertension",
+          "tier": 1
+        },
+        {
+          "name": "IHCI, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "antibiotics_viral",
+      "claim": {
+        "en": "Antibiotics cure cold, flu and viral fever.",
+        "hi": "एंटीबायोटिक से सर्दी, फ्लू और वायरल बुखार ठीक हो जाता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "medicine"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Antibiotics kill bacteria, not viruses. Cold and flu are viral. Taking antibiotics unnecessarily breeds resistant bacteria and harms gut health. Antibiotics must be taken only on a doctor's prescription.",
+        "hi": "एंटीबायोटिक बैक्टीरिया मारते हैं, वायरस नहीं। सर्दी-फ्लू वायरल होते हैं। बिना ज़रूरत एंटीबायोटिक लेने से प्रतिरोधी बैक्टीरिया बनते हैं और पेट के स्वास्थ्य को नुकसान होता है। एंटीबायोटिक केवल डॉक्टर की सलाह पर ही लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Antimicrobial Resistance",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "aspirin_heart_attack",
+      "claim": {
+        "en": "Chewing an aspirin during a heart attack can save a life.",
+        "hi": "हार्ट अटैक के दौरान एस्पिरिन चबाने से जान बच सकती है।"
+      },
+      "verdict": "TRUE",
+      "tags": [
+        "first_aid",
+        "heart"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Chewing one 300-325mg aspirin tablet during a suspected heart attack (while waiting for the ambulance) is standard first aid - it reduces clot formation. BUT: call 108/112 first, and never give aspirin if the person is allergic or has bleeding.",
+        "hi": "संदिग्ध हार्ट अटैक के दौरान (एम्बुलेंस का इंतज़ार करते हुए) 300-325mg की एक एस्पिरिन चबाना मानक प्राथमिक उपचार है - यह खून के थक्के बनने कम करती है। पर पहले 108/112 पर कॉल करें, और एलर्जी या रक्तस्राव होने पर एस्पिरिन कभी न दें।"
+      },
+      "sources": [
+        {
+          "name": "WHO/Indian Resuscitation Council First Aid Guidelines",
+          "tier": 1
+        },
+        {
+          "name": "AHA Guidelines",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "ors_diarrhoea",
+      "claim": {
+        "en": "ORS (salt-sugar solution) is the correct first treatment for diarrhoea.",
+        "hi": "दस्त में ORS (नमक-चीनी घोल) सही प्राथमिक उपचार है।"
+      },
+      "verdict": "TRUE",
+      "tags": [
+        "first_aid",
+        "diarrhoea"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Yes. ORS replaces water and salts lost in stools and prevents dangerous dehydration. Give after every loose stool. Continue feeding and breastfeeding. For children, zinc tablets for 14 days as advised.",
+        "hi": "हाँ। ORS दस्त से खोए पानी और लवण की भरपाई करता है और खतरनाक निर्जलीकरण रोकता है। हर दस्त के बाद दें। भोजन और स्तनपान जारी रखें। बच्चों को सलाह अनुसार 14 दिन ज़िंक की गोलियाँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO Diarrhoeal Disease Treatment",
+          "tier": 1
+        },
+        {
+          "name": "NHM, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "snake_bite_suck",
+      "claim": {
+        "en": "Suck out snake venom from the bite wound with your mouth.",
+        "hi": "साँप के काटे स्थान से मुँह से ज़हर चूस लेना चाहिए।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "first_aid",
+        "dangerous",
+        "snake_bite"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Do NOT suck, cut, or tie a tight tourniquet. This worsens the wound and delays care. Correct first aid: keep the person calm and still, immobilize the limb, remove tight items, and rush to a hospital - anti-venom is the only treatment.",
+        "hi": "ज़हर चूसें, काटें या कसकर बाँधें - बिल्कुल नहीं। इससे घाव बिगड़ता है और इलाज में देरी होती है। सही प्राथमिक उपचार: व्यक्ति को शांत और स्थिर रखें, अंग को हिलने से रोकें, कसे हुए सामान हटाएँ और तुरंत अस्पताल ले जाएँ - एंटी-वेनम ही एकमात्र इलाज है।"
+      },
+      "sources": [
+        {
+          "name": "National Action Plan on Snakebite, MoHFW",
+          "tier": 1
+        },
+        {
+          "name": "WHO Snakebite",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "dog_bite_chilli",
+      "claim": {
+        "en": "Rubbing chilli or oil on a dog bite prevents rabies.",
+        "hi": "कुत्ते के काटने पर मिर्च या तेल लगाने से रेबीज़ नहीं होता।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "first_aid",
+        "dangerous",
+        "rabies"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Chilli, oil, haldi or any home application does NOT prevent rabies. Rabies is 100% fatal once symptoms appear. Only immediate soap-water washing (15 min) + anti-rabies vaccine saves lives. Go to a health centre the same day.",
+        "hi": "मिर्च, तेल, हल्दी या कोई भी घरेलू लेप रेबीज़ नहीं रोकता। लक्षण आने के बाद रेबीज़ 100% घातक है। केवल तुरंत साबुन-पानी से धोना (15 मिनट) + एंटी-रेबीज़ टीका ही जान बचाता है। उसी दिन स्वास्थ्य केंद्र जाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO Rabies",
+          "tier": 1
+        },
+        {
+          "name": "NCDC, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "epilepsy_spoon",
+      "claim": {
+        "en": "Put a spoon or iron object in the mouth of someone having a seizure (fits).",
+        "hi": "दौरे (फिट) के दौरान मुँह में चम्मच या लोहे की वस्तु रखनी चाहिए।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "first_aid",
+        "dangerous",
+        "seizure"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "NEVER put anything in a seizing person's mouth - it breaks teeth and blocks breathing; people cannot swallow their tongue. Correct: turn them on their side, cushion the head, remove nearby objects, time the seizure, stay till it ends. Call 108 if it lasts over 5 minutes.",
+        "hi": "दौरे के समय मुँह में कुछ भी न डालें - इससे दाँत टूटते हैं और साँस रुक सकती है; लोग अपनी जीभ नहीं निगलते। सही तरीका: करवट करके लिटाएँ, सिर के नीचे नरम चीज़ रखें, पास की वस्तुएँ हटाएँ, दौरे का समय नोट करें, समाप्त होने तक साथ रहें। 5 मिनट से अधिक चले तो 108 पर कॉल करें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Epilepsy",
+          "tier": 1
+        },
+        {
+          "name": "CDC Seizure First Aid",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "burn_toothpaste",
+      "claim": {
+        "en": "Toothpaste on burns heals or soothes the burn wound.",
+        "hi": "जले हुए घाव पर टूथपेस्ट या मक्खन लगाना चाहिए।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "first_aid",
+        "dangerous",
+        "burn"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Toothpaste, butter, oil and haldi trap heat, increase infection risk and complicate treatment. Correct: cool the burn under clean running water for 15-20 minutes, cover loosely with clean cloth, seek care for large or deep burns.",
+        "hi": "टूथपेस्ट, मक्खन, तेल और हल्दी गर्मी रोक लेते हैं, संक्रमण बढ़ाते हैं और इलाज जटिल करते हैं। सही तरीका: जले हिस्से को साफ़ बहते पानी के नीचे 15-20 मिनट ठंडा करें, साफ़ कपड़े से हल्के से ढकें, बड़े या गहरे जले पर चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Burns Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "MoHFW Burns Guidance",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "breastfeeding_spicy",
+      "claim": {
+        "en": "Breastfeeding mothers must avoid spicy food, dal and rice.",
+        "hi": "स्तनपान कराने वाली माताओं को मसालेदार खाना, दाल और चावल नहीं खाना चाहिए।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "child_health",
+        "nutrition"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "A breastfeeding mother needs a normal, nutritious diet including dal, rice and vegetables. Restricting foods harms the mother's nutrition and milk supply. No food needs to be avoided unless the baby shows a specific reaction.",
+        "hi": "स्तनपान कराने वाली माँ को दाल, चावल और सब्ज़ियों सहित सामान्य पौष्टिक आहार की ज़रूरत होती है। भोजन सीमित करने से माँ का पोषण और दूध बनना प्रभावित होता है। कोई भी भोजन छोड़ने की ज़रूरत नहीं, जब तक शिशु में कोई विशेष प्रतिक्रिया न दिखे।"
+      },
+      "sources": [
+        {
+          "name": "WHO Breastfeeding",
+          "tier": 1
+        },
+        {
+          "name": "MAA Programme, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "c_section_intelligence",
+      "claim": {
+        "en": "Babies born by caesarean (C-section) are less intelligent.",
+        "hi": "सिज़ेरियन से जन्मे बच्चे कम बुद्धिमान होते हैं।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "child_health"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "No scientific evidence links C-section birth with intelligence. Intelligence depends on genetics, nutrition and environment. C-section is a life-saving procedure for mother or baby when needed.",
+        "hi": "सिज़ेरियन और बुद्धिमत्ता के बीच कोई वैज्ञानिक संबंध नहीं है। बुद्धिमत्ता आनुवंशिकता, पोषण और वातावरण पर निर्भर करती है। ज़रूरत पड़ने पर सिज़ेरियन माँ या बच्चे की जान बचाने वाली प्रक्रिया है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Maternal Health",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "formula_better_than_breast",
+      "claim": {
+        "en": "Formula milk is better than mother's milk.",
+        "hi": "डिब्बे का दूध (फॉर्मूला) माँ के दूध से बेहतर होता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "child_health"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Mother's milk is uniquely superior - it adapts to the baby's needs, provides immunity and protects against infections. Formula carries risks with unsafe water and is expensive. WHO recommends exclusive breastfeeding for 6 months.",
+        "hi": "माँ का दूध सबसे श्रेष्ठ है - यह शिशु की ज़रूरतों के अनुसार बदलता है, रोग प्रतिरोधक क्षमता देता है और संक्रमणों से बचाता है। फॉर्मूला दूध में असुरक्षित पानी से खतरा रहता है और यह महँगा भी है। WHO पहले 6 महीने केवल स्तनपान की सलाह देता है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Infant and Young Child Feeding",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "eat_for_two",
+      "claim": {
+        "en": "Pregnant women should eat double portions (eat for two).",
+        "hi": "गर्भवती महिलाओं को दोगुना खाना खाना चाहिए (दो लोगों के बराबर)।"
+      },
+      "verdict": "PARTLY_TRUE",
+      "tags": [
+        "pregnancy",
+        "nutrition"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "A pregnant woman needs only about 300 extra calories per day (roughly one extra small meal), not double food. Quality matters: extra dal, vegetables, milk, fruits and IFA tablets as prescribed - not double quantity.",
+        "hi": "गर्भवती महिला को दिन में केवल लगभग 300 अतिरिक्त कैलोरी चाहिए (लगभग एक छोटा अतिरिक्त भोजन), दोगुना खाना नहीं। गुणवत्ता महत्वपूर्ण है: अतिरिक्त दाल, सब्ज़ियाँ, दूध, फल और सलाह अनुसार IFA की गोलियाँ - मात्रा दोगुनी नहीं।"
+      },
+      "sources": [
+        {
+          "name": "WHO Pregnancy Nutrition",
+          "tier": 1
+        },
+        {
+          "name": "Poshan Abhiyaan, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "iron_tablet_baby_dark",
+      "claim": {
+        "en": "Iron tablets during pregnancy make the baby dark-skinned.",
+        "hi": "गर्भावस्था में आयरन की गोली से बच्चे का रंग साँवला हो जाता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "pregnancy",
+        "anaemia"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "Skin colour is genetic - iron tablets cannot change it. Iron-folic acid prevents anaemia in mother and baby, low birth weight and complications. Skipping IFA tablets due to this myth harms both mother and child.",
+        "hi": "त्वचा का रंग आनुवंशिक होता है - आयरन की गोली इसे नहीं बदल सकती। आयरन-फोलिक एसिड माँ और बच्चे में एनीमिया, कम वज़न के जन्म और जटिलताओं को रोकता है। इस भ्रांति के कारण IFA छोड़ने से माँ और बच्चे दोनों को नुकसान होता है।"
+      },
+      "sources": [
+        {
+          "name": "Anaemia Mukt Bharat, MoHFW",
+          "tier": 1
+        },
+        {
+          "name": "WHO Antenatal Care",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "coconut_water_cures_jaundice",
+      "claim": {
+        "en": "Coconut water cures jaundice.",
+        "hi": "नारियल पानी से पीलिया ठीक हो जाता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "home_remedy",
+        "hepatitis"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Coconut water hydrates but does not cure jaundice. Jaundice is a sign of liver problems needing medical evaluation and treatment of the cause. Relying on coconut water alone delays diagnosis of serious conditions.",
+        "hi": "नारियल पानी हाइड्रेशन देता है, पर पीलिया ठीक नहीं करता। पीलिया यकृत की समस्या का संकेत है जिसकी चिकित्सकीय जाँच और कारण का इलाज ज़रूरी है। केवल नारियल पानी पर निर्भर रहने से गंभीर बीमारियों का निदान देर से होता है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Hepatitis",
+          "tier": 1
+        },
+        {
+          "name": "NVHCP, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "blood_donation_weak",
+      "claim": {
+        "en": "Blood donation makes you weak permanently.",
+        "hi": "रक्तदान से शरीर स्थायी रूप से कमज़ोर हो जाता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "general"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "The body replaces donated blood within days to weeks. Healthy adults can donate every 3 months. Blood donation saves lives and does not weaken the body permanently.",
+        "hi": "शरीर दान किए गए रक्त की भरपाई कुछ दिनों से हफ्तों में कर लेता है। स्वस्थ वयस्क हर 3 महीने में रक्तदान कर सकते हैं। रक्तदान जानें बचाता है और शरीर को स्थायी कमज़ोरी नहीं देता।"
+      },
+      "sources": [
+        {
+          "name": "NACO, MoHFW Blood Donation Guidelines",
+          "tier": 1
+        },
+        {
+          "name": "WHO Blood Safety",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "vitamin_c_cold",
+      "claim": {
+        "en": "High-dose vitamin C prevents and cures the common cold.",
+        "hi": "विटामिन C की बड़ी खुराक सर्दी-ज़ुकाम रोकती और ठीक करती है।"
+      },
+      "verdict": "PARTLY_TRUE",
+      "tags": [
+        "nutrition"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Regular vitamin C does not prevent colds in most people, though it may slightly shorten duration in some. Balanced diet and rest matter more. Very high doses can cause stomach problems.",
+        "hi": "विटामिन C अधिकांश लोगों में सर्दी नहीं रोकता, हालाँकि कुछ में बीमारी की अवधि थोड़ी कम कर सकता है। संतुलित आहार और आराम ज़्यादा मायने रखते हैं। बहुत अधिक खुराक से पेट की समस्या हो सकती है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Nutrition",
+          "tier": 1
+        },
+        {
+          "name": "Cochrane Reviews",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "aids_food_spread",
+      "claim": {
+        "en": "HIV/AIDS spreads by sharing food or shaking hands.",
+        "hi": "HIV/AIDS एक साथ खाना खाने या हाथ मिलाने से फैलता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "hiv"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "HIV does NOT spread through food, handshakes, hugging, mosquitoes, toilets or shared clothes. It spreads through unprotected sex, infected blood/needles, and from mother to child. Stigma harms patients and testing.",
+        "hi": "HIV भोजन, हाथ मिलाने, गले लगाने, मच्छरों, शौचालय या कपड़ों से नहीं फैलता। यह असुरक्षित यौन संबंध, संक्रमित रक्त/सुई और माँ से बच्चे में फैलता है। भेदभाव मरीज़ों और जाँच दोनों को नुकसान पहुँचाता है।"
+      },
+      "sources": [
+        {
+          "name": "NACO, MoHFW",
+          "tier": 1
+        },
+        {
+          "name": "WHO HIV/AIDS",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "aids_mosquito",
+      "claim": {
+        "en": "Mosquito bites spread HIV/AIDS.",
+        "hi": "मच्छर के काटने से HIV/AIDS फैलता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "hiv"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "Mosquitoes cannot transmit HIV - the virus cannot survive or multiply inside a mosquito. HIV spreads only through specific body fluids: blood, semen, vaginal fluids and breast milk.",
+        "hi": "मच्छर HIV नहीं फैला सकते - यह वायरस मच्छर के शरीर में जीवित या विकसित नहीं हो सकता। HIV केवल विशिष्ट शारीरिक तरल पदार्थों से फैलता है: रक्त, वीर्य, योनि द्रव और स्तन का दूध।"
+      },
+      "sources": [
+        {
+          "name": "NACO, MoHFW",
+          "tier": 1
+        },
+        {
+          "name": "CDC HIV Transmission",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "karela_cures_diabetes",
+      "claim": {
+        "en": "Eating bitter gourd (karela) cures diabetes completely.",
+        "hi": "करेला खाने से डायबिटीज़ पूरी तरह ठीक हो जाता है।"
+      },
+      "verdict": "PARTLY_TRUE",
+      "tags": [
+        "home_remedy",
+        "diabetes"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Karela is a healthy low-glycaemic vegetable that helps manage blood sugar, but it cannot cure diabetes. Stopping medicines and relying on karela alone is dangerous. Use it as part of a doctor-supervised diet.",
+        "hi": "करेला एक स्वस्थ कम-ग्लाइसेमिक सब्ज़ी है जो ब्लड शुगर नियंत्रित करने में सहायक है, पर यह मधुमेह ठीक नहीं कर सकता। दवा छोड़कर केवल करेले पर निर्भर रहना खतरनाक है। इसे डॉक्टर की देखरेख में आहार का हिस्सा बनाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO Diabetes",
+          "tier": 1
+        },
+        {
+          "name": "ICMR Nutrition Guidance",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "milk_tb_cure",
+      "claim": {
+        "en": "Ginger, garlic and milk cures TB without medicines.",
+        "hi": "अदरक, लहसुन और दूध से बिना दवा के टीबी ठीक हो जाती है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "home_remedy",
+        "tb",
+        "dangerous"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "TB is cured ONLY by the full course of anti-TB medicines (6+ months, free under Nikshay). Home remedies cannot kill TB bacteria. Delaying treatment spreads the disease to family and causes drug-resistant TB.",
+        "hi": "टीबी केवल टीबी-रोधी दवाओं के पूरे कोर्स से ठीक होती है (6+ महीने, निक्षय के अंतर्गत मुफ़्त)। घरेलू नुस्खे टीबी के बैक्टीरिया नहीं मार सकते। इलाज में देरी से बीमारी परिवार में फैलती है और दवा-प्रतिरोधी टीबी बनती है।"
+      },
+      "sources": [
+        {
+          "name": "NTEP, MoHFW",
+          "tier": 1
+        },
+        {
+          "name": "WHO TB Treatment",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "vaccine_side_effects_working",
+      "claim": {
+        "en": "Mild fever and pain after vaccination means the vaccine is working.",
+        "hi": "टीके के बाद हल्का बुखार और दर्द का मतलब है कि टीका काम कर रहा है।"
+      },
+      "verdict": "TRUE",
+      "tags": [
+        "vaccination"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Yes - mild fever, soreness or fatigue after vaccination is a normal sign that the immune system is responding and building protection. It lasts 1-2 days. No side effects does NOT mean the vaccine failed; protection still develops.",
+        "hi": "हाँ - टीके के बाद हल्का बुखार, दर्द या थकान इस बात का सामान्य संकेत है कि प्रतिरक्षा प्रणाली प्रतिक्रिया कर रही है और सुरक्षा बना रही है। यह 1-2 दिन रहता है। कोई दुष्प्रभाव न होने का मतलब यह नहीं कि टीका असफल रहा; सुरक्षा फिर भी बनती है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Vaccine Safety",
+          "tier": 1
+        },
+        {
+          "name": "CDC Vaccine Facts",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "fever_alcohol_rub",
+      "claim": {
+        "en": "Rubbing alcohol on the body brings down high fever.",
+        "hi": "शरीर पर स्पिरिट (अल्कोहल) मलने से तेज़ बुखार उतरता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "first_aid",
+        "fever"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Alcohol rubs can be absorbed through skin and cause toxicity, especially in children. Correct method: tepid water sponge on forehead/armpits, light clothes, paracetamol as advised, plenty of fluids. Seek care for high or persistent fever.",
+        "hi": "अल्कोहल त्वचा से सोखा जा सकता है और विषाक्तता पैदा कर सकता है, खासकर बच्चों में। सही तरीका: माथे/बगल पर गुनगुने पानी की पट्टी, हल्के कपड़े, सलाह अनुसार पैरासिटामोल, भरपूर तरल पदार्थ। तेज़ या लगातार बुखार पर चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Fever Management",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "amr_threat",
+      "claim": {
+        "en": "Antibiotic resistance means simple infections will become untreatable and millions will soon die.",
+        "hi": "एंटीबायोटिक प्रतिरोध का मतलब है कि साधारण संक्रमण भी लाइलाज हो जाएँगे और जल्द ही लाखों लोग मरेंगे।"
+      },
+      "verdict": "TRUE",
+      "tags": [
+        "medicine",
+        "antibiotics"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "The core fact is real: antibiotic resistance is a serious, growing global threat and infections ARE becoming harder to treat. But the 'millions will die soon' framing is exaggerated fear-mongering. The reality: resistance can be slowed by using antibiotics only on prescription, completing courses, and better hygiene. The threat is serious - the panic is not.",
+        "hi": "मूल तथ्य सही है: एंटीबायोटिक प्रतिरोध एक गंभीर, बढ़ती वैश्विक समस्या है और संक्रमणों का इलाज कठिन होता जा रहा है। पर 'जल्द ही लाखों लोग मरेंगे' वाला दावा बढ़ा-चढ़ाकर डर फैलाना है। वास्तविकता: केवल डॉक्टर की सलाह पर एंटीबायोटिक लेने, कोर्स पूरा करने और बेहतर स्वच्छता से प्रतिरोध रोका जा सकता है। खतरा गंभीर है - घबराहट ज़रूरी नहीं।"
+      },
+      "sources": [
+        {
+          "name": "WHO Antimicrobial Resistance",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "kadha_immunity",
+      "claim": {
+        "en": "Drinking homemade kadha (herbal decoction) boosts immunity and prevents diseases.",
+        "hi": "घर का बना काढ़ा पीने से रोग प्रतिरोधक क्षमता बढ़ती है और बीमारियाँ नहीं होतीं।"
+      },
+      "verdict": "PARTLY_TRUE",
+      "tags": [
+        "home_remedy",
+        "immunity"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Kadha (ginger, tulsi, honey) is a warm, soothing drink that may ease cold and cough symptoms. But there is no strong scientific proof it 'boosts immunity' to prevent diseases - immunity is not switched on by one drink. It is a supportive wellness drink, not a disease shield or a medicine.",
+        "hi": "काढ़ा (अदरक, तुलसी, शहद) एक गर्म, आरामदायक पेय है जो सर्दी-खाँसी के लक्षणों में राहत दे सकता है। पर इसका कोई पुख्ता वैज्ञानिक प्रमाण नहीं कि यह बीमारियों से बचाने के लिए 'रोग प्रतिरोधक क्षमता बढ़ा देता है'। यह सहायक पेय है, बीमारी से बचाने वाली ढाल या दवा नहीं।"
+      },
+      "sources": [
+        {
+          "name": "WHO Traditional Medicine",
+          "tier": 1
+        },
+        {
+          "name": "Limited clinical evidence",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "giloy_dengue",
+      "claim": {
+        "en": "Giloy (Tinospora cordifolia) cures dengue fever.",
+        "hi": "गिलोय डेंगू बुखार ठीक कर देता है।"
+      },
+      "verdict": "PARTLY_TRUE",
+      "tags": [
+        "home_remedy",
+        "dengue"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Some preliminary studies suggest giloy may support immunity and platelet recovery, but it is NOT a proven cure for dengue. Dengue has no specific cure - treatment is rest, fluids and medical monitoring. Do not rely on giloy instead of seeing a doctor.",
+        "hi": "कुछ शुरुआती अध्ययन बताते हैं कि गिलोय रोग प्रतिरोधक क्षमता और प्लेटलेट सुधार में सहायक हो सकता है, पर यह डेंगू का सिद्ध इलाज नहीं है। डेंगू का कोई विशेष इलाज नहीं - आराम, तरल पदार्थ और चिकित्सकीय निगरानी ही उपचार है। डॉक्टर को दिखाने की जगह गिलोय पर निर्भर न रहें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Traditional Medicine",
+          "tier": 1
+        },
+        {
+          "name": "Limited clinical evidence",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "tulsi_fever",
+      "claim": {
+        "en": "Tulsi (holy basil) leaves cure all fevers.",
+        "hi": "तुलसी के पत्ते हर तरह का बुखार ठीक कर देते हैं।"
+      },
+      "verdict": "PARTLY_TRUE",
+      "tags": [
+        "home_remedy",
+        "fever"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Tulsi has some antimicrobial properties and is used traditionally. It may soothe, but it does not cure all fevers. Fever can have many causes (dengue, typhoid, malaria) that need proper diagnosis. Persistent or high fever needs a doctor.",
+        "hi": "तुलसी में कुछ रोगाणुरोधी गुण होते हैं और इसे पारंपरिक रूप से इस्तेमाल किया जाता है। यह आराम दे सकती है, पर हर तरह का बुखार ठीक नहीं करती। बुखार के कई कारण हो सकते हैं (डेंगू, टाइफाइड, मलेरिया) जिनका सही निदान ज़रूरी है। लगातार या तेज़ बुखार पर डॉक्टर को दिखाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO Traditional Medicine",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "haldi_doodh_cold",
+      "claim": {
+        "en": "Haldi doodh (turmeric milk) cures cold and cough.",
+        "hi": "हल्दी वाला दूध सर्दी-खाँसी ठीक कर देता है।"
+      },
+      "verdict": "PARTLY_TRUE",
+      "tags": [
+        "home_remedy",
+        "cold"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Turmeric contains curcumin which has anti-inflammatory properties, and warm milk is soothing. But haldi doodh is not a proven cure for the viral infections that cause cold and cough. It gives comfort, not a cure.",
+        "hi": "हल्दी में करक्यूमिन होता है जिसमें सूजन-रोधी गुण हैं, और गर्म दूध आराम देता है। पर हल्दी वाला दूध सर्दी-खाँसी पैदा करने वाले वायरल संक्रमण का सिद्ध इलाज नहीं है। यह आराम देता है, इलाज नहीं।"
+      },
+      "sources": [
+        {
+          "name": "NIH (curcumin studies)",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "chyawanprash_immunity",
+      "claim": {
+        "en": "Chyawanprash boosts immunity and prevents all diseases.",
+        "hi": "च्यवनप्राश रोग प्रतिरोधक क्षमता बढ़ाता है और सभी बीमारियों से बचाता है।"
+      },
+      "verdict": "PARTLY_TRUE",
+      "tags": [
+        "home_remedy",
+        "immunity"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Chyawanprash is a traditional Ayurvedic preparation rich in vitamins and antioxidants that may support general health. There is no proof it prevents all diseases. A balanced diet, sleep and exercise matter far more.",
+        "hi": "च्यवनप्राश विटामिन और एंटीऑक्सीडेंट से भरपूर पारंपरिक आयुर्वेदिक तैयारी है जो सामान्य स्वास्थ्य में सहायक हो सकती है। इसका कोई प्रमाण नहीं कि यह सभी बीमारियों से बचाता है। संतुलित आहार, नींद और व्यायाम कहीं अधिक महत्वपूर्ण हैं।"
+      },
+      "sources": [
+        {
+          "name": "WHO Traditional Medicine",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "neem_chickenpox",
+      "claim": {
+        "en": "Applying neem leaves cures chickenpox.",
+        "hi": "नीम की पत्तियाँ लगाने से चेचक ठीक हो जाती है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "home_remedy",
+        "chickenpox"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Neem paste may soothe the itching of chickenpox, but it does not cure the viral infection. The body clears it on its own; keep the child hydrated and see a doctor for high fever or complications.",
+        "hi": "नीम का लेप चेचक की खुजली में आराम दे सकता है, पर यह वायरल संक्रमण को ठीक नहीं करता। शरीर इसे स्वयं ठीक करता है; बच्चे को हाइड्रेट रखें और तेज़ बुखार या जटिलता पर डॉक्टर को दिखाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "jeera_water_weight",
+      "claim": {
+        "en": "Jeera (cumin) water helps digestion and reduces weight.",
+        "hi": "जीरे का पानी पाचन में मदद करता है और वज़न घटाता है।"
+      },
+      "verdict": "PARTLY_TRUE",
+      "tags": [
+        "home_remedy",
+        "nutrition"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Jeera water is a traditional digestive aid and can help with mild bloating. But the weight-loss claim has weak scientific evidence - no single drink causes meaningful weight loss without diet and exercise.",
+        "hi": "जीरे का पानी पाचन का पारंपरिक सहायक है और हल्की अपच में मदद कर सकता है। पर वज़न घटाने का दावा कमज़ोर वैज्ञानिक प्रमाण पर है - बिना आहार और व्यायाम के कोई एक पेय वज़न नहीं घटाता।"
+      },
+      "sources": [
+        {
+          "name": "Limited clinical evidence",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "lemon_honey_cold",
+      "claim": {
+        "en": "Lemon and honey in warm water cures cold and cough.",
+        "hi": "नींबू और शहद का गर्म पानी सर्दी-खाँसी ठीक कर देता है।"
+      },
+      "verdict": "PARTLY_TRUE",
+      "tags": [
+        "home_remedy",
+        "cold"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Lemon provides vitamin C and honey soothes the throat, so this drink can ease symptoms. But it does not cure the viral infection causing the cold. It is supportive, not a cure.",
+        "hi": "नींबू विटामिन C देता है और शहद गले को आराम देता है, इसलिए यह पेय लक्षणों में राहत दे सकता है। पर यह सर्दी पैदा करने वाले वायरल संक्रमण को ठीक नहीं करता। यह सहायक है, इलाज नहीं।"
+      },
+      "sources": [
+        {
+          "name": "WHO Traditional Medicine",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "ghee_arthritis",
+      "claim": {
+        "en": "Applying ghee or oil on joints cures arthritis.",
+        "hi": "जोड़ों पर घी या तेल लगाने से गठिया (आर्थराइटिस) ठीक हो जाता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "home_remedy",
+        "arthritis"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "There is no evidence that applying ghee or oil cures arthritis. Gentle massage may give temporary comfort, but arthritis needs proper medical management. Relying on massage alone delays effective treatment.",
+        "hi": "इसका कोई प्रमाण नहीं कि घी या तेल लगाने से गठिया ठीक होता है। हल्की मालिश से अस्थायी आराम मिल सकता है, पर गठिया का सही चिकित्सकीय प्रबंधन ज़रूरी है। केवल मालिश पर निर्भर रहने से सही इलाज में देरी होती है।"
+      },
+      "sources": [
+        {
+          "name": "NIH (arthritis)",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "saunf_digestion",
+      "claim": {
+        "en": "Eating saunf (fennel seeds) after meals improves digestion.",
+        "hi": "खाने के बाद सौंफ खाने से पाचन अच्छा होता है।"
+      },
+      "verdict": "TRUE",
+      "tags": [
+        "nutrition"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Fennel seeds are a traditional, safe digestive aid commonly eaten after meals in India. This is a harmless, widely accepted practice with no downside for most people.",
+        "hi": "सौंफ पाचन का पारंपरिक और सुरक्षित सहायक है, जिसे भारत में आमतौर पर खाने के बाद खाया जाता है। अधिकांश लोगों के लिए यह हानिरहित और स्वीकृत आदत है।"
+      },
+      "sources": [
+        {
+          "name": "Traditional practice",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "diabetes_karela_cure",
+      "claim": {
+        "en": "Bitter gourd (karela) juice permanently cures diabetes.",
+        "hi": "करेले का जूस पीने से डायबिटीज जड़ से खत्म हो जाती है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "diabetes",
+        "home_remedy"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "While karela has mild compounds that can support blood sugar control, it DOES NOT cure diabetes. Stopping insulin or prescribed medication in favor of karela can lead to life-threatening diabetic ketoacidosis or hyperglycemia.",
+        "hi": "करेले में ऐसे तत्व होते हैं जो ब्लड शुगर को नियंत्रित करने में थोड़ा सहायक हो सकते हैं, पर यह डायबिटीज को जड़ से खत्म नहीं करता। डॉक्टर की दवा या इंसुलिन छोड़कर केवल करेले पर निर्भर रहना खतरनाक हो सकता है।"
+      },
+      "sources": [
+        {
+          "name": "ICMR Guidelines for Diabetes",
+          "tier": 1
+        },
+        {
+          "name": "WHO Diabetes Fact Sheet",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "diabetes_jaggery_safe",
+      "claim": {
+        "en": "Jaggery (gud) is completely safe for diabetics and does not raise blood sugar.",
+        "hi": "गुड़ खाने से शुगर नहीं बढ़ती और यह डायबिटीज के मरीजों के लिए बिल्कुल सुरक्षित है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "diabetes",
+        "nutrition"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Jaggery is made of 65-85% sucrose and has a high glycemic index (~84), similar to white sugar. It spikes blood glucose levels just like regular sugar. Diabetics must not consume jaggery thinking it is harmless.",
+        "hi": "गुड़ में 65-85% सुक्रोज होता है और इसका ग्लाइसेमिक इंडेक्स सफेद चीनी के समान ही बहुत अधिक होता है। यह भी खून में शुगर का स्तर तेजी से बढ़ाता है। डायबिटीज के मरीजों को गुड़ सुरक्षित समझकर नहीं खाना चाहिए।"
+      },
+      "sources": [
+        {
+          "name": "ICMR Dietary Guidelines",
+          "tier": 1
+        },
+        {
+          "name": "NIN Hyderabad",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "cancer_graviola_soursop",
+      "claim": {
+        "en": "Graviola (soursop / hanuman phal) cures cancer 10,000 times better than chemotherapy.",
+        "hi": "हनुमान फल या ग्रेवियोला से कैंसर का इलाज कीमोथेरेपी से दस हजार गुना बेहतर होता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "cancer",
+        "dangerous"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "There are NO approved clinical trials showing graviola cures cancer in humans. Overconsuming soursop seeds/extracts can cause nerve damage and Parkinson-like neurological symptoms. Do not abandon proven oncology treatments.",
+        "hi": "इंसानों में हनुमान फल (ग्रेवियोला) से कैंसर ठीक होने का कोई भी वैज्ञानिक या चिकित्सीय प्रमाण नहीं है। इसके अर्क का अधिक सेवन तंत्रिका तंत्र को नुकसान पहुंचा सकता है। कीमोथेरेपी या कैंसर का चिकित्सीय इलाज कभी न छोड़ें।"
+      },
+      "sources": [
+        {
+          "name": "Tata Memorial Centre",
+          "tier": 1
+        },
+        {
+          "name": "Cancer Research UK",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "hiv_mosquito_spread",
+      "claim": {
+        "en": "Mosquitoes spread HIV through bites.",
+        "hi": "मच्छर के काटने से एचआईवी या एड्स फैलता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "hiv",
+        "infections"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "HIV cannot survive or replicate in mosquitoes. When a mosquito bites, it injects saliva, not blood from previous victims. HIV spreads only through unprotected sex, infected blood transfusions, shared needles, or from mother to child.",
+        "hi": "मच्छरों के शरीर में एचआईवी वायरस जीवित नहीं रह सकता। मच्छर काटते समय लार छोड़ते हैं, पहले काटे गए व्यक्ति का खून नहीं। एचआईवी केवल असुरक्षित यौन संबंध, संक्रमित सुइयों या संक्रमित रक्त से ही फैलता है।"
+      },
+      "sources": [
+        {
+          "name": "NACO (Govt. of India)",
+          "tier": 1
+        },
+        {
+          "name": "CDC HIV Transmission",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "alcohol_kills_virus",
+      "claim": {
+        "en": "Drinking alcohol kills coronavirus and disinfects the body from infections.",
+        "hi": "शराब पीने से शरीर के अंदर कोरोना वायरस मर जाता है और संक्रमण नहीं होता।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "covid",
+        "alcohol"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Drinking alcohol does NOT kill viruses inside the human body. Instead, consuming alcohol weakens the immune system and increases vulnerability to severe lung and respiratory infections.",
+        "hi": "शराब पीने से शरीर के अंदर वायरस खत्म नहीं होते। इसके विपरीत, शराब के सेवन से शरीर की रोग प्रतिरोधक क्षमता कमजोर होती है और फेफड़ों के संक्रमण का खतरा बढ़ जाता है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Mythbusters",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "colostrum_waste",
+      "claim": {
+        "en": "The yellow first milk (colostrum) after birth is impure and should be thrown away.",
+        "hi": "प्रसव के बाद का पहला पीला गाढ़ा दूध (कोलोस्ट्रम) गंदा होता है और उसे फेंक देना चाहिए।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "maternal_child",
+        "nutrition"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Colostrum is the baby first natural immunization. It is packed with protective antibodies, vitamin A, and protein that protect the newborn against life-threatening infections. It should ALWAYS be given to the newborn within the first hour.",
+        "hi": "पहला पीला दूध (कोलोस्ट्रम) शिशु का पहला प्राकृतिक टीका होता है। इसमें भरपूर मात्रा में एंटीबॉडीज और पोषक तत्व होते हैं जो शिशु को गंभीर संक्रमणों से बचाते हैं। जन्म के पहले घंटे में इसे बच्चे को अवश्य पिलाना चाहिए।"
+      },
+      "sources": [
+        {
+          "name": "MoHFW Infant Nutrition",
+          "tier": 1
+        },
+        {
+          "name": "UNICEF India",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "rabies_puppy_bite",
+      "claim": {
+        "en": "Puppy scratch or small dog bite does not cause rabies.",
+        "hi": "पिल्ले के खरोंचने या छोटे पिल्ले के काटने से रेबीज नहीं होता।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "rabies",
+        "first_aid",
+        "dangerous"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Any scratch or bite from an unvaccinated puppy or dog can transmit rabies. Rabies is 100% fatal once symptoms develop. Immediately wash the wound with soap and running water for 15 minutes and receive the Anti-Rabies Vaccine (ARV).",
+        "hi": "बिना टीके वाले पिल्ले के काटने या खरोंचने से भी रेबीज हो सकता है। लक्षण दिखने पर रेबीज 100% जानलेवा है। घाव को तुरंत साबुन और बहते पानी से 15 मिनट तक धोएं और तुरंत एंटी-रेबीज वैक्सीन लगवाएं।"
+      },
+      "sources": [
+        {
+          "name": "National Rabies Control Programme (NRCP)",
+          "tier": 1
+        },
+        {
+          "name": "WHO Rabies Guidance",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "burn_cool_water",
+      "claim": {
+        "en": "Cool running tap water for 15-20 minutes is the best immediate treatment for burns.",
+        "hi": "जलने पर 15-20 मिनट तक नल के सादे बहते पानी से ठंडा करना सबसे सही प्राथमिक उपचार है।"
+      },
+      "verdict": "TRUE",
+      "tags": [
+        "first_aid",
+        "burn"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Cool running water (not ice-cold water) effectively stops the burning process, reduces swelling and tissue damage, and eases pain. Do not apply toothpaste, turmeric, or butter.",
+        "hi": "नल के बहते सादे पानी (बर्फ नहीं) से जले हिस्से को ठंडा करने से अंदरूनी गर्मी निकलती है, छाले कम होते हैं और दर्द में राहत मिलती है। टूथपेस्ट, हल्दी या मक्खन बिल्कुल न लगाएं।"
+      },
+      "sources": [
+        {
+          "name": "WHO Burns Management",
+          "tier": 1
+        },
+        {
+          "name": "MoHFW Burns Guidelines",
+          "tier": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AarogyaSathi - Syndromic Surveillance Dashboard</title>
+  <link rel="stylesheet" href="/static/admin.css" />
+</head>
+<body>
+  <header>
+    <h1>AarogyaSathi — Community Early-Warning Dashboard</h1>
+    <p>Syndromic surveillance: anonymized, pincode-level symptom-query spike detection (SIH 25049 module 7.2)</p>
+  </header>
+
+  <section class="cards">
+    <div class="card"><div class="value" id="msg24">–</div><div class="label">Messages (24h)</div></div>
+    <div class="card"><div class="value" id="msg7">–</div><div class="label">Messages (7d)</div></div>
+    <div class="card"><div class="value" id="ev24">–</div><div class="label">Symptom events (24h)</div></div>
+    <div class="card"><div class="value" id="al7">–</div><div class="label">Spike alerts (7d)</div></div>
+  </section>
+
+  <section class="two-col">
+    <div class="panel">
+      <h2>Active spike alerts</h2>
+      <table id="alertsTable">
+        <thead><tr><th>Pincode</th><th>Symptom</th><th>24h</th><th>Baseline/day</th><th>Severity</th><th>Detected</th></tr></thead>
+        <tbody><tr><td colspan="6">No alerts yet — seed demo data or let queries accumulate.</td></tr></tbody>
+      </table>
+      <div class="buttons">
+        <button id="seedBtn">Seed demo outbreak (pincode 110001)</button>
+        <button id="runBtn">Run detection now</button>
+        <button id="clearBtn">Clear all data</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Official advisories (knowledge base)</h2>
+      <ul id="advisories"></ul>
+    </div>
+  </section>
+
+  <section class="two-col">
+    <div class="panel">
+      <h2>Intent distribution (7d)</h2>
+      <table id="intentsTable">
+        <thead><tr><th>Intent</th><th>Count</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="panel">
+      <h2>Fact-check verdicts (7d)</h2>
+      <table id="verdictsTable">
+        <thead><tr><th>Verdict</th><th>Count</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <h2 class="mt">Languages (7d)</h2>
+      <table id="langsTable">
+        <thead><tr><th>Language</th><th>Count</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Privacy: only pincode + anonymized symptom categories are stored. No phone numbers, no chat text, no identities.
+  </footer>
+
+  <script src="/static/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "note": "Held-out evaluation set, separate from intents.json training examples."
+  },
+  "intent_eval": [
+    {
+      "text": "salaam ji",
+      "intent": "greeting"
+    },
+    {
+      "text": "good evening",
+      "intent": "greeting"
+    },
+    {
+      "text": "kya kar sakte ho batao",
+      "intent": "help"
+    },
+    {
+      "text": "what are the options",
+      "intent": "help"
+    },
+    {
+      "text": "dengue ke lakshan batao",
+      "intent": "disease_info"
+    },
+    {
+      "text": "what is typhoid",
+      "intent": "disease_info"
+    },
+    {
+      "text": "टीबी क्या है",
+      "intent": "disease_info"
+    },
+    {
+      "text": "corona ke baare mein jaankari do",
+      "intent": "disease_info"
+    },
+    {
+      "text": "mujhe khaansi aur bukhar hai",
+      "intent": "symptom_check"
+    },
+    {
+      "text": "i am feeling weak and dizzy",
+      "intent": "symptom_check"
+    },
+    {
+      "text": "पेट में दर्द और उल्टी हो रही है",
+      "intent": "symptom_check"
+    },
+    {
+      "text": "malaria se kaise bache",
+      "intent": "prevention"
+    },
+    {
+      "text": "how can I protect my family from dengue",
+      "intent": "prevention"
+    },
+    {
+      "text": "बच्चों के टीकों की सूची",
+      "intent": "vaccination"
+    },
+    {
+      "text": "when should i get polio drops for my baby",
+      "intent": "vaccination"
+    },
+    {
+      "text": "mr vaccine kab lagta hai",
+      "intent": "vaccination"
+    },
+    {
+      "text": "check this forward",
+      "intent": "fact_check"
+    },
+    {
+      "text": "ye message sahi hai kya",
+      "intent": "fact_check"
+    },
+    {
+      "text": "is this claim real",
+      "intent": "fact_check"
+    },
+    {
+      "text": "kya area me koi bimari faili hai",
+      "intent": "outbreak"
+    },
+    {
+      "text": "any health alerts",
+      "intent": "outbreak"
+    },
+    {
+      "text": "healthy khana kya khaana chahiye",
+      "intent": "nutrition"
+    },
+    {
+      "text": "garbhavati mahila ko kya khana chahiye",
+      "intent": "nutrition"
+    },
+    {
+      "text": "haath dhone ka sahi tarika",
+      "intent": "hygiene"
+    },
+    {
+      "text": "pani ko saaf kaise kare",
+      "intent": "hygiene"
+    },
+    {
+      "text": "thank you so much",
+      "intent": "thanks"
+    },
+    {
+      "text": "bahut dhanyavaad",
+      "intent": "thanks"
+    },
+    {
+      "text": "meri chhati me dard ho raha hai",
+      "intent": "emergency"
+    },
+    {
+      "text": "saans lene me takleef hai",
+      "intent": "emergency"
+    },
+    {
+      "text": "tamil me baat karo",
+      "intent": "language_switch"
+    }
+  ],
+  "retrieval_eval": [
+    {
+      "text": "What are the symptoms of dengue?",
+      "expected_type": "disease",
+      "expected_id": "dengue"
+    },
+    {
+      "text": "टाइफाइड के लक्षण क्या हैं?",
+      "expected_type": "disease",
+      "expected_id": "typhoid"
+    },
+    {
+      "text": "malaria se bachne ke upay",
+      "expected_type": "disease",
+      "expected_id": "malaria"
+    },
+    {
+      "text": "What is tuberculosis?",
+      "expected_type": "disease",
+      "expected_id": "tuberculosis"
+    },
+    {
+      "text": "cholera kya hai",
+      "expected_type": "disease",
+      "expected_id": "cholera"
+    },
+    {
+      "text": "how to prepare ORS",
+      "expected_type": "faq",
+      "expected_id": "ors_preparation"
+    },
+    {
+      "text": "proper way to wash hands",
+      "expected_type": "faq",
+      "expected_id": "handwashing"
+    },
+    {
+      "text": "how to make water safe to drink",
+      "expected_type": "faq",
+      "expected_id": "safe_water"
+    },
+    {
+      "text": "breastfeeding importance",
+      "expected_type": "faq",
+      "expected_id": "breastfeeding"
+    },
+    {
+      "text": "keep blood pressure normal",
+      "expected_type": "faq",
+      "expected_id": "hypertension_basics"
+    },
+    {
+      "text": "mosquito breeding prevention",
+      "expected_type": "faq",
+      "expected_id": "mosquito_control"
+    },
+    {
+      "text": "heat wave protection",
+      "expected_type": "faq",
+      "expected_id": "heat_safety"
+    },
+    {
+      "text": "antibiotics for cold",
+      "expected_type": "faq",
+      "expected_id": "antibiotic_awareness"
+    },
+    {
+      "text": "tobacco health effects",
+      "expected_type": "faq",
+      "expected_id": "tobacco_harm"
+    },
+    {
+      "text": "mental health tips",
+      "expected_type": "faq",
+      "expected_id": "mental_health_basics"
+    }
+  ],
+  "factcheck_eval": [
+    {
+      "claim": "Vaccines cause autism",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "COVID vaccine causes infertility",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Polio drops make children infertile",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "5G towers spread corona",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Mobile radiation causes brain tumour",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Garlic cures dengue",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Honey is good for newborns",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "TB spreads by sharing utensils",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Cold water after hot food causes cancer",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Antibiotics cure viral fever",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Suck snake venom from wound",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Put spoon in mouth during seizure",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Toothpaste on burns",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Chilli on dog bite prevents rabies",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Breastfeeding mothers must avoid spicy food",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Formula milk is better than breast milk",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Iron tablets make baby dark",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Coconut water cures jaundice",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Blood donation makes you permanently weak",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "HIV spreads by sharing food",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Mosquitoes spread HIV",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Ginger garlic milk cures TB",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Alcohol rub reduces fever",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Chew aspirin during heart attack",
+      "expected": "TRUE"
+    },
+    {
+      "claim": "ORS is the right first treatment for diarrhoea",
+      "expected": "TRUE"
+    },
+    {
+      "claim": "Mild fever after vaccine means it is working",
+      "expected": "TRUE"
+    },
+    {
+      "claim": "Papaya leaf juice increases platelets in dengue",
+      "expected": "PARTLY_TRUE"
+    },
+    {
+      "claim": "Turmeric cures cancer",
+      "expected": "MYTH"
+    },
+    {
+      "claim": "Eating sugar causes diabetes",
+      "expected": "PARTLY_TRUE"
+    },
+    {
+      "claim": "Pregnant women should eat for two",
+      "expected": "PARTLY_TRUE"
+    },
+    {
+      "claim": "Vitamin C prevents common cold",
+      "expected": "PARTLY_TRUE"
+    },
+    {
+      "claim": "Karela cures diabetes",
+      "expected": "PARTLY_TRUE"
+    },
+    {
+      "claim": "Antibiotic resistance will kill millions soon",
+      "expected": "TRUE"
+    },
+    {
+      "claim": "Some brand new miracle drink cures every disease known to man",
+      "expected": "UNVERIFIABLE"
+    }
+  ]
+}

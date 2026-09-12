@@ -1,0 +1,1423 @@
+{
+  "meta": {
+    "sources_note": "Content curated from WHO fact sheets, MoHFW/NHM advisories and IDSP guidance. For awareness only; not medical advice.",
+    "languages": [
+      "en",
+      "hi"
+    ]
+  },
+  "diseases": [
+    {
+      "id": "dengue",
+      "names": {
+        "en": [
+          "dengue",
+          "dengue fever"
+        ],
+        "hi": [
+          "डेंगू"
+        ],
+        "bn": [
+          "ডেঙ্গু"
+        ],
+        "ta": [
+          "டெங்கு"
+        ],
+        "te": [
+          "డెంగ్యూ"
+        ],
+        "mr": [
+          "डेंग्यू"
+        ],
+        "gu": [
+          "ડેન્ગ્યુ"
+        ],
+        "kn": [
+          "ಡೆಂಗ್ಯೂ"
+        ],
+        "ml": [
+          "ഡെങ്കിപ്പനി"
+        ],
+        "pa": [
+          "ਡੇਂਗੂ"
+        ],
+        "or": [
+          "ଡେଙ୍ଗୁ"
+        ],
+        "ur": [
+          "ڈینگی"
+        ]
+      },
+      "summary": {
+        "en": "Dengue is a mosquito-borne viral infection spread mainly by Aedes aegypti mosquitoes, which bite during the day, especially early morning and evening.",
+        "hi": "डेंगू मच्छरों से फैलने वाला वायरल संक्रमण है, जो मुख्य रूप से एडीज एजिप्टी मच्छर से फैलता है। यह मच्छर दिन में, खासकर सुबह और शाम काटता है।"
+      },
+      "symptoms": {
+        "en": [
+          "High fever",
+          "Severe headache",
+          "Pain behind the eyes",
+          "Muscle and joint pain",
+          "Nausea and vomiting",
+          "Skin rash",
+          "Bleeding gums or nose in severe cases"
+        ],
+        "hi": [
+          "तेज़ बुखार",
+          "सिर में तेज़ दर्द",
+          "आँखों के पीछे दर्द",
+          "मांसपेशियों और जोड़ों में दर्द",
+          "जी मिचलाना और उल्टी",
+          "त्वचा पर चकत्ते",
+          "गंभीर मामलों में मसूड़ों या नाक से खून आना"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "Remove stagnant water where mosquitoes breed (coolers, pots, tyres)",
+          "Use mosquito nets and repellents",
+          "Wear full-sleeve clothes",
+          "Cover water containers",
+          "Use larvicide or oil in standing water"
+        ],
+        "hi": [
+          "जमा पानी हटाएँ जहाँ मच्छर पनपते हैं (कूलर, बर्तन, टायर)",
+          "मच्छरदानी और रिपेलेंट का उपयोग करें",
+          "पूरी बाँह के कपड़े पहनें",
+          "पानी के बर्तन ढककर रखें",
+          "जमा पानी में लार्वीसाइड डालें"
+        ]
+      },
+      "first_aid": {
+        "en": "Rest, drink plenty of fluids (ORS, water, coconut water), take paracetamol for fever. DO NOT take aspirin or ibuprofen without a doctor's advice - they increase bleeding risk. Monitor platelet count if advised by a doctor.",
+        "hi": "आराम करें, खूब तरल पदार्थ लें (ORS, पानी, नारियल पानी), बुखार के लिए पैरासिटामोल लें। डॉक्टर की सलाह के बिना एस्पिरिन या आइबुप्रोफेन न लें - इनसे रक्तस्राव का खतरा बढ़ता है। डॉक्टर की सलाह पर प्लेटलेट्स की निगरानी करें।"
+      },
+      "when_to_seek": {
+        "en": "Seek immediate medical care if there is severe abdominal pain, persistent vomiting, bleeding, difficulty breathing, or extreme weakness.",
+        "hi": "यदि पेट में तेज़ दर्द, लगातार उल्टी, रक्तस्राव, साँस लेने में कठिनाई या अत्यधिक कमज़ोरी हो तो तुरंत चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Dengue Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "NVBDCP, MoHFW Guidelines",
+          "tier": 1
+        }
+      ],
+      "hinglish": "dengue ke lakshan, dengue se bachav, dengue ka ilaaj, dengue bukhar, dengue kya hai"
+    },
+    {
+      "id": "malaria",
+      "names": {
+        "en": [
+          "malaria"
+        ],
+        "hi": [
+          "मलेरिया"
+        ],
+        "bn": [
+          "ম্যালেরিয়া"
+        ],
+        "ta": [
+          "மலேரியா"
+        ],
+        "te": [
+          "మలేరియా"
+        ],
+        "mr": [
+          "मलेरिया"
+        ],
+        "gu": [
+          "મલેરિયા"
+        ],
+        "kn": [
+          "ಮಲೇರಿಯಾ"
+        ],
+        "ml": [
+          "മലമ്പനി"
+        ],
+        "pa": [
+          "ਮਲੇਰੀਆ"
+        ],
+        "or": [
+          "ମ୍ୟାଲେରିଆ"
+        ],
+        "ur": [
+          "ملیریا"
+        ]
+      },
+      "summary": {
+        "en": "Malaria is a life-threatening disease caused by Plasmodium parasites transmitted through the bite of infected female Anopheles mosquitoes, which usually bite at night.",
+        "hi": "मलेरिया प्लाज़मोडियम परजीवी से होने वाली बीमारी है, जो संक्रमित मादा एनोफिलीज़ मच्छर के काटने से फैलती है। यह मच्छर आमतौर पर रात में काटता है।"
+      },
+      "symptoms": {
+        "en": [
+          "Fever with chills and shivering",
+          "Sweating",
+          "Headache",
+          "Body ache",
+          "Nausea and vomiting",
+          "Fatigue"
+        ],
+        "hi": [
+          "कंपकंपी के साथ बुखार",
+          "पसीना आना",
+          "सिरदर्द",
+          "शरीर में दर्द",
+          "जी मिचलाना और उल्टी",
+          "थकान"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "Sleep under insecticide-treated mosquito nets",
+          "Wear long-sleeved clothing at night",
+          "Use mosquito repellents",
+          "Keep surroundings clean and drain stagnant water",
+          "Complete malaria medicine course if prescribed"
+        ],
+        "hi": [
+          "कीटनाशक-युक्त मच्छरदानी में सोएँ",
+          "रात में पूरी बाँह के कपड़े पहनें",
+          "मच्छर भगाने वाली क्रीम लगाएँ",
+          "आस-पास सफाई रखें और जमा पानी हटाएँ",
+          "मलेरिया की दवा का पूरा कोर्स पूरा करें"
+        ]
+      },
+      "first_aid": {
+        "en": "Get a blood test done at the nearest health centre if fever persists. Take the full course of prescribed antimalarial medicine; never stop early. Drink fluids and rest.",
+        "hi": "बुखार बना रहे तो नज़दीकी स्वास्थ्य केंद्र पर रक्त परीक्षण कराएँ। निर्धारित मलेरिया-रोधी दवा का पूरा कोर्स लें; बीच में बंद न करें। तरल पदार्थ लें और आराम करें।"
+      },
+      "when_to_seek": {
+        "en": "Seek immediate care for high fever with confusion, seizures, severe weakness, dark urine, or difficulty breathing.",
+        "hi": "तेज़ बुखार के साथ भ्रम, दौरे, अत्यधिक कमज़ोरी, गहरे रंग का पेशाब या साँस लेने में कठिनाई हो तो तुरंत चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Malaria Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "NVBDCP, MoHFW Guidelines",
+          "tier": 1
+        }
+      ],
+      "hinglish": "malaria ke lakshan, malaria se bachav, malaria bukhar, malaria ki dawa, malaria kya hai"
+    },
+    {
+      "id": "typhoid",
+      "names": {
+        "en": [
+          "typhoid",
+          "typhoid fever",
+          "enteric fever"
+        ],
+        "hi": [
+          "टाइफाइड",
+          "मियादी बुखार"
+        ],
+        "bn": [
+          "টাইফয়েড"
+        ],
+        "ta": [
+          "டைபாய்டு"
+        ],
+        "te": [
+          "టైఫాయిడ్"
+        ],
+        "mr": [
+          "टायफॉइड"
+        ],
+        "gu": [
+          "ટાઇફોઇડ"
+        ],
+        "kn": [
+          "ಟೈಫಾಯಿಡ್"
+        ],
+        "ml": [
+          "ടൈഫോയിഡ്"
+        ],
+        "pa": [
+          "ਟਾਈਫਾਈਡ"
+        ],
+        "or": [
+          "ଟାଇଫଏଡ"
+        ],
+        "ur": [
+          "ٹائیفائیڈ"
+        ]
+      },
+      "summary": {
+        "en": "Typhoid fever is a bacterial infection caused by Salmonella Typhi, spread through contaminated food and water.",
+        "hi": "टाइफाइड बुखार साल्मोनेला टाइफी नामक बैक्टीरिया से होने वाला संक्रमण है, जो दूषित भोजन और पानी से फैलता है।"
+      },
+      "symptoms": {
+        "en": [
+          "Prolonged fever that rises step by step",
+          "Weakness and fatigue",
+          "Headache",
+          "Stomach pain",
+          "Constipation or diarrhoea",
+          "Loss of appetite"
+        ],
+        "hi": [
+          "धीरे-धीरे बढ़ने वाला लंबा बुखार",
+          "कमज़ोरी और थकान",
+          "सिरदर्द",
+          "पेट दर्द",
+          "कब्ज़ या दस्त",
+          "भूख कम लगना"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "Drink boiled or filtered water",
+          "Eat freshly cooked hot food",
+          "Wash hands with soap before eating",
+          "Avoid street food of doubtful hygiene",
+          "Get vaccinated if travelling to high-risk areas"
+        ],
+        "hi": [
+          "उबला या फ़िल्टर किया हुआ पानी पिएँ",
+          "ताज़ा पका गर्म भोजन खाएँ",
+          "खाने से पहले साबुन से हाथ धोएँ",
+          "अस्वच्छ सड़क-किनारे का खाना न खाएँ",
+          "उच्च-जोखिम वाले क्षेत्र में जाने पर टीका लगवाएँ"
+        ]
+      },
+      "first_aid": {
+        "en": "Maintain hydration with ORS and fluids. Complete the full antibiotic course exactly as prescribed. Take paracetamol for fever as advised.",
+        "hi": "ORS और तरल पदार्थों से हाइड्रेशन बनाए रखें। निर्धारित एंटीबायोटिक का पूरा कोर्स पूरा करें। सलाह अनुसार बुखार के लिए पैरासिटामोल लें।"
+      },
+      "when_to_seek": {
+        "en": "Seek care if fever lasts more than 3 days, or if there is severe abdominal pain, blood in stool, or confusion.",
+        "hi": "यदि बुखार 3 दिन से अधिक रहे, पेट में तेज़ दर्द हो, मल में खून आए या भ्रम की स्थिति हो तो चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Typhoid Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "NHM, MoHFW",
+          "tier": 1
+        }
+      ],
+      "hinglish": "typhoid ke lakshan, typhoid ka ilaaj, miyadi bukhar, typhoid se bachav, typhoid kya hai"
+    },
+    {
+      "id": "cholera",
+      "names": {
+        "en": [
+          "cholera"
+        ],
+        "hi": [
+          "हैज़ा"
+        ],
+        "bn": [
+          "কলেরা"
+        ],
+        "ta": [
+          "காலரா"
+        ],
+        "te": [
+          "కలరా"
+        ],
+        "mr": [
+          "कॉलरा"
+        ],
+        "gu": [
+          "કોલેરા"
+        ],
+        "kn": [
+          "ಕಾಲರಾ"
+        ],
+        "ml": [
+          "കോളറ"
+        ],
+        "pa": [
+          "ਹੈਜ਼ਾ"
+        ],
+        "or": [
+          "କଲେରା"
+        ],
+        "ur": [
+          "ہیضہ"
+        ]
+      },
+      "summary": {
+        "en": "Cholera is an acute diarrhoeal infection caused by Vibrio cholerae, spread through contaminated water and food. It can cause rapid dehydration.",
+        "hi": "हैज़ा विब्रियो कॉलेरी बैक्टीरिया से होने वाला तीव्र दस्त-रोग है, जो दूषित पानी और भोजन से फैलता है। इससे शरीर में पानी की बहुत तेज़ी से कमी हो सकती है।"
+      },
+      "symptoms": {
+        "en": [
+          "Sudden profuse watery diarrhoea (rice-water stools)",
+          "Vomiting",
+          "Leg cramps",
+          "Extreme thirst",
+          "Sunken eyes",
+          "Rapid dehydration and weakness"
+        ],
+        "hi": [
+          "अचानक बहुत अधिक पानी जैसे दस्त (चावल-धोवन जैसा मल)",
+          "उल्टी",
+          "पैरों में ऐंठन",
+          "अत्यधिक प्यास",
+          "धँसी हुई आँखें",
+          "तेज़ी से पानी की कमी और कमज़ोरी"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "Drink only boiled/chlorinated water",
+          "Wash hands with soap before eating and after toilet",
+          "Eat freshly cooked hot food",
+          "Use proper sanitation",
+          "Oral cholera vaccine available in high-risk areas"
+        ],
+        "hi": [
+          "केवल उबला/क्लोरीनयुक्त पानी पिएँ",
+          "खाने से पहले और शौच के बाद साबुन से हाथ धोएँ",
+          "ताज़ा पका गर्म खाना खाएँ",
+          "उचित शौचालय का उपयोग करें",
+          "उच्च-जोखिम क्षेत्रों में ओरल हैज़ा टीका उपलब्ध है"
+        ]
+      },
+      "first_aid": {
+        "en": "ORS is the most important first aid - start immediately and keep giving after every loose stool. Zinc tablets as advised. Rush to a health centre if dehydration worsens.",
+        "hi": "ORS सबसे महत्वपूर्ण प्राथमिक उपचार है - तुरंत शुरू करें और हर दस्त के बाद देते रहें। सलाह अनुसार ज़िंक की गोली दें। पानी की कमी बढ़े तो तुरंत स्वास्थ्य केंद्र ले जाएँ।"
+      },
+      "when_to_seek": {
+        "en": "Seek immediate care if the person is lethargic, has sunken eyes, no urine for hours, or cannot drink fluids.",
+        "hi": "यदि व्यक्ति सुस्त हो जाए, आँखें धँस जाएँ, कई घंटों से पेशाब न आए या पानी पी न पाए तो तुरंत चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Cholera Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "IDSP, MoHFW",
+          "tier": 1
+        }
+      ],
+      "hinglish": "cholera kya hai, cholera ke lakshan, haiza kya hai, cholera se bachav, cholera ka ilaaj, haiza ke lakshan"
+    },
+    {
+      "id": "diarrhoea",
+      "names": {
+        "en": [
+          "diarrhoea",
+          "diarrhea",
+          "loose motions",
+          "dysentery"
+        ],
+        "hi": [
+          "दस्त",
+          "अतिसार"
+        ],
+        "bn": [
+          "ডায়রিয়া"
+        ],
+        "ta": [
+          "வயிற்றுப்போக்கு"
+        ],
+        "te": [
+          "అతిసారం"
+        ],
+        "mr": [
+          "जुलाब"
+        ],
+        "gu": [
+          "ઝાડા"
+        ],
+        "kn": [
+          "ಅತಿಸಾರ"
+        ],
+        "ml": [
+          "വയറിളക്കം"
+        ],
+        "pa": [
+          "ਦਸਤ"
+        ],
+        "or": [
+          "ଝାଡ଼ା"
+        ],
+        "ur": [
+          "دست"
+        ]
+      },
+      "summary": {
+        "en": "Diarrhoea is passing loose or watery stools more than 3 times a day, commonly caused by contaminated food/water or infections. The biggest danger is dehydration.",
+        "hi": "दिन में 3 से अधिक बार पतला या पानी जैसा मल आना दस्त कहलाता है। यह आमतौर पर दूषित भोजन/पानी या संक्रमण से होता है। सबसे बड़ा खतरा शरीर में पानी की कमी है।"
+      },
+      "symptoms": {
+        "en": [
+          "Frequent loose watery stools",
+          "Stomach cramps",
+          "Thirst",
+          "Weakness",
+          "Vomiting in some cases"
+        ],
+        "hi": [
+          "बार-बार पतला मल",
+          "पेट में मरोड़",
+          "प्यास",
+          "कमज़ोरी",
+          "कुछ मामलों में उल्टी"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "Drink safe water",
+          "Wash hands with soap",
+          "Eat clean freshly cooked food",
+          "Exclusive breastfeeding for first 6 months",
+          "Rotavirus vaccination for infants"
+        ],
+        "hi": [
+          "साफ़ पानी पिएँ",
+          "साबुन से हाथ धोएँ",
+          "साफ़ ताज़ा पका भोजन खाएँ",
+          "पहले 6 महीने केवल स्तनपान",
+          "शिशुओं को रोटावायरस का टीका"
+        ]
+      },
+      "first_aid": {
+        "en": "ORS after every loose stool. Homemade ORS if not available: 6 level teaspoons sugar + half teaspoon salt in 1 litre clean water. Zinc tablets (14 days for children) as per ASHA/health worker guidance.",
+        "hi": "हर दस्त के बाद ORS दें। ORS न हो तो घर पर बनाएँ: 1 लीटर साफ़ पानी में 6 चम्मच चीनी + आधा चम्मच नमक। आशा/स्वास्थ्य कार्यकर्ता की सलाह अनुसार ज़िंक की गोलियाँ (बच्चों में 14 दिन)।"
+      },
+      "when_to_seek": {
+        "en": "Seek immediate care for blood in stool, high fever, signs of dehydration, or if a child is unusually sleepy.",
+        "hi": "मल में खून, तेज़ बुखार, पानी की कमी के लक्षण या बच्चे में असामान्य नींद आने पर तुरंत चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Diarrhoeal Disease Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "NHM/MoHFW ORS Guidelines",
+          "tier": 1
+        }
+      ],
+      "hinglish": "dast ka ilaaj, dast kya hai, loose motion ka ilaaj, dast se bachav, dast me kya khaye"
+    },
+    {
+      "id": "tuberculosis",
+      "names": {
+        "en": [
+          "tuberculosis",
+          "tb",
+          "pulmonary tb"
+        ],
+        "hi": [
+          "तपेदिक",
+          "क्षय रोग",
+          "टीबी"
+        ],
+        "bn": [
+          "যক্ষ্মা"
+        ],
+        "ta": [
+          "காசநோய்"
+        ],
+        "te": [
+          "క్షయ"
+        ],
+        "mr": [
+          "क्षयरोग"
+        ],
+        "gu": [
+          "ક્ષય રોગ"
+        ],
+        "kn": [
+          "ಕ್ಷಯ"
+        ],
+        "ml": [
+          "ക്ഷയരോഗം"
+        ],
+        "pa": [
+          "ਤਪਦਿਕ"
+        ],
+        "or": [
+          "ଯକ୍ଷ୍ମା"
+        ],
+        "ur": [
+          "تپ دق"
+        ]
+      },
+      "summary": {
+        "en": "Tuberculosis (TB) is a bacterial infection caused by Mycobacterium tuberculosis, spread through the air when an infected person coughs or sneezes. It mainly affects the lungs and is completely curable with a full medicine course.",
+        "hi": "तपेदिक (टीबी) माइकोबैक्टीरियम ट्यूबरकुलोसिस बैक्टीरिया से होने वाला संक्रमण है, जो संक्रमित व्यक्ति के खाँसने या छींकने से हवा के ज़रिए फैलता है। यह मुख्यतः फेफड़ों को प्रभावित करता है और दवा का पूरा कोर्स लेने से पूरी तरह ठीक हो जाता है।"
+      },
+      "symptoms": {
+        "en": [
+          "Cough for 2 weeks or more",
+          "Blood in sputum",
+          "Evening fever",
+          "Night sweats",
+          "Weight loss",
+          "Chest pain",
+          "Loss of appetite"
+        ],
+        "hi": [
+          "2 सप्ताह या उससे अधिक खाँसी",
+          "बलगम में खून",
+          "शाम को बुखार",
+          "रात में पसीना",
+          "वज़न घटना",
+          "सीने में दर्द",
+          "भूख कम लगना"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "BCG vaccine for newborns",
+          "Cover mouth while coughing/sneezing",
+          "Ventilation and sunlight in rooms",
+          "Complete full TB treatment",
+          "Testing household contacts"
+        ],
+        "hi": [
+          "नवजात को BCG का टीका",
+          "खाँसते/छींकते समय मुँह ढकें",
+          "कमरों में हवा और धूप का आना",
+          "टीबी का पूरा इलाज पूरा करें",
+          "घर के संपर्क में आए लोगों की जाँच"
+        ]
+      },
+      "first_aid": {
+        "en": "If cough lasts 2+ weeks, get sputum tested at the nearest government health centre - testing and treatment under Nikshay are free in India. Never stop medicine midway.",
+        "hi": "2 सप्ताह से अधिक खाँसी रहे तो नज़दीकी सरकारी स्वास्थ्य केंद्र पर बलगम की जाँच कराएँ - भारत में निक्षय के अंतर्गत जाँच और इलाज मुफ़्त है। दवा बीच में कभी बंद न करें।"
+      },
+      "when_to_seek": {
+        "en": "Seek care for blood in sputum, difficulty breathing, or severe chest pain.",
+        "hi": "बलगम में खून, साँस लेने में कठिनाई या सीने में तेज़ दर्द हो तो चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO TB Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "NTEP, MoHFW",
+          "tier": 1
+        }
+      ],
+      "hinglish": "tb ke lakshan, tb ka ilaaj, tb kya hai, tb se bachav, kshay rog"
+    },
+    {
+      "id": "hepatitis",
+      "names": {
+        "en": [
+          "hepatitis",
+          "jaundice",
+          "hepatitis a",
+          "hepatitis b"
+        ],
+        "hi": [
+          "हेपेटाइटिस",
+          "पीलिया"
+        ],
+        "bn": [
+          "হেপাটাইটিস"
+        ],
+        "ta": [
+          "ஹெபடைடிஸ்"
+        ],
+        "te": [
+          "హెపటైటిస్"
+        ],
+        "mr": [
+          "हिपॅटायटीस"
+        ],
+        "gu": [
+          "હિપેટાઇટિસ"
+        ],
+        "kn": [
+          "ಹೆಪಟೈಟಿಸ್"
+        ],
+        "ml": [
+          "ഹെപ്പറ്റൈറ്റിസ്"
+        ],
+        "pa": [
+          "ਹੈਪੇਟਾਈਟਿਸ"
+        ],
+        "or": [
+          "ହେପାଟାଇଟିସ"
+        ],
+        "ur": [
+          "ہیپاٹائٹس"
+        ]
+      },
+      "summary": {
+        "en": "Hepatitis is inflammation of the liver, commonly caused by viruses (A, B, C, E). Hepatitis A and E spread through contaminated food/water; B and C through blood and body fluids. Jaundice (yellow eyes/skin) is a common sign.",
+        "hi": "हेपेटाइटिस यकृत (लीवर) की सूजन है, जो आमतौर पर वायरस (A, B, C, E) से होती है। हेपेटाइटिस A और E दूषित भोजन/पानी से फैलते हैं; B और C रक्त और शरीर के तरल पदार्थों से। पीलिया (आँखों/त्वचा का पीला होना) एक सामान्य लक्षण है।"
+      },
+      "symptoms": {
+        "en": [
+          "Yellowing of eyes and skin (jaundice)",
+          "Dark urine",
+          "Fatigue",
+          "Loss of appetite",
+          "Nausea",
+          "Stomach pain"
+        ],
+        "hi": [
+          "आँखों और त्वचा का पीला पड़ना (पीलिया)",
+          "गहरे रंग का पेशाब",
+          "थकान",
+          "भूख कम लगना",
+          "जी मिचलाना",
+          "पेट दर्द"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "Safe drinking water and sanitation",
+          "Hand washing",
+          "Hepatitis B vaccine for all newborns (under UIP)",
+          "Safe injection practices and screened blood",
+          "Avoid sharing razors/needles"
+        ],
+        "hi": [
+          "सुरक्षित पेयजल और स्वच्छता",
+          "हाथ धोना",
+          "सभी नवजातों को हेपेटाइटिस B का टीका (UIP के अंतर्गत)",
+          "सुरक्षित इंजेक्शन और जाँचा हुआ रक्त",
+          "रेज़र/सुई साझा न करें"
+        ]
+      },
+      "first_aid": {
+        "en": "Rest, avoid alcohol, eat light home-cooked food, drink clean fluids. Jaundice requires medical evaluation - do not rely on home remedies alone.",
+        "hi": "आराम करें, शराब से बचें, हल्का घर का बना खाना खाएँ, साफ़ तरल पदार्थ पिएँ। पीलिया में चिकित्सकीय जाँच ज़रूरी है - केवल घरेलू नुस्खों पर निर्भर न रहें।"
+      },
+      "when_to_seek": {
+        "en": "Seek immediate care for severe vomiting, confusion, bleeding, or if jaundice appears in a newborn or pregnant woman.",
+        "hi": "तेज़ उल्टी, भ्रम, रक्तस्राव हो, या नवजात/गर्भवती महिला में पीलिया दिखे तो तुरंत चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Hepatitis Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "NVHCP, MoHFW",
+          "tier": 1
+        }
+      ],
+      "hinglish": "peeliya ka ilaaj, jaundice ke lakshan, hepatitis kya hai, peeliya me kya khaye, jaundice ka ilaaj"
+    },
+    {
+      "id": "covid19",
+      "names": {
+        "en": [
+          "covid",
+          "covid-19",
+          "covid 19",
+          "corona",
+          "coronavirus"
+        ],
+        "hi": [
+          "कोविड",
+          "कोरोना"
+        ],
+        "bn": [
+          "কোভিড",
+          "করোনা"
+        ],
+        "ta": [
+          "கொரோனா",
+          "கோவிட்"
+        ],
+        "te": [
+          "కరోనా",
+          "కోవిడ్"
+        ],
+        "mr": [
+          "कोरोना",
+          "कोविड"
+        ],
+        "gu": [
+          "કોરોના"
+        ],
+        "kn": [
+          "ಕೊರೊನಾ",
+          "ಕೋವಿಡ್"
+        ],
+        "ml": [
+          "കൊറോണ",
+          "കോവിഡ്"
+        ],
+        "pa": [
+          "ਕੋਰੋਨਾ",
+          "ਕੋਵਿਡ"
+        ],
+        "or": [
+          "କୋଭିଡ",
+          "କରୋନା"
+        ],
+        "ur": [
+          "کورونا",
+          "کووڈ"
+        ]
+      },
+      "summary": {
+        "en": "COVID-19 is a respiratory infection caused by the SARS-CoV-2 virus, spread through droplets and air. Most people recover with rest and care; elderly and those with comorbidities are at higher risk.",
+        "hi": "कोविड-19 सार्स-कोव-2 वायरस से होने वाला श्वसन संक्रमण है, जो बूँदों और हवा से फैलता है। अधिकांश लोग आराम और देखभाल से ठीक हो जाते हैं; बुज़ुर्ग और अन्य बीमारियों वाले लोगों में जोखिम अधिक होता है।"
+      },
+      "symptoms": {
+        "en": [
+          "Fever",
+          "Cough",
+          "Sore throat",
+          "Runny nose",
+          "Body ache",
+          "Loss of taste or smell",
+          "Breathlessness in moderate/severe cases"
+        ],
+        "hi": [
+          "बुखार",
+          "खाँसी",
+          "गले में खराश",
+          "नाक बहना",
+          "शरीर में दर्द",
+          "स्वाद या गंध का पता न चलना",
+          "मध्यम/गंभीर मामलों में साँस फूलना"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "Vaccination (primary doses + precaution dose as advised)",
+          "Wear mask in crowded places if symptomatic",
+          "Hand hygiene",
+          "Ventilation",
+          "Isolate if symptomatic and test as advised"
+        ],
+        "hi": [
+          "टीकाकरण (प्राथमिक खुराक + सलाह अनुसार बूस्टर)",
+          "लक्षण होने पर भीड़ में मास्क पहनें",
+          "हाथों की सफाई",
+          "हवादार कमरे",
+          "लक्षण होने पर आइसोलेट हों और सलाह अनुसार जाँच कराएँ"
+        ]
+      },
+      "first_aid": {
+        "en": "Rest, fluids, paracetamol for fever as advised. Monitor oxygen with a pulse oximeter if available. Seek medical advice, especially for high-risk individuals.",
+        "hi": "आराम करें, तरल पदार्थ लें, सलाह अनुसार बुखार के लिए पैरासिटामोल लें। पल्स ऑक्सीमीटर उपलब्ध हो तो ऑक्सीजन स्तर देखें। विशेषकर उच्च-जोखिम वाले लोग चिकित्सकीय सलाह लें।"
+      },
+      "when_to_seek": {
+        "en": "Seek immediate care if oxygen saturation drops below 94%, or there is breathlessness, chest pain, or confusion.",
+        "hi": "यदि ऑक्सीजन स्तर 94% से नीचे जाए, साँस फूले, सीने में दर्द हो या भ्रम हो तो तुरंत चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO COVID-19 Guidance",
+          "tier": 1
+        },
+        {
+          "name": "MoHFW Guidelines",
+          "tier": 1
+        }
+      ],
+      "hinglish": "corona ke lakshan, corona se bachav, covid kya hai, corona ka ilaaj"
+    },
+    {
+      "id": "influenza",
+      "names": {
+        "en": [
+          "influenza",
+          "flu",
+          "seasonal flu"
+        ],
+        "hi": [
+          "इन्फ्लूएंजा",
+          "फ्लू",
+          "मौसमी बुखार"
+        ],
+        "bn": [
+          "ইনফ্লুয়েঞ্জা"
+        ],
+        "ta": [
+          "இன்ஃபுளுவென்ஸா",
+          "காய்ச்சல் ஜலதோஷம்"
+        ],
+        "te": [
+          "ఇన్ఫ్లుఎంజా"
+        ],
+        "mr": [
+          "इन्फ्लूएन्झा"
+        ],
+        "gu": [
+          "ઈન્ફલ્યુએન્ઝા"
+        ],
+        "kn": [
+          "ಇನ್ಫ್ಲುಯೆನ್ಜಾ"
+        ],
+        "ml": [
+          "ഇൻഫ്ലുവൻസ"
+        ],
+        "pa": [
+          "ਫਲੂ"
+        ],
+        "or": [
+          "ଇନ୍ଫ୍ଲୁଏଞ୍ଜା"
+        ],
+        "ur": [
+          "انفلوئنزا"
+        ]
+      },
+      "summary": {
+        "en": "Influenza (flu) is a viral respiratory infection that spreads easily in winter and monsoon. Most cases are mild but it can be serious in children, elderly, pregnant women and those with chronic illness.",
+        "hi": "इन्फ्लूएंजा (फ्लू) एक वायरल श्वसन संक्रमण है जो सर्दी और बरसात में आसानी से फैलता है। अधिकांश मामले हल्के होते हैं, पर बच्चों, बुज़ुर्गों, गर्भवती महिलाओं और पुरानी बीमारी वालों में गंभीर हो सकता है।"
+      },
+      "symptoms": {
+        "en": [
+          "Sudden high fever",
+          "Dry cough",
+          "Sore throat",
+          "Runny or blocked nose",
+          "Muscle and joint pain",
+          "Headache",
+          "Fatigue"
+        ],
+        "hi": [
+          "अचानक तेज़ बुखार",
+          "सूखी खाँसी",
+          "गले में खराश",
+          "नाक बहना या बंद होना",
+          "मांसपेशियों और जोड़ों में दर्द",
+          "सिरदर्द",
+          "थकान"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "Annual flu vaccine for high-risk groups",
+          "Cover mouth and nose while coughing/sneezing",
+          "Hand washing",
+          "Avoid crowded places when unwell",
+          "Ventilation"
+        ],
+        "hi": [
+          "उच्च-जोखिम समूहों को हर साल फ्लू का टीका",
+          "खाँसते/छींकते समय मुँह और नाक ढकें",
+          "हाथ धोना",
+          "बीमार होने पर भीड़ से बचें",
+          "हवादार कमरे"
+        ]
+      },
+      "first_aid": {
+        "en": "Rest, warm fluids, paracetamol for fever as advised. Antibiotics do NOT work on viral flu. Seek care if breathing becomes difficult.",
+        "hi": "आराम करें, गर्म तरल पदार्थ लें, सलाह अनुसार बुखार के लिए पैरासिटामोल लें। वायरल फ्लू पर एंटीबायोटिक काम नहीं करते। साँस लेने में कठिनाई हो तो चिकित्सा सहायता लें।"
+      },
+      "when_to_seek": {
+        "en": "Seek immediate care for breathlessness, chest pain, drowsiness, or fever lasting more than 3 days in a child.",
+        "hi": "साँस फूलना, सीने में दर्द, सुस्ती या बच्चे में 3 दिन से अधिक बुखार हो तो तुरंत चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Influenza Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "IDSP, MoHFW",
+          "tier": 1
+        }
+      ],
+      "hinglish": "flu ke lakshan, mausami bukhar ka ilaaj, flu se bachav, flu kya hai"
+    },
+    {
+      "id": "pneumonia",
+      "names": {
+        "en": [
+          "pneumonia"
+        ],
+        "hi": [
+          "निमोनिया"
+        ],
+        "bn": [
+          "নিউমোনিয়া"
+        ],
+        "ta": [
+          "நிமோனியா"
+        ],
+        "te": [
+          "న్యుమోనియా"
+        ],
+        "mr": [
+          "न्यूमोनिया"
+        ],
+        "gu": [
+          "ન્યુમોનિયા"
+        ],
+        "kn": [
+          "ನ್ಯುಮೋನಿಯಾ"
+        ],
+        "ml": [
+          "ന്യുമോണിയ"
+        ],
+        "pa": [
+          "ਨਿਮੋਨੀਆ"
+        ],
+        "or": [
+          "ନିମୋନିଆ"
+        ],
+        "ur": [
+          "نمونیا"
+        ]
+      },
+      "summary": {
+        "en": "Pneumonia is a lung infection causing inflammation of air sacs, often after flu or cold. It is a leading cause of child death worldwide but is preventable and treatable.",
+        "hi": "निमोनिया फेफड़ों का संक्रमण है जिसमें हवा की थैलियों में सूजन आ जाती है, अक्सर फ्लू या सर्दी के बाद। यह दुनिया भर में बच्चों की मृत्यु का प्रमुख कारण है, पर रोका और इलाज किया जा सकता है।"
+      },
+      "symptoms": {
+        "en": [
+          "Fever with chills",
+          "Cough with phlegm",
+          "Fast or difficult breathing",
+          "Chest pain while breathing",
+          "Weakness",
+          "Bluish lips or nails in severe cases"
+        ],
+        "hi": [
+          "कंपकंपी के साथ बुखार",
+          "बलगम वाली खाँसी",
+          "तेज़ या कठिन साँस",
+          "साँस लेते समय सीने में दर्द",
+          "कमज़ोरी",
+          "गंभीर मामलों में होंठ या नाखून नीले पड़ना"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "Vaccines: PCV and pentavalent (Hib) under UIP for infants",
+          "Measles and flu vaccines",
+          "Exclusive breastfeeding for 6 months",
+          "Avoid indoor smoke (chulha smoke)",
+          "Good nutrition"
+        ],
+        "hi": [
+          "शिशुओं को UIP के अंतर्गत PCV और पेंटावेलेंट (Hib) टीके",
+          "खसरा और फ्लू के टीके",
+          "6 महीने तक केवल स्तनपान",
+          "घर के अंदर चूल्हे का धुआँ न होने दें",
+          "अच्छा पोषण"
+        ]
+      },
+      "first_aid": {
+        "en": "Count the child's breaths per minute: 60+ (under 2 months), 50+ (2-12 months), 40+ (1-5 years) is fast breathing - take the child to a health centre the same day. Keep the child warm and continue feeding/fluids.",
+        "hi": "बच्चे की एक मिनट में साँसें गिनें: 60+ (2 महीने से कम), 50+ (2-12 महीने), 40+ (1-5 साल) हो तो तेज़ साँस है - बच्चे को उसी दिन स्वास्थ्य केंद्र ले जाएँ। बच्चे को गर्म रखें और दूध/तरल पदार्थ देते रहें।"
+      },
+      "when_to_seek": {
+        "en": "Seek immediate care for fast breathing, chest in-drawing, inability to drink, or bluish lips.",
+        "hi": "तेज़ साँस, सीने का धँसना, कुछ पी न पाना या होंठ नीले पड़ने पर तुरंत चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Pneumonia Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "NHM Child Health Guidelines",
+          "tier": 1
+        }
+      ],
+      "hinglish": "nimonia ke lakshan, pneumonia kya hai, nimonia ka ilaaj, nimonia se bachav"
+    },
+    {
+      "id": "measles",
+      "names": {
+        "en": [
+          "measles",
+          "khasra"
+        ],
+        "hi": [
+          "खसरा"
+        ],
+        "bn": [
+          "হাম"
+        ],
+        "ta": [
+          "தட்டம்மை"
+        ],
+        "te": [
+          "తట్టు"
+        ],
+        "mr": [
+          "गोवर"
+        ],
+        "gu": [
+          "ઓરી"
+        ],
+        "kn": [
+          "ದಡಾರ"
+        ],
+        "ml": [
+          "അഞ്ചാംപനി"
+        ],
+        "pa": [
+          "ਖਸਰਾ"
+        ],
+        "or": [
+          "ହାଡ଼ଫୁଟି"
+        ],
+        "ur": [
+          "خسرہ"
+        ]
+      },
+      "summary": {
+        "en": "Measles is a highly contagious viral disease spread by coughing and sneezing. It can cause serious complications in children but is fully preventable by vaccination.",
+        "hi": "खसरा एक अत्यधिक संक्रामक वायरल बीमारी है जो खाँसने-छींकने से फैलती है। यह बच्चों में गंभीर जटिलताएँ पैदा कर सकती है, पर टीके से पूरी तरह रोकी जा सकती है।"
+      },
+      "symptoms": {
+        "en": [
+          "High fever",
+          "Cough and runny nose",
+          "Red watery eyes",
+          "White spots inside mouth",
+          "Red rash starting on face spreading downwards"
+        ],
+        "hi": [
+          "तेज़ बुखार",
+          "खाँसी और नाक बहना",
+          "लाल पानी वाली आँखें",
+          "मुँह के अंदर सफ़ेद दाने",
+          "चेहरे से शुरू होकर नीचे फैलने वाले लाल चकत्ते"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "MR vaccine at 9 months and second dose at 16-24 months under UIP",
+          "Isolate infected children",
+          "Vitamin A supplementation",
+          "Good nutrition"
+        ],
+        "hi": [
+          "UIP के अंतर्गत 9 महीने पर MR का टीका और 16-24 महीने पर दूसरी खुराक",
+          "संक्रमित बच्चों को अलग रखें",
+          "विटामिन A की खुराक",
+          "अच्छा पोषण"
+        ]
+      },
+      "first_aid": {
+        "en": "Keep the child hydrated, give paracetamol for fever as advised, continue breastfeeding. Take the child to a health centre - measles needs medical monitoring.",
+        "hi": "बच्चे को हाइड्रेट रखें, सलाह अनुसार बुखार के लिए पैरासिटामोल दें, स्तनपान जारी रखें। बच्चे को स्वास्थ्य केंद्र ले जाएँ - खसरे में चिकित्सकीय निगरानी ज़रूरी है।"
+      },
+      "when_to_seek": {
+        "en": "Seek immediate care for breathing difficulty, drowsiness, seizures, or refusal to drink.",
+        "hi": "साँस लेने में कठिनाई, सुस्ती, दौरे या कुछ पीने से इनकार करने पर तुरंत चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Measles Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "UIP, MoHFW",
+          "tier": 1
+        }
+      ],
+      "hinglish": "khasra ke lakshan, khasra ka ilaaj, measles kya hai, khasra se bachav"
+    },
+    {
+      "id": "rabies",
+      "names": {
+        "en": [
+          "rabies",
+          "dog bite"
+        ],
+        "hi": [
+          "रेबीज़",
+          "कुत्ते का काटना"
+        ],
+        "bn": [
+          "জলাতঙ্ক"
+        ],
+        "ta": [
+          "ரேபிஸ்"
+        ],
+        "te": [
+          "రేబిస్"
+        ],
+        "mr": [
+          "रेबीज"
+        ],
+        "gu": [
+          "હડકવા"
+        ],
+        "kn": [
+          "ರೇಬಿಸ್"
+        ],
+        "ml": [
+          "പേവിഷബാധ"
+        ],
+        "pa": [
+          "ਰੇਬੀਜ਼"
+        ],
+        "or": [
+          "ଜଳାତଙ୍କ"
+        ],
+        "ur": [
+          "ریبیز"
+        ]
+      },
+      "summary": {
+        "en": "Rabies is a fatal viral disease spread through the saliva of infected animals, mainly dog bites. It is 100% preventable with immediate wound washing and vaccination - but nearly always fatal once symptoms appear.",
+        "hi": "रेबीज़ संक्रमित जानवरों की लार से फैलने वाली घातक वायरल बीमारी है, मुख्यतः कुत्ते के काटने से। घाव तुरंत धोने और टीका लगवाने से यह 100% रोकी जा सकती है - पर लक्षण आने के बाद लगभग हमेशा घातक होती है।"
+      },
+      "symptoms": {
+        "en": [
+          "In animals: aggression, foaming at mouth, paralysis",
+          "In humans: tingling at bite site, fever, fear of water (hydrophobia), confusion, paralysis"
+        ],
+        "hi": [
+          "जानवरों में: आक्रामकता, मुँह से झाग, लकवा",
+          "इंसानों में: काटने की जगह झुनझुनी, बुखार, पानी से डर, भ्रम, लकवा"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "Vaccinate pet dogs",
+          "Avoid stray dogs; teach children bite safety",
+          "Report stray/aggressive animals",
+          "Complete post-bite vaccine course on schedule"
+        ],
+        "hi": [
+          "पालतू कुत्तों का टीकाकरण कराएँ",
+          "आवारा कुत्तों से बचें; बच्चों को सावधानी सिखाएँ",
+          "आवारा/आक्रामक जानवरों की सूचना दें",
+          "काटने के बाद टीके का पूरा कोर्स समय पर पूरा करें"
+        ]
+      },
+      "first_aid": {
+        "en": "Wash the wound thoroughly with soap and running water for 15 minutes. Apply antiseptic. Go to a government health centre IMMEDIATELY for anti-rabies vaccination - do not delay, do not rely on home remedies.",
+        "hi": "घाव को साबुन और बहते पानी से 15 मिनट तक अच्छी तरह धोएँ। एंटीसेप्टिक लगाएँ। एंटी-रेबीज़ टीके के लिए तुरंत सरकारी स्वास्थ्य केंद्र जाएँ - देरी न करें, घरेलू नुस्खों पर निर्भर न रहें।"
+      },
+      "when_to_seek": {
+        "en": "EVERY animal bite (dog, cat, monkey, bat) needs same-day medical care and vaccination. This is urgent.",
+        "hi": "हर जानवर के काटने (कुत्ता, बिल्ली, बंदर, चमगादड़) पर उसी दिन चिकित्सा सहायता और टीका ज़रूरी है। यह आपातकालीन स्थिति है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Rabies Fact Sheet",
+          "tier": 1
+        },
+        {
+          "name": "NCDC National Rabies Control Programme",
+          "tier": 1
+        }
+      ],
+      "hinglish": "kutte ke kaatne ka ilaaj, dog bite ka ilaaj, rabies ke lakshan, kutte ka kaatna"
+    },
+    {
+      "id": "heatstroke",
+      "names": {
+        "en": [
+          "heatstroke",
+          "heat stroke",
+          "loo",
+          "sun stroke"
+        ],
+        "hi": [
+          "लू लगना",
+          "हीट स्ट्रोक"
+        ],
+        "bn": [
+          "হিটস্ট্রোক"
+        ],
+        "ta": [
+          "வெப்ப அதிர்ச்சி"
+        ],
+        "te": [
+          "వడదెబ్బ"
+        ],
+        "mr": [
+          "उष्माघात"
+        ],
+        "gu": [
+          "લૂ લાગવી"
+        ],
+        "kn": [
+          "ಶಾಖದ ಹೊಡೆತ"
+        ],
+        "ml": [
+          "സൂര്യാഘാതം"
+        ],
+        "pa": [
+          "ਲੂ ਲੱਗਣਾ"
+        ],
+        "or": [
+          "ସନ୍ସ୍ଟ୍ରୋକ"
+        ],
+        "ur": [
+          "لُو لگنا"
+        ]
+      },
+      "summary": {
+        "en": "Heatstroke is a medical emergency caused by the body overheating, usually after prolonged exposure to high heat, especially during peak summer.",
+        "hi": "हीट स्ट्रोक एक चिकित्सीय आपातकाल है जो शरीर के अत्यधिक गर्म होने से होता है, आमतौर पर तेज़ गर्मी में लंबे समय तक रहने से।"
+      },
+      "symptoms": {
+        "en": [
+          "Very high body temperature",
+          "Hot dry skin or heavy sweating",
+          "Severe headache",
+          "Dizziness",
+          "Nausea",
+          "Confusion",
+          "Fainting"
+        ],
+        "hi": [
+          "शरीर का बहुत अधिक तापमान",
+          "गर्म सूखी त्वचा या बहुत पसीना",
+          "तेज़ सिरदर्द",
+          "चक्कर आना",
+          "जी मिचलाना",
+          "भ्रम",
+          "बेहोशी"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "Avoid outdoor work 11 AM - 4 PM in summer",
+          "Drink water, ORS, lassi, buttermilk regularly",
+          "Wear light cotton clothes",
+          "Cover head with cloth/cap",
+          "Do not leave children in parked vehicles"
+        ],
+        "hi": [
+          "गर्मी में 11 बजे से 4 बजे तक बाहर काम न करें",
+          "नियमित पानी, ORS, लस्सी, छाछ पिएँ",
+          "हल्के सूती कपड़े पहनें",
+          "सिर को कपड़े/टोपी से ढकें",
+          "बच्चों को खड़ी गाड़ी में अकेला न छोड़ें"
+        ]
+      },
+      "first_aid": {
+        "en": "Move the person to shade/cool place, loosen clothes, apply cool wet cloths, give water/ORS if conscious. If unconscious, lay on side and call 108 immediately - heatstroke is an emergency.",
+        "hi": "व्यक्ति को छाँव/ठंडी जगह ले जाएँ, कपड़े ढीले करें, ठंडे गीले कपड़े लगाएँ, होश में हो तो पानी/ORS दें। बेहोश हो तो करवट लिटाएँ और तुरंत 108 पर कॉल करें - हीट स्ट्रोक आपातकाल है।"
+      },
+      "when_to_seek": {
+        "en": "Confusion, fainting, or body temperature above 40°C needs immediate ambulance/hospital care.",
+        "hi": "भ्रम, बेहोशी या शरीर का तापमान 40°C से अधिक होने पर तुरंत एम्बुलेंस/अस्पताल की आवश्यकता है।"
+      },
+      "sources": [
+        {
+          "name": "NDMA Heatwave Guidelines",
+          "tier": 1
+        },
+        {
+          "name": "MoHFW Heat Advisory",
+          "tier": 1
+        }
+      ],
+      "hinglish": "loo lagne ke lakshan, loo se kaise bache, loo ka ilaaj, heat stroke kya hai"
+    },
+    {
+      "id": "anaemia",
+      "names": {
+        "en": [
+          "anaemia",
+          "anemia",
+          "low hemoglobin",
+          "low blood"
+        ],
+        "hi": [
+          "एनीमिया",
+          "खून की कमी"
+        ],
+        "bn": [
+          "রক্তাল্পতা"
+        ],
+        "ta": [
+          "இரத்த சோகை"
+        ],
+        "te": [
+          "రక్తహీనత"
+        ],
+        "mr": [
+          "अशक्तता"
+        ],
+        "gu": [
+          "એનિમિયા"
+        ],
+        "kn": [
+          "ರಕ್ತಹೀನತೆ"
+        ],
+        "ml": [
+          "വിളർച്ച"
+        ],
+        "pa": [
+          "ਅਨੀਮੀਆ"
+        ],
+        "or": [
+          "ରକ୍ତହୀନତା"
+        ],
+        "ur": [
+          "خون کی کمی"
+        ]
+      },
+      "summary": {
+        "en": "Anaemia means low haemoglobin in blood, most commonly due to iron deficiency. It is very common among women, adolescent girls and children in India.",
+        "hi": "एनीमिया का मतलब है रक्त में हीमोग्लोबिन की कमी, जो आमतौर पर आयरन की कमी से होती है। भारत में यह महिलाओं, किशोरियों और बच्चों में बहुत आम है।"
+      },
+      "symptoms": {
+        "en": [
+          "Pale skin, nails and eyelids",
+          "Fatigue and weakness",
+          "Dizziness",
+          "Shortness of breath on exertion",
+          "Poor concentration",
+          "Palpitations"
+        ],
+        "hi": [
+          "त्वचा, नाखून और पलकों का पीला पड़ना",
+          "थकान और कमज़ोरी",
+          "चक्कर आना",
+          "मेहनत पर साँस फूलना",
+          "ध्यान केंद्रित करने में कठिनाई",
+          "दिल की धड़कन बढ़ना"
+        ]
+      },
+      "prevention": {
+        "en": [
+          "Iron-rich diet: green leafy vegetables, jaggery, pulses, dates",
+          "Weekly iron-folic acid tablets for adolescents (WIFS programme)",
+          "IFA during pregnancy as prescribed",
+          "Vitamin C with iron-rich food improves absorption",
+          "Deworming tablets twice a year for children"
+        ],
+        "hi": [
+          "आयरन युक्त आहार: हरी पत्तेदार सब्ज़ियाँ, गुड़, दालें, खजूर",
+          "किशोरों को साप्ताहिक आयरन-फोलिक एसिड की गोलियाँ (WIFS कार्यक्रम)",
+          "गर्भावस्था में सलाह अनुसार IFA",
+          "आयरन युक्त भोजन के साथ विटामिन C लेने से अवशोषण बढ़ता है",
+          "बच्चों को साल में दो बार कृमिनाशक गोली"
+        ]
+      },
+      "first_aid": {
+        "en": "Get haemoglobin tested at the nearest health centre. Do not self-medicate with iron tablets without testing and medical advice - excess iron is harmful.",
+        "hi": "नज़दीकी स्वास्थ्य केंद्र पर हीमोग्लोबिन की जाँच कराएँ। बिना जाँच और चिकित्सकीय सलाह के खुद आयरन की गोलियाँ न लें - अधिक आयरन नुकसानदायक है।"
+      },
+      "when_to_seek": {
+        "en": "Seek care for severe weakness, fainting, breathlessness at rest, or black stools.",
+        "hi": "अत्यधिक कमज़ोरी, बेहोशी, आराम में साँस फूलना या काले रंग का मल होने पर चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "Anaemia Mukt Bharat, MoHFW",
+          "tier": 1
+        },
+        {
+          "name": "WHO Anaemia Guidance",
+          "tier": 1
+        }
+      ],
+      "hinglish": "khoon ki kami ke lakshan, anemia ka ilaaj, khun ki kami ka ilaaj, hb kam hone par kya khaye"
+    }
+  ]
+}

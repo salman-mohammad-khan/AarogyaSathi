@@ -1,0 +1,65 @@
+# ==============================================================================
+# AarogyaSathi - .gitignore
+# ==============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment Variables & Secrets (CRITICAL)
+.env
+.env*.local
+*.pem
+*.key
+
+# SQLite Databases & Storage
+*.db
+*.sqlite
+*.sqlite3
+data/surveillance.db
+
+# Machine Learning Models & Embedding Caches (downloaded/generated at runtime)
+data/models/
+data/embeddings/
+*.bin
+*.npy
+
+# Logs & Temporary Execution / Test Files
+*.log
+logs/
+build_err.txt
+build_log.txt
+out_test.txt
+server_*.log
+setup_log.txt
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# External / Non-project directories
+jsub-autopilot/
+se-autopilot/

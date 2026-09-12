@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "note": "Training examples for intent classification. EN + Hindi + Hinglish(roman Hindi) examples. Char n-gram TF-IDF handles transliteration mixing."
+  },
+  "intents": {
+    "greeting": [
+      "hi", "hello", "namaste", "namaskar", "good morning", "hey", "hii", "hi there", "good evening", "good afternoon",
+      "नमस्ते", "नमस्कार", "हैलो", "हाय", "सुप्रभात", "राम राम", "शुभ संध्या",
+      "namaste ji", "hello bhaiya", "hi good morning", "salaam", "salaam ji"
+    ],
+    "help": [
+      "help", "what can you do", "options", "menu", "how do you work", "what do you do", "commands", "what should i ask",
+      "मदद", "आप क्या कर सकते हो", "विकल्प", "मेन्यू", "आप कैसे काम करते हो", "क्या पूछ सकते हैं",
+      "help karo", "kya kya kar sakte ho", "kya puch sakte hai", "menu batao"
+    ],
+    "disease_info": [
+      "tell me about dengue", "what is malaria", "symptoms of typhoid", "what is tuberculosis", "info about cholera", "what is hepatitis", "tell me about covid", "what is pneumonia", "what is measles", "what is rabies", "what is heatstroke", "what is anaemia",
+      "डेंगू के बारे में बताओ", "मलेरिया क्या है", "टाइफाइड के लक्षण", "टीबी क्या है", "हैज़ा की जानकारी", "हेपेटाइटिस क्या है", "कोरोना के बारे में बताओ", "निमोनिया क्या है", "खसरा क्या है", "रेबीज़ क्या है", "लू क्या है", "एनीमिया क्या है",
+      "dengue kya hai", "malaria ke lakshan", "tb kya hai", "corona ke baare mein batao", "corona ke baare mein jaankari do", "chechak kya hai", "flu ke symptoms kya hai", "jaundice kya hota hai"
+    ],
+    "symptom_check": [
+      "i have fever and headache", "i am having cough and cold", "fever with body pain", "my child has vomiting and loose motions", "i feel weak and dizzy", "stomach pain and nausea", "high fever since 3 days", "cough for two weeks", "i have fever, headache and joint pain", "rashes on my body",
+      "मुझे बुखार और सिरदर्द है", "मुझे खाँसी और ज़ुकाम है", "बुखार के साथ बदन दर्द", "मेरे बच्चे को उल्टी और दस्त है", "मुझे कमज़ोरी और चक्कर आ रहे हैं", "पेट दर्द और जी मिचलाना", "3 दिन से तेज़ बुखार", "दो हफ्ते से खाँसी",
+      "mujhe bukhar aur sar dard hai", "khansi aur jukam ho raha hai", "bukhar ke saath body pain", "mere bache ko ulti dast ho rahi hai", "kamzori lag rahi hai", "pet dard ho raha hai"
+    ],
+    "prevention": [
+      "how to prevent dengue", "how to avoid malaria", "how to stay safe from cholera", "prevention of tb", "how to prevent heat stroke", "how to boost immunity", "how to keep safe in monsoon", "preventive measures for covid",
+      "डेंगू से कैसे बचें", "मलेरिया से बचाव कैसे करें", "हैज़ा से कैसे बचें", "टीबी से बचाव", "लू से कैसे बचें", "रोग प्रतिरोधक क्षमता कैसे बढ़ाएँ", "बरसात में कैसे सुरक्षित रहें",
+      "dengue se kaise bache", "malaria se bachav", "mosquito se kaise bache", "immunity kaise badhaye", "how can i protect my family from dengue", "how to protect myself from malaria", "malaria se bachne ke upay", "dengue se bachne ke liye kya kare"
+    ],
+    "vaccination": [
+      "vaccine schedule for my baby", "vaccines for 6 week old baby", "which vaccines does my child need", "bcg vaccine when", "polio drops schedule", "vaccines during pregnancy", "covid vaccine doses", "is measles vaccine free", "vaccination chart",
+      "मेरे बच्चे के लिए टीकों का शेड्यूल", "6 हफ्ते के बच्चे के लिए टीके", "मेरे बच्चे को कौन से टीके लगने हैं", "BCG का टीका कब", "पोलियो ड्रॉप का शेड्यूल", "गर्भावस्था में टीके", "कोविड टीके की खुराक", "खसरे का टीका कब लगता है",
+      "bache ke liye vaccine", "6 week baby ke vaccines", "polio drops kab deni hai", "pregnancy me kaunse teeke", "tt injection kab lagta hai", "bachon ke tikon ki suchi", "बच्चों के टीकों की सूची", "when should i get polio drops for my baby", "bache ko kaun kaun se tike lagte hai", "vaccination kab kab hota hai"
+    ],
+    "fact_check": [
+      "fact check: garlic cures dengue", "verify this message", "is this true", "check this forward", "fact check this", "is this real or fake", "kya ye sach hai", "fact check karo",
+      "फैक्ट चेक करो", "क्या यह सच है", "इस संदेश की जाँच करो", "यह सही है या गलत", "इस फॉरवर्ड की जाँच करो",
+      "fact check: lahsun dengue theek karta hai", "ye sach hai kya", "ye message sahi hai kya", "verify karo"
+    ],
+    "emergency": [
+      "emergency", "help me", "chest pain", "difficulty breathing", "snake bite", "dog bite bleeding", "my father is unconscious", "someone fainted", "heavy bleeding", "heart attack", "seizure", "poisoning",
+      "आपातकाल", "मदद करो", "सीने में दर्द", "साँस लेने में तकलीफ", "साँप ने काट लिया", "कुत्ते ने काट लिया", "पिताजी बेहोश हैं", "कोई बेहोश हो गया", "बहुत खून बह रहा है", "हार्ट अटैक", "दौरा पड़ गया", "ज़हर खा लिया",
+      "emergency hai", "saans nahi aa rahi", "saap ne kaat liya", "kutta kaat gaya", "behosh ho gaya", "khun beh raha hai", "meri chhati me dard ho raha hai", "saans lene me takleef hai", "chhati me dard", "saans nahi le pa raha"
+    ],
+    "outbreak": [
+      "any dengue alert near me", "current health alerts", "is there any outbreak in my area", "disease outbreak news", "any malaria alert", "health alerts today",
+      "पास में डेंगू की कोई चेतावनी", "अभी कोई बीमारी फैली है क्या", "स्वास्थ्य चेतावनियाँ", "मलेरिया की कोई चेतावनी",
+      "dengue alert hai kya", "kya koi bimari faili hai", "outbreak ki khabar"
+    ],
+    "nutrition": [
+      "what should i eat for good health", "diet for pregnant women", "foods rich in iron", "healthy diet tips", "what to eat in summer", "nutrition for children",
+      "अच्छे स्वास्थ्य के लिए क्या खाएँ", "गर्भवती महिला का आहार", "आयरन से भरपूर भोजन", "स्वस्थ आहार सुझाव", "गर्मी में क्या खाएँ", "बच्चों का पोषण",
+      "kya khana chahiye", "healthy khana kya hai", "bache ko kya khilaye"
+    ],
+    "hygiene": [
+      "how to wash hands properly", "how to make water safe for drinking", "hygiene tips", "how to make ors", "how to clean utensils",
+      "हाथ कैसे धोएँ", "पानी कैसे साफ़ करें", "स्वच्छता के उपाय", "ORS कैसे बनाएँ",
+      "haath kaise dhoye", "pani saaf kaise kare", "ors kaise banaye", "pani ko saaf kaise kare", "haath dhone ka sahi tarika"
+    ],
+    "thanks": [
+      "thank you", "thanks", "dhanyavad", "shukriya", "great", "good",
+      "धन्यवाद", "शुक्रिया", "बहुत अच्छा", "थैंक यू",
+      "thanks bhai", "shukriya ji", "dhanyawad"
+    ],
+    "language_switch": [
+      "speak in hindi", "talk in english", "hindi me bolo", "bengali me bolo", "tamil me bolo", "telugu please", "marathi madhe bolo",
+      "हिंदी में बोलो", "अंग्रेज़ी में बोलो", "बंगाली में बोलो", "तमिल में बोलो", "मराठी में बोलो",
+      "hindi me baat karo", "english me bolo", "tamil me baat karo", "telugu me baat karo", "kannada me baat karo"
+    ],
+    "smalltalk": [
+      "who are you", "what is your name", "your name", "tell me about yourself", "what are you", "are you a robot", "are you human", "where are you from", "who made you",
+      "तुम कौन हो", "तुम्हारा नाम क्या है", "अपने बारे में बताओ", "क्या तुम रोबोट हो", "तुम्हें किसने बनाया",
+      "tum kaun ho", "tumhara naam kya hai", "apne baare me batao", "kya tum robot ho", "aap kaun hai", "kaun ho tum"
+    ]
+  }
+}

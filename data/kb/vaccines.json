@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "source": "Universal Immunisation Programme (UIP), National Immunization Schedule, MoHFW",
+    "languages": ["en", "hi"]
+  },
+  "vaccines": [
+    {
+      "id": "bcg",
+      "names": {"en": ["bcg"], "hi": ["बीसीजी"]},
+      "protects": {"en": "Tuberculosis (TB) and other severe mycobacterial infections", "hi": "तपेदिक (टीबी) और अन्य गंभीर माइकोबैक्टीरियल संक्रमण"},
+      "schedule": {"en": "At birth or as early as possible till 1 year of age", "hi": "जन्म पर या 1 वर्ष की आयु तक जितनी जल्दी हो सके"},
+      "note": {"en": "Given as an injection, usually on the left upper arm. A small scar may form - absence of scar does not mean the vaccine failed.", "hi": "इंजेक्शन के रूप में, आमतौर पर बाईं ऊपरी बाँह पर। छोटा निशान बन सकता है - निशान न होने का मतलब यह नहीं कि टीका असफल रहा।"},
+      "sources": [{"name": "UIP, MoHFW", "tier": 1}]
+    },
+    {
+      "id": "hepb",
+      "names": {"en": ["hepatitis b vaccine", "hep b"], "hi": ["हेपेटाइटिस बी टीका"]},
+      "protects": {"en": "Hepatitis B (liver infection)", "hi": "हेपेटाइटिस B (यकृत संक्रमण)"},
+      "schedule": {"en": "Birth dose, then doses at 6, 10 and 14 weeks (as part of pentavalent)", "hi": "जन्म पर पहली खुराक, फिर 6, 10 और 14 सप्ताह पर (पेंटावेलेंट के भाग के रूप में)"},
+      "note": {"en": "Birth dose within 24 hours is important to protect newborns.", "hi": "नवजात की सुरक्षा के लिए 24 घंटे के भीतर जन्म-खुराक महत्वपूर्ण है।"},
+      "sources": [{"name": "UIP, MoHFW", "tier": 1}]
+    },
+    {
+      "id": "opv",
+      "names": {"en": ["polio vaccine", "opv", "polio drops"], "hi": ["पोलियो की खुराक", "पोलियो ड्रॉप"]},
+      "protects": {"en": "Polio (paralysing viral disease)", "hi": "पोलियो (लकवा करने वाली वायरल बीमारी)"},
+      "schedule": {"en": "Birth, 6 weeks, 10 weeks, 14 weeks + booster doses till 5 years; plus Pulse Polio rounds every year", "hi": "जन्म, 6 सप्ताह, 10 सप्ताह, 14 सप्ताह + 5 वर्ष तक बूस्टर खुराकें; साथ ही हर साल पल्स पोलियो अभियान"},
+      "note": {"en": "India is polio-free; vaccination continues to prevent re-entry of the virus.", "hi": "भारत पोलियो-मुक्त है; वायरस की पुनः एंट्री रोकने के लिए टीकाकरण जारी है।"},
+      "sources": [{"name": "UIP, MoHFW", "tier": 1}]
+    },
+    {
+      "id": "pentavalent",
+      "names": {"en": ["pentavalent vaccine", "5 in 1 vaccine", "dpt"], "hi": ["पेंटावेलेंट टीका", "5 में 1 टीका"]},
+      "protects": {"en": "Diphtheria, Pertussis (whooping cough), Tetanus, Hepatitis B, and Hib (pneumonia/meningitis)", "hi": "डिप्थीरिया, काली खाँसी, टिटनेस, हेपेटाइटिस B और Hib (निमोनिया/मेनिन्जाइटिस)"},
+      "schedule": {"en": "6 weeks, 10 weeks, 14 weeks", "hi": "6 सप्ताह, 10 सप्ताह, 14 सप्ताह"},
+      "note": {"en": "Mild fever or soreness at injection site can occur and is normal.", "hi": "हल्का बुखार या इंजेक्शन वाली जगह दर्द हो सकता है, यह सामान्य है।"},
+      "sources": [{"name": "UIP, MoHFW", "tier": 1}]
+    },
+    {
+      "id": "rotavirus",
+      "names": {"en": ["rotavirus vaccine", "rotavac"], "hi": ["रोटावायरस टीका"]},
+      "protects": {"en": "Rotavirus diarrhoea (leading cause of severe diarrhoea in infants)", "hi": "रोटावायरस दस्त (शिशुओं में गंभीर दस्त का प्रमुख कारण)"},
+      "schedule": {"en": "6 weeks, 10 weeks, 14 weeks (oral drops)", "hi": "6 सप्ताह, 10 सप्ताह, 14 सप्ताह (मुँह से ड्रॉप)"},
+      "note": {"en": "Given orally - a few drops in the mouth.", "hi": "मुँह से दी जाती है - कुछ बूँदें मुँह में।"},
+      "sources": [{"name": "UIP, MoHFW", "tier": 1}]
+    },
+    {
+      "id": "pcv",
+      "names": {"en": ["pcv", "pneumococcal vaccine"], "hi": ["पीसीवी", "न्यूमोकोकल टीका"]},
+      "protects": {"en": "Pneumococcal pneumonia and meningitis", "hi": "न्यूमोकोकल निमोनिया और मेनिन्जाइटिस"},
+      "schedule": {"en": "6 weeks, 14 weeks, and booster at 9 months", "hi": "6 सप्ताह, 14 सप्ताह और 9 महीने पर बूस्टर"},
+      "note": {"en": "Protects against a major cause of child pneumonia.", "hi": "बच्चों में निमोनिया के प्रमुख कारण से बचाता है।"},
+      "sources": [{"name": "UIP, MoHFW", "tier": 1}]
+    },
+    {
+      "id": "ipv",
+      "names": {"en": ["ipv", "injectable polio"], "hi": ["आईपीवी", "इंजेक्शन वाला पोलियो"]},
+      "protects": {"en": "Polio (injection form, boosts immunity along with OPV)", "hi": "पोलियो (इंजेक्शन रूप, OPV के साथ प्रतिरोधक क्षमता बढ़ाता है)"},
+      "schedule": {"en": "6 weeks, 14 weeks (along with OPV)", "hi": "6 सप्ताह, 14 सप्ताह (OPV के साथ)"},
+      "note": {"en": "Given in addition to polio drops for stronger protection.", "hi": "मज़बूत सुरक्षा के लिए पोलियो ड्रॉप के साथ दिया जाता है।"},
+      "sources": [{"name": "UIP, MoHFW", "tier": 1}]
+    },
+    {
+      "id": "mr",
+      "names": {"en": ["mr vaccine", "measles rubella", "measles vaccine"], "hi": ["एमआर टीका", "खसरा-रूबेला टीका"]},
+      "protects": {"en": "Measles and Rubella", "hi": "खसरा और रूबेला"},
+      "schedule": {"en": "First dose 9-12 months, second dose 16-24 months", "hi": "पहली खुराक 9-12 महीने, दूसरी खुराक 16-24 महीने"},
+      "note": {"en": "Rubella in pregnancy can harm the baby - vaccinating all children protects future mothers too.", "hi": "गर्भावस्था में रूबेला बच्चे को नुकसान पहुँचा सकता है - सभी बच्चों का टीकाकरण भावी माताओं की भी रक्षा करता है।"},
+      "sources": [{"name": "UIP, MoHFW", "tier": 1}]
+    },
+    {
+      "id": "je",
+      "names": {"en": ["je vaccine", "japanese encephalitis"], "hi": ["जेई टीका", "जापानी इंसेफेलाइटिस"]},
+      "protects": {"en": "Japanese Encephalitis (mosquito-borne brain infection)", "hi": "जापानी इंसेफेलाइटिस (मच्छर से फैलने वाला मस्तिष्क संक्रमण)"},
+      "schedule": {"en": "9-12 months and 16-24 months (only in endemic districts)", "hi": "9-12 महीने और 16-24 महीने (केवल प्रभावित जिलों में)"},
+      "note": {"en": "Given only in districts where the disease occurs regularly.", "hi": "केवल उन जिलों में दी जाती है जहाँ यह बीमारी नियमित रूप से होती है।"},
+      "sources": [{"name": "UIP, MoHFW", "tier": 1}]
+    },
+    {
+      "id": "dpt_booster",
+      "names": {"en": ["dpt booster", "booster dose"], "hi": ["डीपीटी बूस्टर", "बूस्टर खुराक"]},
+      "protects": {"en": "Diphtheria, Pertussis, Tetanus (boosters)", "hi": "डिप्थीरिया, काली खाँसी, टिटनेस (बूस्टर)"},
+      "schedule": {"en": "16-24 months and 5-6 years", "hi": "16-24 महीने और 5-6 वर्ष"},
+      "note": {"en": "Boosters keep childhood protection strong as the child grows.", "hi": "बच्चे के बड़े होने पर बूस्टर सुरक्षा बनाए रखते हैं।"},
+      "sources": [{"name": "UIP, MoHFW", "tier": 1}]
+    },
+    {
+      "id": "td",
+      "names": {"en": ["td vaccine", "tetanus diphtheria 10 years", "tetanus injection"], "hi": ["टीडी टीका", "टिटनेस इंजेक्शन"]},
+      "protects": {"en": "Tetanus and Diphtheria in adolescents/adults", "hi": "किशोरों/वयस्कों में टिटनेस और डिप्थीरिया"},
+      "schedule": {"en": "10 years and 16 years; for pregnant women: 2 TT/Td doses during pregnancy", "hi": "10 वर्ष और 16 वर्ष; गर्भवती महिलाओं को: गर्भावस्था में TT/Td की 2 खुराकें"},
+      "note": {"en": "After an injury with soil/dust, a tetanus booster may be needed if the last dose was over 5 years ago.", "hi": "मिट्टी/धूल वाले घाव के बाद, यदि अंतिम खुराक 5 वर्ष से अधिक पुरानी है तो टिटनेस बूस्टर की आवश्यकता हो सकती है।"},
+      "sources": [{"name": "UIP, MoHFW", "tier": 1}]
+    },
+    {
+      "id": "covid_vaccine",
+      "names": {"en": ["covid vaccine", "corona vaccine", "covidshield", "covaxin"], "hi": ["कोविड टीका", "कोरोना टीका"]},
+      "protects": {"en": "Severe COVID-19 disease, hospitalisation and death", "hi": "गंभीर कोविड-19 बीमारी, अस्पताल में भर्ती और मृत्यु"},
+      "schedule": {"en": "As per current Government of India guidelines; primary series + precaution (booster) doses for eligible groups", "hi": "भारत सरकार के वर्तमान दिशानिर्देशों के अनुसार; प्राथमिक खुराक + पात्र समूहों के लिए बूस्टर खुराक"},
+      "note": {"en": "Vaccines are safe; serious side effects are extremely rare. Temporary fever/pain is a sign the immune system is responding.", "hi": "टीके सुरक्षित हैं; गंभीर दुष्प्रभाव अत्यंत दुर्लभ हैं। कुछ समय का बुखार/दर्द प्रतिरक्षा प्रणाली की प्रतिक्रिया का संकेत है।"},
+      "sources": [{"name": "MoHFW COVID Vaccination Guidelines", "tier": 1}, {"name": "WHO COVID-19 Vaccines", "tier": 1}]
+    },
+    {
+      "id": "influenza_vaccine",
+      "names": {"en": ["flu vaccine", "influenza vaccine"], "hi": ["फ्लू टीका", "इन्फ्लूएंजा टीका"]},
+      "protects": {"en": "Seasonal influenza (flu)", "hi": "मौसमी इन्फ्लूएंजा (फ्लू)"},
+      "schedule": {"en": "Yearly for high-risk groups: elderly, pregnant women, young children, healthcare workers, people with diabetes/heart/lung/kidney disease", "hi": "उच्च-जोखिम समूहों के लिए हर साल: बुज़ुर्ग, गर्भवती महिलाएँ, छोटे बच्चे, स्वास्थ्यकर्मी, मधुमेह/हृदय/फेफड़े/गुर्दे की बीमारी वाले लोग"},
+      "note": {"en": "Not part of UIP but recommended by doctors for high-risk people, especially before winter.", "hi": "UIP का हिस्सा नहीं है, पर उच्च-जोखिम वाले लोगों के लिए, खासकर सर्दी से पहले, डॉक्टर इसे सुझाते हैं।"},
+      "sources": [{"name": "WHO Influenza Vaccination", "tier": 1}]
+    }
+  ],
+  "schedule_summary": {
+    "en": "UIP core schedule: BCG + OPV0 + HepB at birth | 6/10/14 weeks: Pentavalent, OPV, Rotavirus, IPV(6,14), PCV(6,14) | 9-12 months: MR1, JE1*, PCV booster | 16-24 months: MR2, JE2*, DPT booster, OPV booster | 5-6 years: DPT booster | 10 & 16 years: Td | Pregnancy: 2 doses TT/Td. (*JE only in endemic districts)",
+    "hi": "UIP मुख्य कार्यक्रम: जन्म पर BCG + OPV0 + HepB | 6/10/14 सप्ताह: पेंटावेलेंट, OPV, रोटावायरस, IPV(6,14), PCV(6,14) | 9-12 महीने: MR1, JE1*, PCV बूस्टर | 16-24 महीने: MR2, JE2*, DPT बूस्टर, OPV बूस्टर | 5-6 वर्ष: DPT बूस्टर | 10 और 16 वर्ष: Td | गर्भावस्था: TT/Td की 2 खुराकें। (*JE केवल प्रभावित जिलों में)"
+  }
+}

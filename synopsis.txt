@@ -1,0 +1,554 @@
+SYNOPSIS FOR MINOR PROJECT 
+(ES-451)
+ON
+“AI-DRIVEN PUBLIC HEALTH 
+CHATBOT FOR DISEASE 
+AWARENESS”
+Under The Guidance of 
+Mr.Aditya Sam Kosy
+[Department of CSE(DS)]
+SUBMITTED BY
+Salman Mohd. Khan (00520815723)
+Dhairya Summi (00420815723)
+Sidharth Singh (01820815723)
+Department of Computer Science & Engineering (Data Science)
+Bhagwan Parshuram Institute of Technology, Rohini, New 
+Delhi
+
+TABLE OF CONTENTS
+1. INTRODUCTION..................................................................................................................3
+1.1 SDG, PO and PSO Mapping........................................................................................3
+2. LITERATURE SURVEY...................................................................................................... 5
+3. PROBLEM STATEMENT.................................................................................................... 7
+4. MOTIVATION...................................................................................................................... 7
+5. AIM AND OBJECTIVES...................................................................................................... 7
+6. PROPOSED WORK.............................................................................................................. 8
+7. DISTINCTIVE FEATURES — SOLVING A REAL RURAL PROBLEM.........................9
+6.1 Health-Forward Verification (Myth-vs-Fact) Module.................................................7
+6.2 Community Early-Warning (Syndromic Surveillance) Module..................................8
+8. SYSTEM ARCHITECTURE AND METHODOLOGY....................................................... 9
+9. MULTILINGUAL SUPPORT AND DEPLOYMENT....................................................... 10
+10. SAFETY AND ETHICAL CONSIDERATIONS............................................................. 10
+11. REQUIREMENTS (SOFTWARE AND HARDWARE).................................................. 10
+12. PROPOSED TIMELINE....................................................................................................11
+13. APPLICATION..................................................................................................................11
+14. EXPECTED OUTCOMES AND FUTURE SCOPE.........................................................12
+15. CONCLUSION.................................................................................................................. 12
+16. REFERENCES...................................................................................................................12
+Page 2
+1. INTRODUCTION
+Field Details
+Project Title AI-Driven Public Health Chatbot for Disease Awareness
+Domain / Category MedTech / BioTech / HealthTech  |  Software
+Theme Empowering Rural and Semi-Urban Communities
+Project Type Minor Project
+Technology Domain Artificial Intelligence, Natural Language Processing, Machine Learning, 
+Web Technologies and Database Systems
+Healthcare awareness is one of the most important factors influencing the health and well-
+being  of  individuals  and  communities.  Despite  significant  advancements  in  healthcare  
+infrastructure and digital health platforms, a considerable gap still exists between health  
+information and the people who need it most — particularly in rural and semi-urban areas,  
+where access to doctors, specialists and reliable information is limited, and where information 
+available  through  conventional  sources  is  often  fragmented,  unavailable  in  regional  
+languages, or obtained from unreliable sources. Misinformation can create unnecessary fear,  
+delayed treatment, self-medication and inappropriate healthcare decisions.
+The Smart India Hackathon 2025 Problem Statement SIH25049 “AI-Driven Public Health  
+Chatbot for Disease Awareness”, proposed by the Government of Odisha (Electronics & IT  
+Department), addresses this challenge by calling for a multilingual AI chatbot that educates  
+rural  and  semi-urban  populations  about  preventive  healthcare,  disease  symptoms  and  
+vaccination  schedules,  integrates  with  government  health  databases,  delivers  real-time  
+outbreak alerts, and remains accessible over low-bandwidth channels such as WhatsApp and  
+SMS.  The  proposed  project  develops  exactly  such  a  chatbot.  Users  ask  health-related  
+questions conversationally — e.g., “What are the symptoms of dengue?” or “When should  
+children  receive  vaccinations?”  —  and  receive  verified,  easy-to-understand  responses  
+generated  by  Artificial  Intelligence  and  Natural  Language  Processing  techniques  over  a  
+curated health-information knowledge base. The system is an awareness and information-
+support platform, not a replacement for professional medical consultation or diagnosis. To go  
+beyond a conventional Q&A chatbot, the project adds two standout capabilities that solve a  
+real, measurable problem for rural India: a health-forward verification (myth-vs-fact) module  
+that fights the epidemic of false health information spreading through WhatsApp, and a  
+community early-warning module that detects local outbreak signals from anonymized usage  
+patterns — making the chatbot an active guardian of community health rather than a passive  
+information bot.
+1.1  SDG, PO and PSO Mapping
+The project primarily contributes to SDG 3 (Good Health and Well-Being) through disease  
+awareness, preventive care and outbreak communication; it also supports SDG 4 (Quality  
+Education)  by  delivering  health  education  in  Indian  languages,  SDG  10  (Reduced  
+Page 3
+Inequalities)  by  bridging  the  urban–rural  and  language  divide,  SDG  11  (Sustainable  
+Communities)  through  timely,  location-aware  outbreak  communication,  and  SDG  17  
+(Partnerships) by integrating with government health databases. Mapping levels: 3 = Strong,  
+2 = Medium, 1 = Weak.
+Project: AI-Driven Public Health Chatbot for Disease Awareness
+Project – PO Mapping
+Program Outcome (PO) Level Justification
+PO1 – Engineering 
+knowledge
+3 Application of AI, NLP and machine-learning 
+fundamentals to build the conversational system
+PO2 – Problem analysis 3 Analysis of rural healthcare-information gaps 
+and the health-misinformation problem
+PO3 – Design/development of 
+solutions
+3 Design and development of the multilingual 
+public-health chatbot platform
+PO4 – Investigations of 
+complex problems
+1 Limited research component; solution is built on 
+curated verified health content
+PO5 – Modern tool usage 3 Python, NLP/ML libraries, RAG pipelines, 
+WhatsApp and SMS APIs
+PO6 – Engineer and society 3 Directly serves rural and semi-urban community 
+health needs
+PO7 – Environment and 
+sustainability
+2 Digital delivery reduces resources compared 
+with printed health campaigns
+PO8 – Ethics 3 Privacy, disclaimers, no-diagnosis policy and 
+verified information only
+PO9 – Individual and team 
+work
+3 Team-based development with defined module 
+ownership
+PO10 – Communication 2 Multilingual responses and public-health 
+communication
+PO11 – Project management 
+and finance
+2 Phased execution with open-source tools and 
+controlled cost
+PO12 – Lifelong learning 2 Continuous knowledge-base updating from 
+authorized sources
+Page 4
+Project: AI-Driven Public Health Chatbot for Disease Awareness
+Project – PSO Mapping
+Program Specific Outcome (PSO) Level Justification
+PSO1 – Apply core concepts of CS and Data 
+Science to develop effective, scalable 
+solutions
+3 Builds a scalable data-driven 
+intelligent system using ML and 
+data processing
+PSO2 – Design and develop sustainable data-
+driven intelligent systems
+3 Develops a sustainable AI system 
+with modern engineering 
+principles and tools
+PSO3 – Ethical and legal awareness in data 
+usage with strong communication skills
+2 Ethical data handling, clear 
+disclaimers and simple local-
+language communication
+Project – SDG Mapping
+SDG Goal Relevance to the Project Level
+SDG 3 Good Health and 
+Well-Being
+Disease awareness, prevention, vaccination 
+information and outbreak alerts
+Strong
+SDG 4 Quality Education Health education in multiple Indian languages via a 
+simple conversational interface
+Medium
+SDG 10 Reduced 
+Inequalities
+Bridges the urban–rural and language divide in 
+access to health information
+Medium
+SDG 11 Sustainable 
+Communities
+Timely, location-aware outbreak communication 
+for resilient communities
+Low
+SDG 17 Partnerships for the 
+Goals
+Integration with government health databases 
+(MoHFW, IDSP)
+Low
+2. LITERATURE SURVEY
+A  considerable  body  of  research  and  deployed  systems  exists  in  health  informatics,  
+conversational AI and multilingual NLP. Global health chatbots such as Babylon Health and  
+Ada Health provide symptom triage and health education, but they are application-based,  
+English-first and designed for urban users. In India, national platforms such as AarogyaSetu  
+and eSanjeevani focus on contact tracing and telemedicine rather than preventive-health  
+education, while CoWIN and U-WIN digitize vaccination records. Recent research chatbots  
+such  as  ASHABot  (Microsoft  Research)  and  DISHA  (UNICEF)  successfully  combine  
+WhatsApp  and  large  language  models  for  frontline  health  workers,  confirming  both  the 
+Page 5
+feasibility  and  the  reach  of  chat-based  health  information  —  yet  they  target  health  
+professionals, not the rural public.
+On  the  technology  side,  Retrieval-Augmented  Generation  (RAG)  enables  grounded  and  
+traceable answers [7], and Indic-language NLP models such as IndicTrans2 and IndicBERT  
+(AI4Bharat), together with the national Bhashini platform, make high-quality multilingual  
+interaction feasible. At the same time, empirical studies of rural India document that over  
+25% of viral WhatsApp content is misinformation [11], that roughly one in two users has  
+received  false  health  news  within  a  single  month,  and  that  previously  debunked  claims 
+continue to circulate because fact-checks never reach village groups [11], [12]. The table  
+below summarizes the surveyed systems and studies.
+System / 
+Study
+Year Key Features / Purpose Limitatio
+n
+Aarogya
+Setu, 
+eSanjeev
+ani 
+(Govt. of 
+India)
+2020–21 National digital-health platforms for contact tracing 
+and telemedicine
+No 
+preventive
+-awareness 
+chatbot; 
+app-first 
+and 
+English-
+centric
+ASHAB
+ot 
+(Microso
+ft 
+Research
+)
+2024 LLM-powered WhatsApp chatbot answering 
+ASHA workers' questions
+Built for 
+health 
+workers, 
+not for the 
+general 
+rural 
+public
+DISHA 
+(UNICE
+F)
+2022 Chatbot for frontline workers on immunization and 
+maternal-child health
+English/
+Hindi/
+Tamil 
+only; no 
+misinform
+ation 
+control
+Page 6
+System / 
+Study
+Year Key Features / Purpose Limitatio
+n
+SIH 
+2025 
+RAG-
+based 
+chatbot 
+teams
+2025 Multilingual RAG question-answer chatbots over 
+WhatsApp and SMS
+Passive 
+Q&A 
+only; no 
+forward 
+verificatio
+n or 
+outbreak 
+early-
+warning
+Lewis et 
+al. – 
+Retrieval
+-
+Augmen
+ted 
+Generati
+on
+2020 Grounded, traceable answer generation for 
+knowledge-intensive tasks
+Foundatio
+n 
+technique; 
+requires 
+domain 
+curation 
+and safety 
+controls
+AI4Bharat 
+– 
+IndicTrans
+2 / 
+IndicBER
+T
+2023 Open-source translation and NLP models for Indian 
+languages
+Technology 
+enabler, not 
+an end-user 
+health 
+product
+Garimella 
+et al. – 
+WhatsApp 
+village 
+study
+2024 Documented that over 25% of viral WhatsApp 
+content is misinformation
+Debunked 
+claims keep 
+circulating; 
+fact-checks 
+never reach 
+rural groups
+Chandrase
+karan et al. 
+(JMIR)
+2021 57.8% of users trust forwarded health messages; 13% 
+never fact-check
+No in-group, 
+local-
+language 
+verification 
+tool exists
+Research  Gap:  The  surveyed  systems  either  serve  healthcare  professionals,  require  
+application installation, or function as passive question-answer bots. None of them combines  
+multilingual disease awareness with in-group verification of forwarded health claims and  
+community-level  outbreak  early-warning  over  low-bandwidth  channels  (WhatsApp  and  
+SMS) for rural populations. This project addresses exactly that gap, adding a myth-vs-fact  
+Page 7
+verification module and a syndromic early-warning module on top of the verified knowledge  
+base.
+3. PROBLEM STATEMENT
+The major problem addressed is the lack of easily accessible, reliable, understandable and  
+multilingual  public-health  information  for  rural  and  semi-urban  populations.  Traditional  
+sources — websites, search engines, hospitals and direct consultation — are difficult for  
+users with limited digital literacy, language barriers, poor connectivity or restricted access to  
+healthcare professionals, while unverified social-media content spreads misinformation. The  
+problem can therefore be summarized as:
+How  can  an  AI-powered  conversational  system  provide  accessible,  multilingual,  
+reliable  and  easy-to-understand  public-health  information  regarding  diseases,  
+symptoms, preventive measures, vaccination schedules and health alerts to rural and  
+semi-urban populations?
+4. MOTIVATION
+The motivation for the project comes from several challenges in the current healthcare-
+information ecosystem:
+ Limited healthcare accessibility in rural and remote areas, where basic information may  
+require travel or long waits
+ Language barrier — most technical health resources are English-only, reducing their  
+usefulness for regional-language users
+ Health misinformation spreading rapidly through social media and messaging platforms
+ Lack of preventive awareness — many problems are preventable through vaccination,  
+sanitation, hygiene and early screening
+ Need  for  quick  information  and  timely  public-health  communication  during  disease  
+outbreaks
+5. AIM AND OBJECTIVES
+To design and develop an AI-driven multilingual public-health chatbot that provides reliable  
+disease-awareness, preventive healthcare, vaccination and public-health information through  
+an easy-to-use conversational interface, deployed primarily over WhatsApp and SMS. The  
+major objectives are:
+ Disease  awareness  —  understandable  information  on  common  diseases:  description,  
+symptoms, risk factors, prevention, precautions, and when to consult a professional
+ Preventive healthcare — awareness of hygiene, nutrition, sanitation, healthy lifestyle and  
+preventive practices
+ Vaccination awareness — vaccination schedules, eligibility and purpose, from trusted  
+health sources
+ Multilingual  support  —  interaction  in  English  and  Indian  regional  languages  (Hindi  
+initially)
+Page 8
+ Natural language interaction — free-form questions without predefined commands
+ Public-health alerts — verified outbreak and health-alert information with district/block-
+level (location-based) targeting
+ Easy accessibility — usable by people with limited technical knowledge, on low-end  
+phones and low-bandwidth networks
+ Responsible  and  reliable  AI  —  verified  structured  information,  clear  limitation  
+disclaimers, and no replacement of medical professionals
+ Misinformation control — verification of health forwards shared on WhatsApp, with  
+source-cited verdicts, to reduce the spread of false health claims
+6. PROPOSED WORK
+The proposed system is an AI-powered conversational public-health awareness platform. The  
+basic workflow is: User → Chat Interface → Language Processing → Intent Detection →  
+Knowledge Retrieval → AI Response Generation → Safety Check → Response to User. The  
+chatbot will be deployed through multiple channels, with WhatsApp (via the WhatsApp  
+Business Cloud API) and SMS (via a text-message gateway) as the primary channels because  
+they work on low-end phones and low-bandwidth networks — a key requirement of the SIH  
+2025 problem statement — together with a web interface and voice interaction for users with  
+limited literacy.
+Every  response  will  be  generated  using  a  Retrieval-Augmented  Generation  (RAG)  
+architecture grounded in a curated, verified knowledge base built from MoHFW, WHO,  
+ICMR and state health-department content, ensuring factual accuracy and source traceability.  
+The system will integrate with the Integrated Disease Surveillance Programme (IDSP) and  
+state health bulletins to push pincode-relevant outbreak alerts in the user’s language, support  
+vaccination-schedule lookups (CoWIN-derived), detect red-flag symptoms and escalate them  
+to helpline / primary-health-centre information instead of reassuring users, and target the SIH  
+benchmark of approximately 80% query-answer accuracy.
+Page 9
+Fig. 1: Block Diagram of the Proposed System
+7. DISTINCTIVE FEATURES — SOLVING A REAL RURAL PROBLEM
+Beyond a generic multilingual chatbot, this project addresses the most damaging practical  
+problem in rural health communication: health misinformation spread through WhatsApp  
+forwards.  Research  shows  that  over  25%  of  viral  WhatsApp  content  in  India  is  
+misinformation,  that  roughly  one  in  two  Indians  received  fake  news  on  WhatsApp  or  
+Facebook within a single month, and that previously debunked health claims keep circulating  
+for  years  because  fact-checks  never  reach  rural  groups.  The  proposed  system  therefore  
+includes two standout modules that make it an active guardian of community health rather  
+than a passive question-answering bot.
+7.1  Health-Forward Verification (Myth-vs-Fact) Module
+A user who receives a health message on WhatsApp can paste or forward it to the chatbot,  
+which analyses the claim and returns a clear, source-cited verdict in the user’s language:  
+VERIFIED / MYTH / PARTLY TRUE / UNVERIFIABLE. The verdict is generated from a  
+curated, doctor-reviewed myth-and-fact knowledge base covering the most widely circulated  
+rural  health  rumours  (vaccination  myths,  “home  cures”,  dietary  warnings,  “miracle  
+remedies”), combined with RAG retrieval over verified MoHFW, WHO, ICMR and PIB fact-
+check content. Each verdict card shows the original claim, the verdict, a plain-language  
+explanation  and  the  official  source,  and  is  designed  to  be  shared  back  into  the  same  
+WhatsApp group — converting the forward mechanism itself into a mechanism for spreading  
+verified truth. The module does not rely on general-purpose AI assistants: those require the  
+Page 10
+user to actively seek verification, do not provide domain-curated, cited verdicts, and are not  
+permitted to deliver medical claims. The failure of fact-checking in rural India is a discovery-
+and-trust problem — users forward first and never ask — so verification must come to the  
+rumour, in the group’s own language, with sources the community trusts.
+7.2  Community Early-Warning (Syndromic Surveillance) Module
+With user consent and full anonymization, aggregate chat-query patterns are analysed per  
+pincode/block. A statistically unusual spike in symptom-related queries (e.g., a sudden rise in  
+“diarrhoea” or “jaundice” questions in one area) generates an early-warning signal for a  
+potential local outbreak. The module combines this signal with official IDSP and state health-
+department  alerts  to  push  preventive  guidance  to  the  affected  community  ahead  of  the  
+outbreak curve, and flags the signal for health authorities — turning the chatbot into a low-
+cost,  community-level  public-health  sensor  and  providing  the  local  disease-outbreak  
+awareness that rural populations currently lack.
+8. SYSTEM ARCHITECTURE AND METHODOLOGY
+The system is organized in seven layers: (1) User Interface — web, WhatsApp, SMS and  
+voice; (2) Input Processing — text cleaning, language identification, translation, tokenization  
+and query normalization; (3) NLP Engine — intent, entity, disease and language recognition;  
+(4)  Knowledge  Retrieval  —  RAG  over  the  verified  healthcare  knowledge  base  and  
+government APIs; (5) AI Response Generation; (6) Safety and Validation — medical safety,  
+unsupported claims, disclaimers and reliability checks; (7) Output — response delivered in  
+the appropriate language and format.
+The project follows a systematic methodology: Requirement Analysis → Data Collection  
+from reliable sources → Data Preprocessing and structuring → NLP Development (intent  
+classification)  →  AI/Chatbot  Development  →  Multilingual  Integration  (IndicTrans2  /  
+Bhashini) → Database Integration → Alert Integration (IDSP) → Testing and evaluation  
+(accuracy,  precision,  recall,  F1-score,  response  latency,  multilingual  accuracy,  user  
+satisfaction) → Deployment over WhatsApp, SMS and web.
+9. MULTILINGUAL SUPPORT AND DEPLOYMENT
+India’s linguistic diversity makes multilingual functionality essential for accessibility. The  
+system  will  initially  support  English  and  Hindi,  and  later  expand  to  additional  Indian  
+languages. The multilingual pipeline is: User Input → Language Detection → Translation /  
+Multilingual NLP → Intent Detection → Knowledge Retrieval → Response Generation →  
+Translation → User.
+Hindi Query: “         डेंगूसेबचनेके लिए क्यासेवधानेरखनेचलिए?” → the chatbot identifies  
+a dengue-prevention intent and answers in Hindi.
+WhatsApp and SMS are the primary deployment channels, providing access with zero app  
+installation on low-end phones; the web interface serves users who prefer a browser chat, and  
+voice-based interaction is planned as an accessibility enhancement.
+Page 11
+10. SAFETY AND ETHICAL CONSIDERATIONS
+Because the project operates in the healthcare domain, safety is paramount. The chatbot  
+clearly communicates that it is an awareness system, not a substitute for a qualified doctor,  
+and  avoids  statements  such  as  “You  definitely  have  dengue,”  instead  using  responsible  
+language such as “These symptoms can occur in several conditions; if symptoms are severe,  
+persistent  or  worsening,  consult  a  qualified  healthcare  professional.”  It  never  provides  
+definitive diagnoses, never recommends prescription medicines or dosages, uses only verified 
+information,  protects  user  data,  maintains  information  freshness,  provides  emergency  
+guidance appropriately, and encourages professional consultation where necessary.
+11. REQUIREMENTS (SOFTWARE AND HARDWARE)
+Software Requirements
+Category Software / Tool Purpose
+Language Python 3.12 Core development (AI, NLP, backend)
+NLP spaCy / NLTK / transformers Language detection, intent & entity 
+recognition
+ML scikit-learn Query classification models
+Web Flask / FastAPI + HTML/CSS/JS Backend REST API and web chat 
+interface
+Databases MySQL/SQLite + ChromaDB/FAISS Knowledge base storage and RAG 
+vector search
+Channels WhatsApp Business Cloud API, 
+Twilio/MSG91 SMS
+Primary chat channels
+Translation IndicTrans2 / Bhashini API Multilingual understanding and 
+responses
+Hosting AWS / Azure / local VM Deployment and scalability
+Hardware Requirements
+Item Specification Purpose
+Development Laptop Intel i5 / 8 GB RAM Development, training and testing
+Smartphone / Feature 
+Phone
+Android/iOS + GSM Testing WhatsApp and SMS channels
+Cloud Server 
+(optional)
+2 vCPU / 4 GB RAM Deployment and 24×7 availability
+Page 12
+12. PROPOSED TIMELINE
+The  project  will  be  executed  in  four  phases  of  three  weeks  each,  aligned  with  the  
+departmental review schedule (synopsis submission by 13th August 2026, first defence in the  
+3rd week of September, second defence in the 4th week of October, hard-bound report in the  
+2nd week of November, and final viva as per the university schedule).
+Proposed Project Timeline
+Phase Duration Key Deliverables
+Phase 1 Weeks 1–3 Requirement analysis; collection of verified health content 
+(MoHFW, WHO, ICMR); curation of the myth-vs-fact 
+knowledge base; knowledge-base and UI/UX design; 
+WhatsApp and SMS channel setup.
+Phase 2 Weeks 4–6 NLP engine development (language detection, intent and 
+entity recognition); RAG retrieval pipeline over the verified 
+corpus; web chat interface.
+Phase 3 Weeks 7–9 AI response generation with safety and validation layer; 
+health-forward verification (myth-vs-fact) module; 
+community early-warning (syndromic surveillance) module; 
+IDSP alert integration.
+Phase 4 Weeks 10–
+12
+Multilingual integration and testing; evaluation against the 
+approximately 80% accuracy benchmark; WhatsApp and 
+SMS deployment; documentation and report preparation.
+13. APPLICATION
+ Public-health awareness and education for rural and semi-urban communities
+ Support for ASHA and Anganwadi workers with quick, local-language health guidance
+ School and community health-education programmes
+ Dissemination of disease-outbreak alerts and preventive advisories
+ Vaccination-awareness campaigns and vaccination-schedule lookups
+ Supplementary public-health communication during health emergencies
+14. EXPECTED OUTCOMES AND FUTURE SCOPE
+The project is expected to deliver an intelligent public-health information system capable of  
+answering  common  healthcare-awareness  questions,  providing  disease  and  symptom  
+information, preventive-care and vaccination awareness, multilingual support, and verified  
+public-health alerts — demonstrating how AI can be used for public-health awareness rather  
+than only prediction or diagnosis. Future scope includes additional Indian languages, a full  
+voice/IVR  assistant,  national-scale  multi-number  WhatsApp  deployment,  personalized  
+vaccination reminders, healthcare-facility location and continuous knowledge updating from  
+authorized sources.
+Page 13
+15. CONCLUSION
+The AI-Driven Public Health Chatbot for Disease Awareness is proposed as an intelligent  
+digital solution for improving access to reliable healthcare information, particularly among  
+rural and semi-urban communities. By combining Artificial Intelligence, Natural Language  
+Processing,  Retrieval-Augmented  Generation  and  multilingual  communication  over  low-
+bandwidth channels such as WhatsApp and SMS, the project addresses the challenges of  
+limited awareness, language barriers, information accessibility and health misinformation.  
+The system is designed primarily as a health-awareness and information platform — not a  
+diagnostic replacement for medical professionals — ensuring responsible and safe use of AI  
+in healthcare while encouraging timely professional consultation.
+16. REFERENCES
+[1] Smart India Hackathon 2025 – Problem Statement SIH25049, “AI-Driven Public Health  
+Chatbot  for  Disease  Awareness,”  Government  of  Odisha,  Electronics  &  IT  Department. 
+https://sih.gov.in
+[2] World Health Organization (WHO) – health topics, fact sheets and disease-prevention  
+guidance. https://www.who.int
+[3] Ministry of Health and Family Welfare (MoHFW), Government of India – public-health  
+programmes and advisories. https://www.mohfw.gov.in
+[4]  Integrated  Disease  Surveillance  Programme  (IDSP),  NCDC  –  disease-outbreak  
+surveillance data. https://idsp.mohfw.gov.in
+[5] National Health Mission (NHM) – rural healthcare outreach and vaccination programmes.  
+https://nhm.gov.in
+[6] CoWIN – vaccination scheduling and information portal. https://www.cowin.gov.in
+[7] Lewis, P., et al. (2020). “Retrieval-Augmented Generation for Knowledge-Intensive NLP  
+Tasks.” NeurIPS 2020. arXiv:2005.11401.
+[8] Devlin, J., et al. (2019). “BERT: Pre-training of Deep Bidirectional Transformers for  
+Language Understanding.” arXiv:1810.04805.
+[9]  AI4Bharat  –  IndicTrans2  open-source  multilingual  translation  models.  
+https://ai4bharat.org
+[10] Bhashini – Digital India language translation platform. https://www.bhashini.gov.in
+[11] Garimella, K., et al. (2024). “Deciphering Viral Trends in WhatsApp: A Case Study  
+From a Village in Rural India.” arXiv:2407.08172 — over 25% of viral WhatsApp content in  
+India is misinformation, and debunked health claims continue to circulate for years.
+[12] Chandrasekaran, R., et al. (2021). “Demographic Factors Influencing the Impact of  
+Coronavirus-Related Misinformation on WhatsApp.” JMIR — 57.8% of respondents trusted  
+forwarded health messages; 13.3% never fact-checked before forwarding.
+Page 14

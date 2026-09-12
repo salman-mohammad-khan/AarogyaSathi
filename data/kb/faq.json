@@ -1,0 +1,828 @@
+{
+  "meta": {
+    "sources_note": "Curated from WHO and MoHFW public-health guidance.",
+    "languages": [
+      "en",
+      "hi"
+    ]
+  },
+  "faqs": [
+    {
+      "id": "handwashing",
+      "topics": [
+        "hygiene",
+        "prevention"
+      ],
+      "q": {
+        "en": "How should I wash my hands properly?",
+        "hi": "हाथ ठीक से कैसे धोने चाहिए?",
+        "hinglish": "haath dhone ka sahi tarika"
+      },
+      "a": {
+        "en": "Wet hands, apply soap, rub all surfaces (palms, back, between fingers, under nails) for at least 20 seconds, rinse and dry. Wash before eating/cooking, after toilet, after touching animals, and after coughing or sneezing.",
+        "hi": "हाथ गीले करें, साबुन लगाएँ, सभी सतहें (हथेली, पीठ, उँगलियों के बीच, नाखूनों के नीचे) कम से कम 20 सेकंड रगड़ें, धोकर सुखाएँ। खाने/पकाने से पहले, शौच के बाद, जानवरों को छूने के बाद और खाँसने-छींकने के बाद हाथ धोएँ।",
+        "hinglish": "haath geele karo, sabun lagao, kam se kam 20 second tak ragaro, dhokar sukha lo. khana khane se pehle, toilet ke baad, janwar ko chune ke baad aur khansne cheenkne ke baad haath dhona zaroori hai."
+      },
+      "sources": [
+        {
+          "name": "WHO Hand Hygiene",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "ors_preparation",
+      "topics": [
+        "diarrhoea",
+        "first_aid",
+        "prevention"
+      ],
+      "q": {
+        "en": "How do I prepare ORS at home?",
+        "hi": "घर पर ORS कैसे बनाएँ?",
+        "hinglish": "ors kaise banaye ghar par"
+      },
+      "a": {
+        "en": "Use an ORS packet from ASHA/health centre mixed exactly as per instructions. Homemade: 6 level teaspoons of sugar + half teaspoon of salt dissolved in 1 litre of clean drinking water. Give sips after every loose stool. Discard after 24 hours.",
+        "hi": "आशा/स्वास्थ्य केंद्र से मिले ORS पैकेट को निर्देशानुसार मिलाएँ। घर पर: 1 लीटर साफ़ पेयजल में 6 चम्मच चीनी + आधा चम्मच नमक घोलें। हर दस्त के बाद घूँट-घूँट दें। 24 घंटे बाद फेंक दें।",
+        "hinglish": "ek litre saaf pani me 6 chammach cheeni aur aadha chammach namak milao. har dast ke baad ghoot ghoot karke pilao. 24 ghante baad ghol ko phenk do."
+      },
+      "sources": [
+        {
+          "name": "WHO ORS Guidance",
+          "tier": 1
+        },
+        {
+          "name": "NHM, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "mosquito_control",
+      "topics": [
+        "prevention",
+        "dengue",
+        "malaria"
+      ],
+      "q": {
+        "en": "How can I prevent mosquito breeding near my home?",
+        "hi": "घर के आस-पास मच्छरों को पनपने से कैसे रोकें?",
+        "hinglish": "machhar se kaise bache, machhar nahi bhagana"
+      },
+      "a": {
+        "en": "Empty and scrub water containers (coolers, flower pots, tyres, coconut shells) every week. Cover stored water. Use larvicide (temephos) or oil in standing water. Keep drains clean. Sleep under nets and use repellents.",
+        "hi": "पानी के बर्तनों (कूलर, गमले, टायर, नारियल के खोल) को हर सप्ताह खाली करके साफ़ करें। रखा हुआ पानी ढकें। जमा पानी में लार्वीसाइड (टेमेफोस) या तेल डालें। नालियाँ साफ़ रखें। मच्छरदानी में सोएँ और रिपेलेंट लगाएँ।",
+        "hinglish": "hafte me ek baar paani ke bartan saaf karo, jama paani hataya, machhardani me soya, repellent lagao."
+      },
+      "sources": [
+        {
+          "name": "NVBDCP, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "breastfeeding",
+      "topics": [
+        "nutrition",
+        "child_health"
+      ],
+      "q": {
+        "en": "Why is exclusive breastfeeding important for 6 months?",
+        "hi": "6 महीने तक केवल स्तनपान क्यों ज़रूरी है?",
+        "hinglish": "stanpaan kyu zaroori hai, doodh pilana"
+      },
+      "a": {
+        "en": "Mother's milk is the complete, safest food for the first 6 months - it provides nutrition, immunity and protects against diarrhoea and pneumonia. No water, honey, ghutti or other milk is needed before 6 months. Start breastfeeding within 1 hour of birth.",
+        "hi": "पहले 6 महीनों के लिए माँ का दूध पूर्ण और सबसे सुरक्षित आहार है - यह पोषण, रोग प्रतिरोधक क्षमता देता है और दस्त व निमोनिया से बचाता है। 6 महीने से पहले पानी, शहद, घुट्टी या अन्य दूध की ज़रूरत नहीं है। जन्म के 1 घंटे के भीतर स्तनपान शुरू करें।",
+        "hinglish": "pehle 6 mahine sirf maa ka doodh hi sabse behtar hai. paani, shahad, ghutti ki zaroorat nahi."
+      },
+      "sources": [
+        {
+          "name": "WHO Breastfeeding",
+          "tier": 1
+        },
+        {
+          "name": "MAA Programme, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "food_safety",
+      "topics": [
+        "hygiene",
+        "prevention"
+      ],
+      "q": {
+        "en": "What are basic food safety rules?",
+        "hi": "भोजन सुरक्षा के बुनियादी नियम क्या हैं?",
+        "hinglish": "khana saaf kaise rakhe, khane ki safai"
+      },
+      "a": {
+        "en": "Keep clean - wash hands and utensils. Separate raw and cooked food. Cook thoroughly, especially meat and eggs. Keep food at safe temperatures - eat hot food hot. Use safe water and fresh raw materials.",
+        "hi": "सफाई रखें - हाथ और बर्तन धोएँ। कच्चे और पके भोजन को अलग रखें। अच्छी तरह पकाएँ, खासकर मांस और अंडे। भोजन को सुरक्षित तापमान पर रखें - गर्म खाना गर्म ही खाएँ। साफ़ पानी और ताज़ा सामग्री का उपयोग करें।",
+        "hinglish": "haath dhona, kacha pakka alag rakho, khana achhe se pakao, garam khana garam khao."
+      },
+      "sources": [
+        {
+          "name": "WHO Five Keys to Safer Food",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "nutrition_plate",
+      "topics": [
+        "nutrition"
+      ],
+      "q": {
+        "en": "What should a balanced daily diet include?",
+        "hi": "संतुलित दैनिक आहार में क्या शामिल होना चाहिए?",
+        "hinglish": "roz kya khana chahiye, healthy khana kya hai"
+      },
+      "a": {
+        "en": "Cereals/millets, pulses, seasonal vegetables and fruits, milk/curd, and small amounts of oil. Iron-rich foods: green leafy vegetables, jaggery, dates, pulses. Include iodised salt. Avoid excess sugar, salt and oily food.",
+        "hi": "अनाज/मोटे अनाज, दालें, मौसमी सब्ज़ियाँ और फल, दूध/दही और थोड़ा सा तेल। आयरन युक्त भोजन: हरी पत्तेदार सब्ज़ियाँ, गुड़, खजूर, दालें। आयोडीन युक्त नमक इस्तेमाल करें। अधिक चीनी, नमक और तली चीज़ों से बचें।",
+        "hinglish": "anaj, dal, sabzi, phal, doodh dahin khana chahiye. har bhajan me poushtik cheeze shamil karo."
+      },
+      "sources": [
+        {
+          "name": "NIN, ICMR Dietary Guidelines",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "safe_water",
+      "topics": [
+        "hygiene",
+        "prevention"
+      ],
+      "q": {
+        "en": "How can I make drinking water safe?",
+        "hi": "पीने का पानी सुरक्षित कैसे बनाएँ?",
+        "hinglish": "pani saaf kaise kare, pine ka pani kaise saaf kare"
+      },
+      "a": {
+        "en": "Boil water (rolling boil for 1 minute) or use chlorine tablets as per instructions. Store in clean covered containers with a tap or ladle - never dip hands into drinking water. Filter through clean cloth if water is muddy, before treating.",
+        "hi": "पानी उबालें (1 मिनट तक खौलता रहे) या निर्देशानुसार क्लोरीन की गोली डालें। ढक्कन वाले साफ़ बर्तन में रखें - पीने के पानी में हाथ न डालें। पानी गंदला हो तो उपचार से पहले साफ़ कपड़े से छान लें।",
+        "hinglish": "pani ko ubalo ya chlorine ki goli dalo. saaf dhake bartan me rakho."
+      },
+      "sources": [
+        {
+          "name": "WHO Household Water Treatment",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "mask_hygiene",
+      "topics": [
+        "hygiene",
+        "respiratory"
+      ],
+      "q": {
+        "en": "When should I wear a mask?",
+        "hi": "मास्क कब पहनना चाहिए?",
+        "hinglish": "mask kab pehne"
+      },
+      "a": {
+        "en": "Wear a mask when you have cough/cold symptoms to protect others, in crowded poorly-ventilated places during outbreaks, and while caring for a sick person. Change if wet; wash cloth masks daily with soap.",
+        "hi": "खाँसी/ज़ुकाम के लक्षण हों तो दूसरों की सुरक्षा के लिए, प्रकोप के दौरान भीड़-भाड़ वाली बंद जगहों में और बीमार की देखभाल करते समय मास्क पहनें। गीला होने पर बदलें; कपड़े का मास्क रोज़ साबुन से धोएँ।",
+        "hinglish": "khansi jukam ho to mask pehno, bheed me mask pehno, bimar ki dekhbhal karte samay mask pehno."
+      },
+      "sources": [
+        {
+          "name": "WHO Mask Guidance",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "heat_safety",
+      "topics": [
+        "prevention",
+        "summer"
+      ],
+      "q": {
+        "en": "How to protect myself from heat waves?",
+        "hi": "लू से खुद को कैसे बचाएँ?",
+        "hinglish": "loo se kaise bache, garmi se kaise bache"
+      },
+      "a": {
+        "en": "Stay indoors 11 AM-4 PM. Drink water, ORS, lassi, buttermilk, lemon water even if not thirsty. Wear light cotton clothes, cover head outdoors. Watch for headache, dizziness, nausea - early signs of heat illness.",
+        "hi": "सुबह 11 से शाम 4 बजे तक घर के अंदर रहें। प्यास न भी लगे तब भी पानी, ORS, लस्सी, छाछ, नींबू पानी पिएँ। हल्के सूती कपड़े पहनें, बाहर सिर ढकें। सिरदर्द, चक्कर, जी मिचलाना - गर्मी से बीमार होने के शुरुआती लक्षणों पर ध्यान दें।",
+        "hinglish": "dopahar 11 se 4 baje tak bahar mat niklo, paani ors lassi piyo, halke kapde pehno."
+      },
+      "sources": [
+        {
+          "name": "NDMA Heatwave Guidelines",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "mental_health_basics",
+      "topics": [
+        "mental_health"
+      ],
+      "q": {
+        "en": "Basic tips for mental well-being?",
+        "hi": "मानसिक स्वास्थ्य के लिए बुनियादी सुझाव?",
+        "hinglish": "tension kaise kam kare, mann kaise shaant rakhe"
+      },
+      "a": {
+        "en": "Keep a regular sleep and meal routine. Stay connected with family and friends. Do light exercise or walking daily. Limit excessive screen time. Talk to someone you trust if you feel persistently sad or anxious. Tele-MANAS helpline (14416) provides free counselling in India.",
+        "hi": "सोने और खाने की नियमित दिनचर्या रखें। परिवार और दोस्तों से जुड़े रहें। रोज़ हल्का व्यायाम या टहलें। स्क्रीन का अत्यधिक उपयोग सीमित करें। लगातार उदासी या चिंता हो तो किसी विश्वसनीय व्यक्ति से बात करें। भारत में टेली-मानस हेल्पलाइन (14416) मुफ़्त परामर्श देती है।",
+        "hinglish": "neend aur khana time par lo, dost parivar se baat karo, roz thoda tehalo. zyada pareshani ho to tele-manas 14416 par call karo."
+      },
+      "sources": [
+        {
+          "name": "Tele-MANAS, MoHFW",
+          "tier": 1
+        },
+        {
+          "name": "WHO Mental Health",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "antibiotic_awareness",
+      "topics": [
+        "medicine",
+        "prevention"
+      ],
+      "q": {
+        "en": "Do antibiotics cure cold and flu?",
+        "hi": "क्या एंटीबायोटिक से सर्दी-फ्लू ठीक होता है?",
+        "hinglish": "kya antibiotic se sardi theek hoti hai"
+      },
+      "a": {
+        "en": "No. Cold and flu are caused by viruses; antibiotics work only against bacteria. Taking antibiotics unnecessarily causes antibiotic resistance, making future infections harder to treat. Always take antibiotics only when prescribed, and complete the full course.",
+        "hi": "नहीं। सर्दी-फ्लू वायरस से होते हैं; एंटीबायोटिक केवल बैक्टीरिया पर काम करते हैं। बिना ज़रूरत एंटीबायोटिक लेने से एंटीबायोटिक प्रतिरोध बढ़ता है, जिससे भविष्य में संक्रमण का इलाज मुश्किल हो जाता है। एंटीबायोटिक केवल डॉक्टर की सलाह पर लें और पूरा कोर्स पूरा करें।",
+        "hinglish": "nahi, sardi jukam virus se hota hai, antibiotic sirf bacteria par kaam karta hai. antibiotic doctor ke bataye par hi lo."
+      },
+      "sources": [
+        {
+          "name": "WHO Antimicrobial Resistance",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "hypertension_basics",
+      "topics": [
+        "lifestyle",
+        "prevention"
+      ],
+      "q": {
+        "en": "How to keep blood pressure normal?",
+        "hi": "रक्तचाप सामान्य कैसे रखें?",
+        "hinglish": "bp normal kaise rakhe, high bp me kya kare"
+      },
+      "a": {
+        "en": "Eat less salt (under 5g/day), avoid packaged snacks. Exercise 30 min daily. Maintain healthy weight, avoid tobacco and limit alcohol. Get BP checked regularly. If prescribed BP medicine, take it daily - never stop without doctor's advice even if BP reads normal.",
+        "hi": "कम नमक खाएँ (दिन में 5 ग्राम से कम), पैकेट वाले स्नैक्स से बचें। रोज़ 30 मिनट व्यायाम करें। वज़न सामान्य रखें, तंबाकू से बचें, शराब सीमित करें। नियमित BP जाँच कराएँ। BP की दवा दी गई है तो रोज़ लें - BP सामान्य दिखने पर भी डॉक्टर की सलाह के बिना बंद न करें।",
+        "hinglish": "kam namak khao, roz vyayam karo, wazan sahi rakho, tambaku mat khao. bp ki dawai roz lo, doctor ke bina band mat karo."
+      },
+      "sources": [
+        {
+          "name": "WHO Hypertension",
+          "tier": 1
+        },
+        {
+          "name": "India Hypertension Control Initiative, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "diabetes_basics",
+      "topics": [
+        "lifestyle",
+        "prevention"
+      ],
+      "q": {
+        "en": "How can diabetes be prevented or managed?",
+        "hi": "मधुमेह (डायबिटीज़) से कैसे बचें या उसे कैसे नियंत्रित करें?",
+        "hinglish": "sugar kaise control kare, diabetes se kaise bache"
+      },
+      "a": {
+        "en": "Stay active daily, eat whole grains instead of refined food, limit sugar and sugary drinks, maintain healthy weight, avoid tobacco. Get blood sugar tested after age 30, especially with family history. If diabetic, take medicine regularly and check sugar as advised.",
+        "hi": "रोज़ सक्रिय रहें, मैदा की जगह साबुत अनाज खाएँ, चीनी और मीठे पेय सीमित करें, वज़न सामान्य रखें, तंबाकू से बचें। 30 वर्ष के बाद, खासकर परिवार में इतिहास हो तो ब्लड शुगर की जाँच कराएँ। मधुमेह हो तो दवा नियमित लें और सलाह अनुसार शुगर जाँचें।",
+        "hinglish": "meetha kam khao, roz chalna farna karo, wazan sahi rakho, 30 saal ke baad sugar ki jaanch karao."
+      },
+      "sources": [
+        {
+          "name": "WHO Diabetes",
+          "tier": 1
+        },
+        {
+          "name": "NP-NCD, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "tobacco_harm",
+      "topics": [
+        "lifestyle",
+        "prevention"
+      ],
+      "q": {
+        "en": "What are the health effects of tobacco?",
+        "hi": "तंबाकू के स्वास्थ्य पर क्या प्रभाव हैं?",
+        "hinglish": "tambaku ke nuksan kya hai, beedi sigaret ke nuksan"
+      },
+      "a": {
+        "en": "Tobacco (smoking, chewing, gutka) causes cancer, heart disease, stroke, lung disease and harms pregnancy. Even second-hand smoke harms family members. Quitting at any age improves health. National Quitline: 1800-11-2356.",
+        "hi": "तंबाकू (धूम्रपान, खैनी, गुटखा) से कैंसर, हृदय रोग, पक्षाघात, फेफड़ों की बीमारी होती है और गर्भावस्था को नुकसान पहुँचाती है। परोक्ष धुआँ भी परिवार को नुकसान पहुँचाता है। किसी भी उम्र में छोड़ने से स्वास्थ्य सुधरता है। राष्ट्रीय क्विटलाइन: 1800-11-2356।",
+        "hinglish": "tambaku se cancer, dil ki bimari, lakwa aur phool ki bimari hoti hai. chodne par 1800-11-2356 par call karo."
+      },
+      "sources": [
+        {
+          "name": "WHO Tobacco",
+          "tier": 1
+        },
+        {
+          "name": "NTCP, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "immunity_diet",
+      "topics": [
+        "nutrition",
+        "prevention"
+      ],
+      "q": {
+        "en": "What diet strengthens immunity?",
+        "hi": "रोग प्रतिरोधक क्षमता बढ़ाने के लिए क्या खाना चाहिए?",
+        "hinglish": "immunity kaise badhaye, bimari se kaise bache"
+      },
+      "a": {
+        "en": "No single food 'boosts' immunity. A balanced diet - seasonal fruits, vegetables, pulses, millets, milk/curd - plus adequate sleep, exercise and less stress keeps immunity strong. Beware of 'miracle immunity' products and herbs claimed to cure diseases.",
+        "hi": "कोई एक चीज़ खाकर रोग प्रतिरोधक क्षमता 'बढ़ती' नहीं। संतुलित आहार - मौसमी फल, सब्ज़ियाँ, दालें, मोटे अनाज, दूध/दही - और पर्याप्त नींद, व्यायाम व कम तनाव से रोग प्रतिरोधक क्षमता मज़बूत रहती है। 'चमत्कारी' इम्युनिटी उत्पादों और बीमारी ठीक करने का दावा करने वाली जड़ी-बूटियों से सावधान रहें।",
+        "hinglish": "santulit aahar, neend, vyayam aur kam tanaav se rog pratirodhak kshamta mazboot rehti hai. koi ek cheez se immunity nahi badhti."
+      },
+      "sources": [
+        {
+          "name": "WHO Nutrition Guidance",
+          "tier": 1
+        },
+        {
+          "name": "PIB Fact Check",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "std_testing",
+      "topics": [
+        "sexual_health"
+      ],
+      "q": {
+        "en": "How to check if I have an STD or STI?",
+        "hi": "मुझे कैसे पता चले कि मुझे STD/STI है?",
+        "hinglish": "STD hai ya nahi kaise check kare"
+      },
+      "a": {
+        "en": "STIs (chlamydia, gonorrhoea, HIV, syphilis) often have NO clear symptoms, so the only reliable way to know is testing. Visit a government hospital or STI clinic - testing and treatment are often free and confidential. See a doctor promptly if you have unusual discharge, sores, rash, or burning during urination. Never self-diagnose from symptoms alone.",
+        "hi": "STI (क्लैमाइडिया, गोनोरिया, HIV, सिफलिस) में अक्सर कोई स्पष्ट लक्षण नहीं होते, इसलिए पता करने का एकमात्र विश्वसनीय तरीका जाँच है। सरकारी अस्पताल या STI क्लिनिक जाएँ - जाँच और इलाज अक्सर मुफ़्त और गोपनीय होते हैं। असामान्य स्राव, घाव, चकत्ते या पेशाब में जलन हो तो तुरंत डॉक्टर को दिखाएँ। केवल लक्षणों से खुद निदान न करें।"
+      },
+      "sources": [
+        {
+          "name": "NACO, MoHFW",
+          "tier": 1
+        },
+        {
+          "name": "WHO STI Guidance",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "hiv_basics",
+      "topics": [
+        "sexual_health"
+      ],
+      "q": {
+        "en": "What is HIV and how is it tested?",
+        "hi": "HIV क्या है और इसकी जाँच कैसे होती है?",
+        "hinglish": "HIV kya hai aur test kaise hota hai"
+      },
+      "a": {
+        "en": "HIV is a virus that weakens the immune system over time; it is NOT spread by touch, sharing food or mosquito bites - only through unprotected sex, infected blood/needles, or mother-to-child. A simple blood test detects it; government ICTC centres offer free, confidential testing. Early treatment lets people with HIV live long, healthy lives.",
+        "hi": "HIV एक वायरस है जो धीरे-धीरे प्रतिरोधक क्षमता कम करता है; यह छूने, खाना साझा करने या मच्छर से नहीं - केवल असुरक्षित यौन संबंध, संक्रमित रक्त/सुई या माँ से बच्चे में फैलता है। साधारण रक्त जाँच से इसका पता चलता है; सरकारी ICTC केंद्रों पर मुफ़्त, गोपनीय जाँच होती है। समय पर इलाज से HIV वाले लोग लंबा, स्वस्थ जीवन जी सकते हैं।"
+      },
+      "sources": [
+        {
+          "name": "NACO, MoHFW",
+          "tier": 1
+        },
+        {
+          "name": "WHO HIV",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "safe_sex",
+      "topics": [
+        "sexual_health"
+      ],
+      "q": {
+        "en": "How can I prevent STIs and HIV?",
+        "hi": "STI और HIV से कैसे बचें?",
+        "hinglish": "STI aur HIV se kaise bache"
+      },
+      "a": {
+        "en": "Use condoms correctly every time, limit partners, and get tested regularly if at risk. Never share needles or razors. If exposed, PEP (post-exposure) medicine taken within 72 hours can prevent HIV - visit a government hospital immediately.",
+        "hi": "हर बार कंडोम का सही उपयोग करें, साथी सीमित रखें और जोखिम हो तो नियमित जाँच कराएँ। सुई या रेज़र कभी साझा न करें। संक्रमण हो जाए तो 72 घंटे के भीतर PEP दवा HIV रोक सकती है - तुरंत सरकारी अस्पताल जाएँ।"
+      },
+      "sources": [
+        {
+          "name": "NACO, MoHFW",
+          "tier": 1
+        },
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "menstrual_hygiene",
+      "topics": [
+        "women_health"
+      ],
+      "q": {
+        "en": "Menstrual hygiene tips",
+        "hi": "मासिक धर्म के दौरान स्वच्छता के उपाय",
+        "hinglish": "periods me safai kaise rakhe"
+      },
+      "a": {
+        "en": "Change pads/cloths every 4-6 hours, wash hands before and after, and wash reusable cloth with soap and dry in sunlight. Bathing daily is safe during periods. See a doctor for very heavy bleeding, severe pain, or irregular cycles.",
+        "hi": "हर 4-6 घंटे में पैड/कपड़ा बदलें, पहले और बाद में हाथ धोएँ, और धुले कपड़े को धूप में सुखाएँ। मासिक धर्म के दौरान रोज़ नहाना सुरक्षित है। बहुत अधिक रक्तस्राव, तेज़ दर्द या अनियमित माहवारी पर डॉक्टर को दिखाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO Menstrual Health",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "pregnancy_signs",
+      "topics": [
+        "women_health",
+        "pregnancy"
+      ],
+      "q": {
+        "en": "What are early signs of pregnancy?",
+        "hi": "गर्भावस्था के शुरुआती लक्षण क्या हैं?",
+        "hinglish": "pregnancy ke shuruati lakshan"
+      },
+      "a": {
+        "en": "Missed period, nausea/vomiting, breast tenderness, frequent urination and tiredness. Confirm with a home pregnancy test or a health centre urine/blood test. Start antenatal care early and take iron-folic acid as advised.",
+        "hi": "माहवारी का रुकना, जी मिचलाना/उल्टी, स्तनों में भारीपन, बार-बार पेशाब और थकान। घर के टेस्ट या स्वास्थ्य केंद्र की जाँच से पुष्टि करें। जल्दी प्रसव-पूर्व जाँच शुरू करें और सलाह अनुसार आयरन-फोलिक एसिड लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Antenatal Care",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "anxiety_management",
+      "topics": [
+        "mental_health"
+      ],
+      "q": {
+        "en": "How to manage anxiety and stress?",
+        "hi": "चिंता और तनाव कैसे कम करें?",
+        "hinglish": "chinta aur tension kaise kam kare"
+      },
+      "a": {
+        "en": "Deep slow breathing, regular exercise, enough sleep, limiting caffeine, and talking to someone you trust all help. If anxiety is constant, interferes with daily life, or causes panic, consult a doctor. Tele-MANAS (14416) offers free counselling in India.",
+        "hi": "धीमी गहरी साँस, नियमित व्यायाम, पर्याप्त नींद, कैफीन कम करना और किसी विश्वसनीय व्यक्ति से बात करना सहायक है। चिंता लगातार बनी रहे, दैनिक जीवन में बाधा डाले या घबराहट हो तो डॉक्टर से मिलें। भारत में टेली-मानस (14416) मुफ़्त परामर्श देता है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Mental Health",
+          "tier": 1
+        },
+        {
+          "name": "Tele-MANAS, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "depression_signs",
+      "topics": [
+        "mental_health"
+      ],
+      "q": {
+        "en": "What are signs of depression?",
+        "hi": "अवसाद (डिप्रेशन) के लक्षण क्या हैं?",
+        "hinglish": "depression ke lakshan"
+      },
+      "a": {
+        "en": "Persistent sadness or emptiness, loss of interest in things once enjoyed, sleep/appetite changes, tiredness, and hopelessness lasting over two weeks. Depression is a treatable illness, not weakness. Talk to a doctor; help is available (Tele-MANAS 14416).",
+        "hi": "लगातार उदासी, पसंद की चीज़ों में रुचि कम होना, नींद/भूख में बदलाव, थकान और निराशा जो दो सप्ताह से अधिक रहे। अवसाद इलाज योग्य बीमारी है, कमज़ोरी नहीं। डॉक्टर से बात करें; मदद उपलब्ध है (टेली-मानस 14416)।"
+      },
+      "sources": [
+        {
+          "name": "WHO Depression",
+          "tier": 1
+        },
+        {
+          "name": "Tele-MANAS, MoHFW",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "sleep_hygiene",
+      "topics": [
+        "mental_health",
+        "lifestyle"
+      ],
+      "q": {
+        "en": "How to improve sleep?",
+        "hi": "नींद कैसे अच्छी आए?",
+        "hinglish": "neend kaise achi aaye"
+      },
+      "a": {
+        "en": "Sleep and wake at the same time daily, avoid tea/coffee after evening, keep the room dark and quiet, and avoid mobile screens before bed. Adults need 7-9 hours. See a doctor for persistent insomnia.",
+        "hi": "रोज़ एक ही समय पर सोएँ और जागें, शाम के बाद चाय/कॉफी से बचें, कमरा अँधेरा और शांत रखें, सोने से पहले मोबाइल न देखें। वयस्कों को 7-9 घंटे की नींद चाहिए। लगातार अनिद्रा हो तो डॉक्टर से मिलें।"
+      },
+      "sources": [
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "asthma_basics",
+      "topics": [
+        "respiratory"
+      ],
+      "q": {
+        "en": "What is asthma and how to manage it?",
+        "hi": "अस्थमा (दमा) क्या है और उसे कैसे संभालें?",
+        "hinglish": "asthma kya hai aur kaise control kare"
+      },
+      "a": {
+        "en": "Asthma is a long-term lung condition causing wheezing, cough and breathlessness, often triggered by dust, smoke, cold air or allergies. It is controlled with inhalers as prescribed - not cured. Avoid smoke and dust, and always carry the prescribed inhaler.",
+        "hi": "अस्थमा फेफड़ों की एक पुरानी बीमारी है जिसमें घरघराहट, खाँसी और साँस फूलती है, अक्सर धूल, धुएँ, ठंडी हवा या एलर्जी से। यह डॉक्टर द्वारा बताए इनहेलर से नियंत्रित होती है - पूरी तरह ठीक नहीं होती। धुएँ-धूल से बचें और इनहेलर हमेशा साथ रखें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Asthma",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "allergy_basics",
+      "topics": [
+        "respiratory"
+      ],
+      "q": {
+        "en": "Common allergy symptoms and how to manage them",
+        "hi": "एलर्जी के लक्षण और उनका प्रबंधन",
+        "hinglish": "allergy ke lakshan aur ilaaj"
+      },
+      "a": {
+        "en": "Sneezing, runny/itchy nose, watery eyes, and skin rashes are common. Avoid the trigger (dust, pollen, certain foods), keep the house dust-free, and take antihistamines as a doctor advises. Severe swelling or breathing trouble is an emergency - get help immediately.",
+        "hi": "छींक, नाक बहना/खुजली, आँखों से पानी और त्वचा पर चकत्ते आम हैं। कारण (धूल, पराग, कुछ खाने) से बचें, घर को धूल-रहित रखें, और डॉक्टर की सलाह से एंटीहिस्टामिन लें। गंभीर सूजन या साँस लेने में तकलीफ आपातकाल है - तुरंत मदद लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "acidity_gerd",
+      "topics": [
+        "digestive"
+      ],
+      "q": {
+        "en": "How to relieve acidity and heartburn?",
+        "hi": "एसिडिटी और सीने में जलन से कैसे राहत पाएँ?",
+        "hinglish": "acidity aur gale me jalan ka ilaaj"
+      },
+      "a": {
+        "en": "Eat smaller meals, avoid spicy/oily food, don't lie down right after eating, and avoid alcohol and smoking. Persistent or severe heartburn, difficulty swallowing, or weight loss needs a doctor.",
+        "hi": "थोड़ा-थोड़ा खाएँ, मसालेदार/तला भोजन से बचें, खाने के तुरंत बाद न लेटें, और शराब व धूम्रपान से बचें। लगातार या तेज़ जलन, निगलने में कठिनाई या वज़न घटना हो तो डॉक्टर को दिखाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "constipation_relief",
+      "topics": [
+        "digestive"
+      ],
+      "q": {
+        "en": "How to relieve constipation?",
+        "hi": "कब्ज़ से कैसे राहत पाएँ?",
+        "hinglish": "kabz ka ilaaj"
+      },
+      "a": {
+        "en": "Drink plenty of water, eat fibre-rich food (vegetables, fruits, whole grains), stay active, and don't ignore the urge to go. Laxatives should only be used on a doctor's advice. See a doctor for blood in stool or long-lasting constipation.",
+        "hi": "खूब पानी पिएँ, रेशेदार भोजन (सब्ज़ियाँ, फल, साबुत अनाज) खाएँ, सक्रिय रहें और शौच की इच्छा को न रोकें। जुलाब केवल डॉक्टर की सलाह पर लें। मल में खून या लंबे समय की कब्ज़ पर डॉक्टर को दिखाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "food_poisoning",
+      "topics": [
+        "digestive"
+      ],
+      "q": {
+        "en": "Food poisoning symptoms and care",
+        "hi": "फूड पॉइज़निंग के लक्षण और देखभाल",
+        "hinglish": "food poisoning ke lakshan"
+      },
+      "a": {
+        "en": "Vomiting, diarrhoea, stomach cramps and sometimes fever, usually starting hours after eating contaminated food. Drink ORS/fluids, rest, and avoid solid food briefly. Seek care for blood in stool, high fever, or signs of dehydration.",
+        "hi": "उल्टी, दस्त, पेट में मरोड़ और कभी-कभी बुखार, आमतौर पर दूषित भोजन खाने के कुछ घंटों बाद शुरू होते हैं। ORS/तरल पदार्थ लें, आराम करें और कुछ देर ठोस भोजन न खाएँ। मल में खून, तेज़ बुखार या पानी की कमी पर चिकित्सा सहायता लें।"
+      },
+      "sources": [
+        {
+          "name": "WHO Food Safety",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "conjunctivitis",
+      "topics": [
+        "eye"
+      ],
+      "q": {
+        "en": "Conjunctivitis (eye infection) care",
+        "hi": "आँख आना (कंजंक्टिवाइटिस) की देखभाल",
+        "hinglish": "aankh aana ka ilaaj"
+      },
+      "a": {
+        "en": "Red, itchy, watery eyes with discharge - often viral and self-limiting. Wash hands often, don't rub or share towels, and clean discharge with clean cloth. See a doctor for pain, blurred vision or if it doesn't improve in a few days.",
+        "hi": "लाल, खुजलीदार, पानी वाली आँखें और कीचड़ - अक्सर वायरल और अपने आप ठीक हो जाता है। बार-बार हाथ धोएँ, आँखें न मलें, तौलिया साझा न करें और साफ़ कपड़े से कीचड़ हटाएँ। दर्द, धुंधला दिखना या कुछ दिनों में आराम न मिलने पर डॉक्टर को दिखाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "ear_infection",
+      "topics": [
+        "child_health",
+        "ent"
+      ],
+      "q": {
+        "en": "Ear pain and infection in children",
+        "hi": "बच्चों में कान दर्द और संक्रमण",
+        "hinglish": "bache ke kaan me dard"
+      },
+      "a": {
+        "en": "Ear pain, fever, irritability and pulling at the ear in young children. Avoid putting oil/drops without a doctor's advice, keep the child comfortable with paracetamol as advised, and see a doctor for proper diagnosis.",
+        "hi": "कान में दर्द, बुखार, चिड़चिड़ापन और छोटे बच्चों का कान खींचना। डॉक्टर की सलाह के बिना तेल/ड्रॉप न डालें, सलाह अनुसार पैरासिटामोल से आराम दें और सही निदान के लिए डॉक्टर को दिखाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "fungal_skin",
+      "topics": [
+        "skin"
+      ],
+      "q": {
+        "en": "Ringworm and fungal skin infections",
+        "hi": "दाद और फंगल त्वचा संक्रमण",
+        "hinglish": "daad khujli ka ilaaj"
+      },
+      "a": {
+        "en": "Itchy red ring-shaped patches, common in warm sweaty folds. Keep skin clean and dry, wear loose cotton clothes, don't share towels, and complete the full antifungal cream/medicine course as prescribed. See a doctor for spreading or persistent infection.",
+        "hi": "खुजलीदार लाल गोल चकत्ते, गर्म पसीने वाले हिस्सों में आम। त्वचा साफ़-सूखी रखें, ढीले सूती कपड़े पहनें, तौलिया साझा न करें और डॉक्टर द्वारा बताई फंगल क्रीम/दवा का पूरा कोर्स पूरा करें। फैलता या लगातार संक्रमण हो तो डॉक्टर को दिखाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "scabies",
+      "topics": [
+        "skin"
+      ],
+      "q": {
+        "en": "Scabies and intense itching",
+        "hi": "खुजली (स्केबीज़) का इलाज",
+        "hinglish": "khujli scabies ka ilaaj"
+      },
+      "a": {
+        "en": "Scabies causes intense night-time itching and a rash from tiny mites, spreading by close contact. It needs a prescribed scabicide lotion applied to the whole body, and all family members should be treated together. Wash clothes/bedding in hot water.",
+        "hi": "स्केबीज़ में रात में तेज़ खुजली और छोटे कीट से चकत्ते होते हैं, यह निकट संपर्क से फैलता है। डॉक्टर द्वारा बताया स्केबीसाइड लोशन पूरे शरीर पर लगाना ज़रूरी है, और परिवार के सभी सदस्यों का एक साथ इलाज होना चाहिए। कपड़े/बिस्तर गर्म पानी में धोएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "back_pain",
+      "topics": [
+        "bone_joint"
+      ],
+      "q": {
+        "en": "Lower back pain management",
+        "hi": "कमर दर्द का प्रबंधन",
+        "hinglish": "kamar dard ka ilaaj"
+      },
+      "a": {
+        "en": "Most back pain improves with staying gently active, avoiding long bed rest, and heat. Improve posture and lift properly. See a doctor for pain radiating down the leg, numbness, weakness, or loss of bladder/bowel control.",
+        "hi": "अधिकांश कमर दर्द हल्की सक्रियता, लंबे बिस्तर-आराम से बचने और सेंक से ठीक होता है। मुद्रा सुधारें और सही तरीके से वज़न उठाएँ। दर्द पैर में जाए, सुन्नता, कमज़ोरी या पेशाब/मल पर नियंत्रण न रहे तो तुरंत डॉक्टर को दिखाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "sprain_rice",
+      "topics": [
+        "bone_joint",
+        "first_aid"
+      ],
+      "q": {
+        "en": "What to do for a sprain or muscle injury?",
+        "hi": "मोच या मांसपेशी की चोट पर क्या करें?",
+        "hinglish": "moch aane par kya kare"
+      },
+      "a": {
+        "en": "Follow RICE: Rest the injured part, apply Ice (wrapped in cloth) for 15-20 min, Compress gently with a bandage, and Elevate the limb. Avoid heat or massage in the first 48 hours. See a doctor if pain is severe or you cannot bear weight.",
+        "hi": "RICE नियम अपनाएँ: चोट वाले हिस्से को आराम (Rest), कपड़े में लपेटकर 15-20 मिनट बर्फ (Ice), हल्की पट्टी (Compress), और अंग ऊपर रखें (Elevate)। पहले 48 घंटे सेंक या मालिश न करें। तेज़ दर्द हो या वज़न सहन न हो तो डॉक्टर को दिखाएँ।"
+      },
+      "sources": [
+        {
+          "name": "WHO First Aid",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "cholesterol",
+      "topics": [
+        "lifestyle"
+      ],
+      "q": {
+        "en": "High cholesterol and diet",
+        "hi": "उच्च कोलेस्ट्रॉल और आहार",
+        "hinglish": "cholesterol kaise kam kare"
+      },
+      "a": {
+        "en": "Reduce fried and fatty food, use less oil/ghee, eat more fruits, vegetables and whole grains, and exercise regularly. Get a lipid profile test if you have diabetes, high BP, or a family history. Medicines are prescribed by a doctor when needed.",
+        "hi": "तला-भुना और चिकनाई कम करें, तेल/घी कम लें, अधिक फल-सब्ज़ियाँ और साबुत अनाज खाएँ, नियमित व्यायाम करें। मधुमेह, उच्च रक्तचाप या पारिवारिक इतिहास हो तो लिपिड प्रोफाइल जाँच कराएँ। ज़रूरत पड़ने पर दवा डॉक्टर देते हैं।"
+      },
+      "sources": [
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    }
+  ]
+}

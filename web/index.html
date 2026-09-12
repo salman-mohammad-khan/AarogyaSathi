@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AarogyaSathi - Public Health Chatbot</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="phone">
+    <div class="screen">
+      <header class="chat-header">
+        <div class="avatar">AS</div>
+        <div class="header-info">
+          <div class="name">AarogyaSathi</div>
+          <div class="status">online - verified health info | EN / हिंदी</div>
+        </div>
+        <div class="badge" title="Not a substitute for a doctor">Awareness bot</div>
+      </header>
+
+      <div class="chat-area" id="chatArea">
+        <div class="day-divider">Today</div>
+        <div class="msg bot">
+          <div class="bubble" id="greetingBubble">Loading...</div>
+          <div class="meta">AarogyaSathi</div>
+        </div>
+      </div>
+
+      <div class="quick-chips" id="quickChips">
+        <button class="chip" data-msg="Tell me about dengue">Dengue info</button>
+        <button class="chip" data-msg="I have fever and headache">Symptom check</button>
+        <button class="chip" data-msg="Vaccines for 6 week baby">Vaccines</button>
+        <button class="chip" data-msg="Fact check: garlic cures dengue">Fact check</button>
+        <button class="chip" data-msg="How to prevent malaria">Prevention</button>
+        <button class="chip" data-msg="Any dengue alert near me?">Alerts</button>
+      </div>
+
+      <footer class="input-area">
+        <input type="text" id="pincodeInput" placeholder="Pincode (optional)" maxlength="6" title="Optional: enables location-based outbreak alerts. Stored anonymously." />
+        <input type="text" id="userInput" placeholder="Type a health question..." autocomplete="off" />
+        <button id="sendBtn" aria-label="Send">&#10148;</button>
+      </footer>
+    </div>
+  </div>
+
+  <div class="side-panel">
+    <h1>AarogyaSathi</h1>
+    <p class="subtitle">AI-Driven Public Health Chatbot for Disease Awareness</p>
+    <p class="desc">
+      SIH 25049 - multilingual preventive-health information, symptom awareness,
+      vaccination schedules, outbreak alerts and health-forward verification
+      (myth-vs-fact) for rural and semi-urban India.
+    </p>
+    <div class="features">
+      <div class="feature"><b>NLP</b> intent + entity + cross-lingual retrieval (LaBSE)</div>
+      <div class="feature"><b>Fact check</b> verdicts: VERIFIED / MYTH / PARTLY TRUE / UNVERIFIABLE</div>
+      <div class="feature"><b>Safety</b> red-flag escalation to 108/112 + disclaimers</div>
+      <div class="feature"><b>Sources</b> WHO / MoHFW / PIB / ICMR grounded answers</div>
+      <div class="feature"><b>Channels</b> web demo now, WhatsApp Cloud API + SMS next</div>
+    </div>
+    <p class="disclaimer">
+      This is a health awareness system, not a diagnostic tool. It does not replace a doctor.
+    </p>
+  </div>
+
+  <script src="/static/chat.js"></script>
+</body>
+</html>
