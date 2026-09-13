@@ -28,12 +28,11 @@ class NumberedCanvas(canvas.Canvas):
     def draw_page_decorations(self, page_count):
         self.saveState()
         self.setFont("Helvetica", 8)
-        self.setFillColor(colors.HexColor("#555555"))
+        self.setFillColor(colors.HexColor("#666666"))
         
         # Header (on pages after page 1)
         if self._pageNumber > 1:
             self.drawString(54, 750, "AarogyaSathi: Multilingual Public Health Agent with Autonomous Verification")
-            self.drawRightString(558, 750, "ES-451 Minor Project Technical Defense")
             self.setStrokeColor(colors.HexColor("#D0D3D4"))
             self.setLineWidth(0.5)
             self.line(54, 744, 558, 744)
@@ -42,8 +41,7 @@ class NumberedCanvas(canvas.Canvas):
         self.setStrokeColor(colors.HexColor("#D0D3D4"))
         self.setLineWidth(0.5)
         self.line(54, 45, 558, 45)
-        self.drawString(54, 34, "Minor Project Defense Manuscript | Department of Computer Science & Engineering (Data Science)")
-        self.drawRightString(558, 34, f"Page {self._pageNumber} of {page_count}")
+        self.drawCentredString(306, 34, f"Page {self._pageNumber} of {page_count}")
         self.restoreState()
 
 def build_pdf():

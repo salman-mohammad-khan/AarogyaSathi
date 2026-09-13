@@ -23,18 +23,31 @@ def create_research_paper():
         header = s.header
         hp = header.paragraphs[0]
         hp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-        hrun = hp.add_run("AarogyaSathi: Multilingual Public Health Agent with Autonomous Verification | 2026")
-        hrun.font.name = "Calibri"
+        hrun = hp.add_run("AarogyaSathi: Multilingual Public Health Agent with Autonomous Verification")
+        hrun.font.name = "Times New Roman"
         hrun.font.size = Pt(8.5)
         hrun.font.color.rgb = RGBColor(120, 120, 120)
 
         footer = s.footer
         fp = footer.paragraphs[0]
         fp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        frun = fp.add_run("Minor Project Defense Manuscript | Department of Computer Science & Engineering (Data Science)")
-        frun.font.name = "Calibri"
-        frun.font.size = Pt(8.5)
-        frun.font.color.rgb = RGBColor(120, 120, 120)
+        r1 = fp.add_run("Page ")
+        r1.font.name = "Times New Roman"
+        r1.font.size = Pt(9)
+        r1.font.color.rgb = RGBColor(120, 120, 120)
+        
+        fld1 = OxmlElement('w:fldSimple')
+        fld1.set(qn('w:instr'), 'PAGE')
+        fp._p.append(fld1)
+        
+        r2 = fp.add_run(" of ")
+        r2.font.name = "Times New Roman"
+        r2.font.size = Pt(9)
+        r2.font.color.rgb = RGBColor(120, 120, 120)
+        
+        fld2 = OxmlElement('w:fldSimple')
+        fld2.set(qn('w:instr'), 'NUMPAGES')
+        fp._p.append(fld2)
 
     # Style definitions
     style_normal = doc.styles['Normal']
