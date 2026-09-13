@@ -40,8 +40,8 @@ LLM_TEMPERATURE = 0.1
 LLM_MAX_TOKENS = 200
 LLM_CLOUD_MAX_TOKENS = int(os.environ.get("LLM_CLOUD_MAX_TOKENS", "600"))
 
-GOOGLE_FACTCHECK_API_KEY = os.environ.get("GOOGLE_FACTCHECK_API_KEY", "")
-FACTCHECK_API_URL = "https://factchecktools.googleapis.com/v1alpha1/claims:search"
+FACTCHECK_SEARCH_MAX_RESULTS = int(os.environ.get("FACTCHECK_SEARCH_MAX_RESULTS", "5"))
+FACTCHECK_SEARCH_TIMEOUT_S = int(os.environ.get("FACTCHECK_SEARCH_TIMEOUT_S", "8"))
 
 SUPPORTED_LANGUAGES = ["en", "hi", "bn", "ta", "te", "mr", "gu", "kn", "ml", "pa", "or", "ur"]
 LANG_NAMES = {

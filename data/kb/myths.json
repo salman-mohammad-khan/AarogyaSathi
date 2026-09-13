@@ -1479,6 +1479,215 @@
           "tier": 1
         }
       ]
+    },
+    {
+      "id": "paracetamol_machupo",
+      "claim": {
+        "en": "Paracetamol P-500 tablets contain deadly Machupo virus.",
+        "hi": "पैरासिटामोल पी-500 गोलियों में खतरनाक माचुपो वायरस होता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "viral_hoax",
+        "medication",
+        "fake_news"
+      ],
+      "fear_mongering": true,
+      "explanation": {
+        "en": "This is a recurring viral WhatsApp hoax debunked by the Delhi Medical Council, PIB Fact Check, and WHO. Machupo virus is a rare rodent-borne virus endemic to Bolivia and cannot survive in dry manufactured pharmaceutical tablets.",
+        "hi": "यह एक बार-बार फैलने वाला फर्जी व्हाट्सएप संदेश है जिसे दिल्ली मेडिकल काउंसिल, पीआईबी फैक्ट चेक और डब्ल्यूएचओ ने खारिज किया है। माचुपो वायरस केवल चूहों से फैलता है और सूखी दवा की गोलियों में जीवित नहीं रह सकता।"
+      },
+      "sources": [
+        {
+          "name": "PIB Fact Check",
+          "tier": 1
+        },
+        {
+          "name": "Delhi Medical Council",
+          "tier": 1
+        },
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "cow_urine_cancer",
+      "claim": {
+        "en": "Drinking cow urine (gaumutra) cures cancer and chronic diseases.",
+        "hi": "गाय का मूत्र (गौमूत्र) पीने से कैंसर और गंभीर बीमारियां ठीक हो जाती हैं।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "cancer",
+        "alternative_medicine",
+        "fake_cure"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "There is no scientific, clinical, or peer-reviewed medical evidence showing that cow urine cures cancer or chronic illnesses. Relying on unverified remedies can delay critical medical interventions like chemotherapy or surgery. Cancer requires evidence-based oncological care.",
+        "hi": "गौमूत्र से कैंसर या अन्य गंभीर बीमारियों के इलाज का कोई वैज्ञानिक या चिकित्सीय प्रमाण नहीं है। अप्रमाणित उपचारों पर निर्भर रहने से उचित चिकित्सा और कीमोथेरेपी में देरी हो सकती है जो जानलेवा हो सकती है।"
+      },
+      "sources": [
+        {
+          "name": "Tata Memorial Centre",
+          "tier": 1
+        },
+        {
+          "name": "ICMR Guidelines",
+          "tier": 1
+        },
+        {
+          "name": "WHO Cancer Fact Sheets",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "turmeric_cancer",
+      "claim": {
+        "en": "Drinking turmeric milk (haldi doodh) completely cures cancer.",
+        "hi": "हल्दी वाला दूध पीने से कैंसर पूरी तरह ठीक हो जाता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "cancer",
+        "home_remedies",
+        "nutrition"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "While turmeric contains curcumin which has mild anti-inflammatory and antioxidant properties, turmeric milk cannot cure cancer. Cancer is a complex cellular disease that requires evidence-based treatments such as surgery, chemotherapy, and radiation.",
+        "hi": "हल्दी में करक्यूमिन होता है जिसमें हल्के एंटी-इंफ्लेमेटरी गुण होते हैं, लेकिन हल्दी दूध कैंसर का इलाज नहीं कर सकता। कैंसर के लिए ऑन्कोलॉजिस्ट द्वारा उचित चिकित्सा (सर्जरी, कीमोथेरेपी) अनिवार्य है।"
+      },
+      "sources": [
+        {
+          "name": "American Cancer Society",
+          "tier": 1
+        },
+        {
+          "name": "Tata Memorial Centre",
+          "tier": 1
+        },
+        {
+          "name": "WHO",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "polio_drops_protect",
+      "claim": {
+        "en": "Polio drops prevent infantile paralysis and protect children against polio.",
+        "hi": "पोलियो ड्रॉप्स बच्चों को पोलियो से बचाती हैं और पक्षाघात (लकवा) से रोकती हैं।"
+      },
+      "verdict": "VERIFIED",
+      "tags": [
+        "vaccines",
+        "polio",
+        "child_health"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Oral Polio Vaccine (OPV) drops are proven to effectively prevent poliovirus infection and resulting paralysis. Pulse Polio campaigns have successfully eliminated wild poliovirus in India, leading to official WHO polio-free certification in 2014.",
+        "hi": "ओरल पोलियो वैक्सीन (OPV) ड्रॉप्स पोलियो संक्रमण और उसके कारण होने वाले पक्षाघात (लकवे) को रोकने में पूरी तरह प्रभावी हैं। भारत में पल्स पोलियो अभियान की सफलता से 2014 में देश को पोलियो-मुक्त घोषित किया गया था।"
+      },
+      "sources": [
+        {
+          "name": "WHO Global Polio Eradication Initiative",
+          "tier": 1
+        },
+        {
+          "name": "MoHFW Universal Immunization Programme",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "papaya_pregnancy",
+      "claim": {
+        "en": "Eating ripe papaya causes miscarriage or abortion in pregnancy.",
+        "hi": "गर्भावस्था में पका पपीता खाने से गर्भपात हो जाता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "pregnancy",
+        "food_myths",
+        "nutrition"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Eating normal portions of fully ripe papaya is safe during pregnancy and provides essential vitamins like A, C, and folate. The myth arises because unripe or semi-ripe green papaya contains high levels of latex and papain which may induce uterine contractions. Ripe papaya is safe in moderation.",
+        "hi": "गर्भावस्था में पूरी तरह पका हुआ पपीता खाना सुरक्षित है और इससे गर्भपात नहीं होता। कच्चा या अधपका हरा पपीता नहीं खाना चाहिए क्योंकि उसमें लेटेक्स और पपेन होता है जो गर्भाशय में संकुचन पैदा कर सकता है। पका हुआ पपीता सुरक्षित है।"
+      },
+      "sources": [
+        {
+          "name": "PubMed / British Journal of Nutrition",
+          "tier": 1
+        },
+        {
+          "name": "FOGSI (Federation of Obstetric and Gynaecological Societies of India)",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "dengue_aedes_mosquito",
+      "claim": {
+        "en": "Female Aedes mosquitoes transmit dengue virus to humans through bites.",
+        "hi": "मादा एडीज मच्छर के काटने से इंसानों में डेंगू वायरस फैलता है।"
+      },
+      "verdict": "VERIFIED",
+      "tags": [
+        "dengue",
+        "vector_borne",
+        "prevention"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "Dengue virus is transmitted to people through the bites of infected female mosquitoes, primarily Aedes aegypti and to a lesser extent Aedes albopictus. These mosquitoes typically bite during daytime hours, especially early morning and before dusk.",
+        "hi": "डेंगू वायरस मुख्य रूप से संक्रमित मादा एडीज एजिप्टी (Aedes aegypti) मच्छर के काटने से फैलता है। यह मच्छर आमतौर पर दिन के समय (सुबह और शाम) काटता है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Dengue Factsheet",
+          "tier": 1
+        },
+        {
+          "name": "National Vector Borne Disease Control Programme (NVBDCP)",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "hot_water_covid",
+      "claim": {
+        "en": "Drinking hot or warm water kills coronavirus and cures COVID-19.",
+        "hi": "गर्म पानी पीने से कोरोना वायरस खत्म हो जाता है।"
+      },
+      "verdict": "MYTH",
+      "tags": [
+        "covid",
+        "coronavirus",
+        "home_remedies",
+        "viral_claim"
+      ],
+      "fear_mongering": false,
+      "explanation": {
+        "en": "There is no scientific evidence that drinking warm or hot water protects against or cures coronavirus / COVID-19. Viruses enter respiratory cells and cannot be washed away into the stomach by drinking water. The WHO and PIB Fact Check have explicitly debunked this viral claim.",
+        "hi": "गर्म पानी पीने से कोरोना वायरस खत्म होने या ठीक होने का कोई वैज्ञानिक प्रमाण नहीं है। वायरस श्वसन प्रणाली में प्रवेश करता है और पानी पीने से पेट में नहीं धुलता। WHO और PIB फैक्ट चेक ने इस वायरल दावे को स्पष्ट रूप से खारिज किया है।"
+      },
+      "sources": [
+        {
+          "name": "WHO Mythbusters",
+          "tier": 1
+        },
+        {
+          "name": "PIB Fact Check",
+          "tier": 1
+        }
+      ]
     }
   ]
 }

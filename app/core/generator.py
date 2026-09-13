@@ -311,3 +311,56 @@ def grounded_answer(context, question, lang="en"):
         f"Answer in {_lang_name(lang)}. Keep it under 70 words."
     )
     return generate(SYSTEM_PROMPT, user_prompt, prefer_cloud=lang not in ("en", "hi"))
+
+
+FACTCHECK_EVAL_SYSTEM_PROMPT = (
+    "You are an objective, evidence-based medical fact-checker for AarogyaSathi. "
+    "You will receive a health CLAIM and LIVE WEB EVIDENCE from trusted fact-checkers and health authorities.\n"
+    "Your job is to strictly compare the CLAIM against the EVIDENCE and reply with ONLY a valid JSON object, no other text.\n"
+    "JSON Fields:\n"
+    '- "verdict": exactly one of "MYTH" (if evidence refutes, disproves, or warns against the claim), '
+    '"TRUE" (if evidence confirms the claim is scientifically accurate), '
+    '"PARTLY_TRUE" (if evidence indicates mixed truth, supportive home remedy, or misleading context), '
+    'or "UNVERIFIABLE" (if evidence does not address the claim).\n'
+    '- "confidence": integer between 60 and 98 reflecting how clearly the evidence addresses the claim.\n'
+    '- "explanation": concise 1-2 sentence factual explanation in the requested language. Be clear, calm, and objective. Never diagnose or prescribe.\n'
+    '- "fear_mongering": boolean, true if the claim uses panic/alarmist language.\n'
+    "STRICT RULES: Base your verdict ONLY on the provided evidence. If the evidence says 'false', 'hoax', 'myth', 'misleading', or 'no evidence', verdict MUST be MYTH or PARTLY_TRUE."
+)
+
+
+def evaluate_claim_evidence(claim, evidence_text, lang="en"):
+    import json as _json
+
+    user_prompt = (
+        f"CLAIM: {claim}\n\n"
+        f"VERIFIED WEB EVIDENCE:\n{evidence_text}\n\n"
+        f"Evaluate the claim and return the JSON analysis in {_lang_name(lang)}."
+    )
+    reply = generate(FACTCHECK_EVAL_SYSTEM_PROMPT, user_prompt, prefer_cloud=True)
+    if not reply:
+        return None
+    try:
+        m = re.search(r"\{.*\}", reply, re.DOTALL)
+        if not m:
+            return None
+        data = _json.loads(m.group(0))
+        if not isinstance(data, dict):
+            return None
+        verdict = (data.get("verdict") or "").upper().strip()
+        if verdict not in ("MYTH", "TRUE", "PARTLY_TRUE", "UNVERIFIABLE"):
+            verdict = "UNVERIFIABLE"
+        conf = float(data.get("confidence", 75.0))
+        conf = max(40.0, min(99.0, conf))
+        explanation = (data.get("explanation") or "").strip()
+        if not explanation:
+            return None
+        return {
+            "verdict": verdict,
+            "confidence": conf,
+            "explanation": explanation,
+            "fear_mongering": bool(data.get("fear_mongering", False)),
+        }
+    except Exception:
+        return None
+

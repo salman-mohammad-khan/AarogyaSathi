@@ -1,14 +1,14 @@
 import re
+import urllib.parse
 
 import httpx
 import numpy as np
 
 from app.config import (
-    FACTCHECK_API_URL,
+    FACTCHECK_SEARCH_MAX_RESULTS,
     FACTCHECK_SIM_THRESHOLD,
-    GOOGLE_FACTCHECK_API_KEY,
 )
-from app.core import embeddings, kb
+from app.core import embeddings, generator, kb, websearch
 
 _CLAIM_PREFIX = re.compile(
     r"^(fact\s*check\s*:?\s*|verify\s*(this\s*)?(message\s*)?:?\s*|check\s*this\s*:?\s*|kya\s+ye\s+sach\s+hai\s*:?\s*|फैक्ट\s*चेक\s*:?\s*|क्या\s*यह\s*सच\s*है\s*:?\s*|फैक्ट चेक\s*:?\s*)",
@@ -125,6 +125,7 @@ SEVERE_DISEASES = {"cancer", "tb", "rabies", "hiv", "cholera", "pneumonia", "pol
 CURE_TERMS = [
     "cure", "cures", "curing", "cured", "treat", "treats", "treatment",
     "heal", "heals", "healing", "eradicate", "kill", "kills", "killing",
+    "theek", "thik", "khatam", "khatm", "ilaj", "ilaaj", "jad se", "jar se", "dawa", "dawai",
     "इलाज", "ठीक", "जड़ से", "खत्म", "दवा"
 ]
 
@@ -152,9 +153,12 @@ def _content_overlap(claim, ref):
         return {_stem_token(w) for w in raw if w not in _STOPWORDS}
     a = tokens(claim)
     b = tokens(ref)
-    if not a:
+    if not a or not b:
         return 0.0
-    return len(a & b) / len(a)
+    common = len(a & b)
+    dice = (2.0 * common) / (len(a) + len(b))
+    query_cov = common / len(a)
+    return min(dice, query_cov)
 
 
 _REMEDY_KEYWORDS = [
@@ -268,73 +272,223 @@ def _distill_query_keywords(claim):
     return " ".join(words[:6]) if len(words) >= 2 else claim
 
 
-def _live_lookup(claim, lang):
-    if not GOOGLE_FACTCHECK_API_KEY:
-        return None
-    queries_to_try = [claim]
-    distilled = _distill_query_keywords(claim)
-    if distilled != claim:
-        queries_to_try.append(distilled)
+TRUSTED_FACTCHECK_DOMAINS = [
+    # Indian Fact-Checkers & Authorities
+    "factcheck.pib.gov.in",
+    "pib.gov.in",
+    "thip.media",
+    "boomlive.in",
+    "vishwasnews.com",
+    "altnews.in",
+    "thequint.com",
+    "thelogicalindian.com",
+    "icmr.gov.in",
+    "mohfw.gov.in",
+    "nhm.gov.in",
+    # Global Health Authorities
+    "who.int",
+    "cdc.gov",
+    "nih.gov",
+    "nlm.nih.gov",
+    "medlineplus.gov",
+    "mayoclinic.org",
+    "clevelandclinic.org",
+    "nhs.uk",
+    "hopkinsmedicine.org",
+    "healthdirect.gov.au",
+    # Global Fact-Checkers
+    "snopes.com",
+    "afp.com",
+    "factcheck.org",
+    "reuters.com",
+    "wikipedia.org",
+]
 
-    for q in queries_to_try:
+
+def _extract_domain(url):
+    m = re.search(r"https?://([^/]+)", url or "")
+    return m.group(1).lower() if m else ""
+
+
+def _search_wikipedia(query):
+    headers = {"User-Agent": "AarogyaSathiHealthBot/1.0 (healthbot@aarogyasathi.org)"}
+    q_clean = re.sub(r"^(fact\s*check|फैक्ट\s*चेक|ye\s*sach\s*hai\s*kya)[\s:]*", "", query, flags=re.I).strip()
+    wiki_lang = "hi" if re.search(r"[\u0900-\u097F]", query) else "en"
+    try:
+        r = httpx.get(
+            f"https://{wiki_lang}.wikipedia.org/w/api.php",
+            params={"action": "query", "list": "search", "srsearch": q_clean, "format": "json", "srlimit": 3},
+            headers=headers,
+            timeout=FACTCHECK_SEARCH_TIMEOUT_S,
+        )
+        if r.status_code != 200:
+            return []
+        hits = r.json().get("query", {}).get("search", [])
+        items = []
+        for h in hits:
+            title = h["title"]
+            snippet = ""
+            try:
+                s_res = httpx.get(
+                    f"https://{wiki_lang}.wikipedia.org/api/rest_v1/page/summary/{urllib.parse.quote(title)}",
+                    headers=headers,
+                    timeout=FACTCHECK_SEARCH_TIMEOUT_S,
+                )
+                if s_res.status_code == 200:
+                    snippet = s_res.json().get("extract", "")
+            except Exception:
+                pass
+            if not snippet:
+                snippet = re.sub(r"<[^>]+>", "", h.get("snippet", ""))
+            if snippet:
+                items.append({
+                    "url": f"https://{wiki_lang}.wikipedia.org/wiki/{urllib.parse.quote(title)}",
+                    "domain": "wikipedia.org",
+                    "title": title,
+                    "snippet": snippet[:600],
+                    "tier": 1,
+                })
+        return items
+    except Exception:
+        return []
+
+
+def _search_live_evidence(claim, max_results=FACTCHECK_SEARCH_MAX_RESULTS):
+    if re.search(r"[\u0900-\u097F]", claim):
+        queries = [f"{claim} फैक्ट चेक", f"fact check {claim}"]
+    else:
+        queries = [f"fact check {claim}"]
+
+    collected = []
+    seen_urls = set()
+
+    try:
+        from ddgs import DDGS
+        ddgs = DDGS()
+        for q in queries:
+            try:
+                results = list(ddgs.text(q, region="in-en", max_results=max_results))
+                for r in results:
+                    url = r.get("href", "")
+                    if not url or url in seen_urls:
+                        continue
+                    seen_urls.add(url)
+                    title = (r.get("title") or "").strip()
+                    snippet = (r.get("body") or "").strip()
+                    domain = _extract_domain(url)
+                    is_trusted = any(td in domain for td in TRUSTED_FACTCHECK_DOMAINS)
+                    has_fc_marker = any(
+                        m in (title + " " + snippet).lower()
+                        for m in ["fact check", "fact-check", "myth", "debunk", "hoax", "false", "misleading", "claim", "true", "evidence"]
+                    )
+                    if is_trusted or has_fc_marker:
+                        collected.append({
+                            "url": url,
+                            "domain": domain,
+                            "title": title,
+                            "snippet": snippet,
+                            "tier": 1 if is_trusted else 2,
+                        })
+            except Exception:
+                pass
+
+            if len(collected) < 2:
+                try:
+                    q_news = re.sub(r"^(fact\s*check|फैक्ट\s*चेक)[\s:]*", "", q, flags=re.I).strip()
+                    news_results = list(ddgs.news(q_news, max_results=max_results))
+                    for r in news_results:
+                        url = r.get("url", "")
+                        if not url or url in seen_urls:
+                            continue
+                        seen_urls.add(url)
+                        title = (r.get("title") or "").strip()
+                        snippet = (r.get("body") or "").strip()
+                        domain = _extract_domain(url)
+                        collected.append({
+                            "url": url,
+                            "domain": domain,
+                            "title": title,
+                            "snippet": snippet,
+                            "tier": 2,
+                        })
+                except Exception:
+                    pass
+
+            if len(collected) >= 2:
+                break
+    except Exception:
+        pass
+
+    if not collected:
         try:
-            params = {
-                "key": GOOGLE_FACTCHECK_API_KEY,
-                "query": q,
-                "pageSize": 3,
-            }
-            if lang in ("hi", "en"):
-                params["languageCode"] = lang
-            resp = httpx.get(FACTCHECK_API_URL, params=params, timeout=5)
-            if resp.status_code != 200:
-                continue
-            claims = resp.json().get("claims") or []
-            if not claims:
-                continue
-            verdict_counts = {}
-            sources = []
-            explanation_parts = []
-            for item in claims[:3]:
-                review = (item.get("claimReview") or [{}])[0]
-                rating = review.get("textualRating", "")
-                publisher = (review.get("publisher") or {}).get("name", "")
-                if not rating or not publisher:
-                    continue
-                verdict = _rating_to_verdict(rating)
-                verdict_counts[verdict] = verdict_counts.get(verdict, 0) + 1
-                tier = 1 if publisher.lower() in TRUSTED_PUBLISHERS_TIER1 else 2
-                sources.append({"name": publisher, "tier": tier})
-                title = review.get("title", "") or item.get("text", "")
-                if title:
-                    explanation_parts.append(f"{publisher}: {title[:180]}")
-            if not verdict_counts:
-                continue
-            verdict = max(verdict_counts, key=verdict_counts.get)
-            agree = max(verdict_counts.values())
-            confidence = 80.0 if agree == 1 else min(96.0, 84.0 + 4 * agree)
-            explanation = {
-                "en": (
-                    "This claim was checked by independent fact-checkers. "
-                    + " | ".join(explanation_parts)[:500]
-                ),
-                "hi": (
-                    "इस दावे की जाँच स्वतंत्र फैक्ट-चेकर्स ने की है। "
-                    + " | ".join(explanation_parts)[:500]
-                ),
-            }
-            return {
-                "verdict": verdict,
-                "claim": claim,
-                "confidence": confidence,
-                "explanation": explanation,
-                "sources": sources,
-                "tags": ["live_verification"],
-                "fear_mongering": False,
-                "live": True,
-            }
+            wiki_items = _search_wikipedia(claim)
+            for item in wiki_items:
+                if item["url"] not in seen_urls:
+                    seen_urls.add(item["url"])
+                    collected.append(item)
         except Exception:
-            continue
-    return None
+            pass
+
+    if not collected:
+        try:
+            ws = websearch.search_health(f"fact check {claim}")
+            if ws and ws.get("url") not in seen_urls:
+                collected.append({
+                    "url": ws.get("url", ""),
+                    "domain": ws.get("source", ""),
+                    "title": ws.get("title", ""),
+                    "snippet": ws.get("answer", ""),
+                    "tier": 1,
+                })
+        except Exception:
+            pass
+
+    return collected
+
+
+def _live_lookup(claim, lang):
+    evidence_items = _search_live_evidence(claim)
+    if not evidence_items:
+        return None
+
+    evidence_parts = []
+    sources = []
+    for item in evidence_items[:3]:
+        evidence_parts.append(
+            f"Source: {item['domain']} | Headline: {item['title']}\nExcerpt: {item['snippet']}"
+        )
+        sources.append({
+            "name": item["domain"],
+            "title": item["title"],
+            "url": item["url"],
+            "tier": item["tier"],
+        })
+    evidence_text = "\n---\n".join(evidence_parts)
+
+    evaluation = generator.evaluate_claim_evidence(claim, evidence_text, lang)
+    if not evaluation:
+        return None
+
+    verdict = evaluation["verdict"]
+    if verdict == "UNVERIFIABLE":
+        return None
+
+    explanation_text = evaluation["explanation"]
+    explanation = {
+        lang: explanation_text,
+        "en": explanation_text,
+    }
+
+    return {
+        "verdict": verdict,
+        "claim": claim,
+        "confidence": evaluation["confidence"],
+        "explanation": explanation,
+        "sources": sources,
+        "tags": ["live_verification", "autonomous_factcheck"],
+        "fear_mongering": evaluation.get("fear_mongering", False),
+        "live": True,
+    }
 
 
 def clean_claim(text):
@@ -391,8 +545,21 @@ def verify_claim(text, lang="en"):
                 else:
                     scores[i] -= 0.30  # conflicting disease penalty
 
-    order = np.argsort(scores)[::-1]
-    best_idx = int(order[0])
+    # Re-rank top candidates by combining semantic similarity and lexical overlap
+    top_candidates = np.argsort(scores)[::-1][:8]
+    best_idx = int(top_candidates[0])
+    best_combined = -1.0
+    for idx in top_candidates:
+        entry_cand = index["entries"][idx]
+        ol = max(
+            _content_overlap(claim, entry_cand["claim"].get("en", "")),
+            _content_overlap(claim, entry_cand["claim"].get("hi", "")),
+        )
+        combined = float(scores[idx]) * (1.0 + 0.6 * ol)
+        if combined > best_combined:
+            best_combined = combined
+            best_idx = int(idx)
+
     best_sim = float(sims[best_idx])
     entry = index["entries"][best_idx]
 
@@ -404,8 +571,8 @@ def verify_claim(text, lang="en"):
     disease_conflict = bool(ck) and bool(ek) and not (ck & ek)
 
     use_curated = (
-        (best_sim >= FACTCHECK_SIM_THRESHOLD and overlap >= 0.35 and not disease_conflict)
-        or (best_sim >= 0.50 and overlap >= 0.50 and not disease_conflict)
+        (best_sim >= 0.70 and overlap >= 0.35 and not disease_conflict)
+        or (best_sim >= FACTCHECK_SIM_THRESHOLD and overlap >= 0.40 and not disease_conflict)
     )
 
     if not use_curated:
@@ -451,18 +618,26 @@ def format_verdict(result, lang):
 
     labels = {
         "TRUE": "VERIFIED",
+        "VERIFIED": "VERIFIED",
         "MYTH": "MYTH",
         "PARTLY_TRUE": "PARTLY TRUE",
         "UNVERIFIABLE": "UNVERIFIABLE",
     }
     if lang == "hi":
-        labels = {"TRUE": "सत्य", "MYTH": "भ्रांति", "PARTLY_TRUE": "आंशिक सत्य", "UNVERIFIABLE": "पुष्टि असंभव"}
+        labels = {
+            "TRUE": "सत्य",
+            "VERIFIED": "सत्य",
+            "MYTH": "भ्रांति",
+            "PARTLY_TRUE": "आंशिक सत्य",
+            "UNVERIFIABLE": "पुष्टि असंभव",
+        }
 
     title = "[FACT CHECK]"
     if lang == "hi":
         title = "[फैक्ट चेक]"
 
-    verdict_label = labels[result["verdict"]]
+    verdict_raw = result.get("verdict", "UNVERIFIABLE")
+    verdict_label = labels.get(verdict_raw, verdict_raw)
     if result.get("fear_mongering"):
         suffix = " (with context - see explanation)" if lang == "en" else " (संदर्भ सहित - स्पष्टीकरण पढ़ें)"
         verdict_label += suffix
@@ -475,8 +650,16 @@ def format_verdict(result, lang):
         lines.append(f"Matched known claim: {result['matched_claim'].get(lang, result['matched_claim'].get('en', ''))}")
     explanation = result["explanation"].get(lang) or result["explanation"].get("en", "")
     lines.append(f"Explanation: {explanation}")
-    sources = ", ".join(f"{s['name']} ({'Govt/WHO' if s['tier'] == 1 else 'Reputed institution'})" for s in result["sources"])
-    lines.append(f"Sources: {sources}")
+    src_list = []
+    for s in result.get("sources", []):
+        name = s.get("name", "")
+        url = s.get("url")
+        if url:
+            src_list.append(f"{name} ({url})")
+        else:
+            tier_str = "Govt/WHO" if s.get("tier") == 1 else "Reputed institution"
+            src_list.append(f"{name} ({tier_str})")
+    lines.append(f"Sources: {', '.join(src_list)}")
     if result.get("tags"):
         lines.append(f"Category: {', '.join(result['tags'])}")
     lines.append(kb.msg(lang, "disclaimer"))
