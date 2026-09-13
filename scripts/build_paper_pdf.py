@@ -42,7 +42,7 @@ class NumberedCanvas(canvas.Canvas):
         self.setStrokeColor(colors.HexColor("#D0D3D4"))
         self.setLineWidth(0.5)
         self.line(54, 45, 558, 45)
-        self.drawString(54, 34, "Confidential — Minor Project Defense Manuscript | Department of Computer Science & Engineering")
+        self.drawString(54, 34, "Minor Project Defense Manuscript | Department of Computer Science & Engineering (Data Science)")
         self.drawRightString(558, 34, f"Page {self._pageNumber} of {page_count}")
         self.restoreState()
 
@@ -201,8 +201,8 @@ def build_pdf():
     # Title & Metadata
     story.append(Paragraph("AarogyaSathi: A Multilingual Retrieval-Augmented Public Health Conversational Agent with Autonomous Multi-Tier Fact-Checking and Community Syndromic Surveillance", title_style))
     story.append(Paragraph("An Open-Source, Edge-Cloud Framework for Rural and Semi-Urban Preventive Healthcare Informatics", subtitle_style))
-    story.append(Paragraph("Student Project Team, Department of Computer Science & Engineering", author_style))
-    story.append(Paragraph("Minor Project (ES-451) Technical Defense Evaluation | Bachelor of Technology<br/>Academic Year 2026 | Self-Hosted Production Infrastructure", affil_style))
+    story.append(Paragraph("Salman Mohammad Khan (00520815723) &nbsp;|&nbsp; Dhairya Summi (00420815723) &nbsp;|&nbsp; Siddharth Singh (01820815723)", author_style))
+    story.append(Paragraph("Department of Computer Science & Engineering (Data Science)<br/>Minor Project (ES-451) Technical Defense Evaluation | Bachelor of Technology (B.Tech)<br/>Academic Year 2026", affil_style))
     story.append(HRFlowable(width="100%", thickness=1, color=colors.HexColor("#2980B9"), spaceAfter=10))
 
     # Abstract

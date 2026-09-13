@@ -31,7 +31,7 @@ def create_research_paper():
         footer = s.footer
         fp = footer.paragraphs[0]
         fp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        frun = fp.add_run("Minor Project Research Paper Draft — Department of Computer Science & Engineering")
+        frun = fp.add_run("Minor Project Defense Manuscript | Department of Computer Science & Engineering (Data Science)")
         frun.font.name = "Calibri"
         frun.font.size = Pt(8.5)
         frun.font.color.rgb = RGBColor(120, 120, 120)
@@ -153,8 +153,14 @@ def create_research_paper():
     # -------------------------------------------------------------
     add_title("AarogyaSathi: A Multilingual Retrieval-Augmented Public Health Conversational Agent with Autonomous Multi-Tier Fact-Checking and Community Syndromic Surveillance")
     add_subtitle("An Open-Source, Edge-Cloud Framework for Rural and Semi-Urban Preventive Healthcare Informatics")
-    add_authors(["Student Project Team", "Department of Computer Science & Engineering"], 
-                "Minor Project (ES-451) Evaluation | Bachelor of Technology\nTechnical Defense Manuscript | Academic Year 2026")
+    add_authors(
+        [
+            "Salman Mohammad Khan (00520815723)",
+            "Dhairya Summi (00420815723)",
+            "Siddharth Singh (01820815723)"
+        ], 
+        "Department of Computer Science & Engineering (Data Science)\nMinor Project (ES-451) Technical Defense Evaluation | Bachelor of Technology (B.Tech)\nAcademic Year 2026"
+    )
 
     # -------------------------------------------------------------
     # ABSTRACT & KEYWORDS
