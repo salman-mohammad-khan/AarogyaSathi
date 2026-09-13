@@ -1,43 +1,68 @@
 import os
-import pptx
 from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 from pptx.enum.shapes import MSO_SHAPE
+from PIL import Image
 
 def build_presentation():
     prs = Presentation()
     # 16:9 Widescreen layout
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)
-    blank_layout = prs.slide_layouts[6] # completely blank layout
+    blank_layout = prs.slide_layouts[6]
 
     # Palette
     c_navy = RGBColor(15, 32, 67)
     c_teal = RGBColor(22, 160, 133)
+    c_cyan = RGBColor(0, 180, 216)
     c_white = RGBColor(255, 255, 255)
     c_dark = RGBColor(33, 47, 61)
-    c_gray = RGBColor(100, 110, 120)
-    c_light_bg = RGBColor(245, 247, 250)
-    c_card_bg = RGBColor(235, 245, 251)
-    c_card_border = RGBColor(169, 204, 227)
+    c_gray = RGBColor(110, 120, 130)
+    c_card_bg = RGBColor(245, 248, 252)
+    c_card_border = RGBColor(180, 210, 235)
     c_gold = RGBColor(212, 172, 13)
+    c_red = RGBColor(231, 76, 60)
+
+    def add_fitted_image(slide, img_path, left_in, top_in, max_w_in, max_h_in, center=True):
+        """Preserves exact native aspect ratio without stretching or distortion."""
+        if not os.path.exists(img_path):
+            return None
+        with Image.open(img_path) as img:
+            img_w, img_h = img.size
+        aspect = img_w / img_h
+        box_aspect = max_w_in / max_h_in
+
+        if aspect > box_aspect:
+            # Constrain by width
+            w = max_w_in
+            h = max_w_in / aspect
+        else:
+            # Constrain by height
+            h = max_h_in
+            w = max_h_in * aspect
+
+        if center:
+            l = left_in + (max_w_in - w) / 2.0
+            t = top_in + (max_h_in - h) / 2.0
+        else:
+            l = left_in
+            t = top_in
+
+        return slide.shapes.add_picture(img_path, Inches(l), Inches(t), Inches(w), Inches(h))
 
     def add_header(slide, title_text, category_text="MINOR PROJECT 1ST DEFENSE | ES-451"):
-        # Top banner background
         top_bar = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, Inches(13.333), Inches(1.15))
         top_bar.fill.solid()
         top_bar.fill.fore_color.rgb = c_navy
         top_bar.line.fill.background()
 
-        # Accent line
         accent = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, Inches(1.15), Inches(13.333), Inches(0.06))
         accent.fill.solid()
         accent.fill.fore_color.rgb = c_teal
         accent.line.fill.background()
 
-        # Text
         tx = slide.shapes.add_textbox(Inches(0.8), Inches(0.12), Inches(11.7), Inches(0.95))
         tf = tx.text_frame
         tf.word_wrap = True
@@ -57,199 +82,225 @@ def build_presentation():
         p_title.font.color.rgb = c_white
 
     def add_footer(slide):
-        # Bottom line
         line = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.8), Inches(7.0), Inches(11.733), Inches(0.02))
         line.fill.solid()
-        line.fill.fore_color.rgb = RGBColor(210, 215, 220)
+        line.fill.fore_color.rgb = RGBColor(215, 220, 225)
         line.line.fill.background()
 
         tx = slide.shapes.add_textbox(Inches(0.8), Inches(7.05), Inches(11.733), Inches(0.35))
         tf = tx.text_frame
         p = tf.paragraphs[0]
-        p.text = "AarogyaSathi: Multilingual Public Health Agent | Department of Computer Science & Engineering (Data Science)"
+        p.text = "AarogyaSathi: Bilingual Healthcare Guidance & Autonomous Fact-Checking | Department of CSE (Data Science)"
         p.font.size = Pt(9)
         p.font.color.rgb = c_gray
 
-    # -------------------------------------------------------------
-    # SLIDE 1: TITLE SLIDE
-    # -------------------------------------------------------------
+    # =============================================================
+    # SLIDE 1: TITLE SLIDE (WITH CUSTOM EMBLEM & CREDENTIALS)
+    # =============================================================
     s1 = prs.slides.add_slide(blank_layout)
     bg1 = s1.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, Inches(13.333), Inches(7.5))
     bg1.fill.solid()
     bg1.fill.fore_color.rgb = c_navy
     bg1.line.fill.background()
 
-    # Decorative accent
-    acc1 = s1.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(1.0), Inches(1.3), Inches(1.2), Inches(0.08))
-    acc1.fill.solid()
-    acc1.fill.fore_color.rgb = c_teal
-    acc1.line.fill.background()
-
-    tx1 = s1.shapes.add_textbox(Inches(1.0), Inches(1.5), Inches(11.333), Inches(5.2))
+    # Left Column: Title & Metadata
+    tx1 = s1.shapes.add_textbox(Inches(0.8), Inches(0.9), Inches(7.8), Inches(6.0))
     tf1 = tx1.text_frame
     tf1.word_wrap = True
 
     p_badge = tf1.paragraphs[0]
-    p_badge.text = "MINOR PROJECT (ES-451) — 1ST DEFENSE PRESENTATION"
-    p_badge.font.size = Pt(12)
+    p_badge.text = "MINOR PROJECT (ES-451) — 1ST DEFENSE EVALUATION"
+    p_badge.font.size = Pt(11)
     p_badge.font.bold = True
     p_badge.font.color.rgb = c_gold
 
     p_main = tf1.add_paragraph()
     p_main.text = "AarogyaSathi"
-    p_main.font.size = Pt(38)
+    p_main.font.size = Pt(40)
     p_main.font.bold = True
     p_main.font.color.rgb = c_white
-    p_main.space_before = Pt(8)
+    p_main.space_before = Pt(6)
 
     p_sub = tf1.add_paragraph()
-    p_sub.text = "A Multilingual Retrieval-Augmented Public Health Conversational Agent with Autonomous Multi-Tier Fact-Checking and Community Syndromic Surveillance"
-    p_sub.font.size = Pt(16)
-    p_sub.font.color.rgb = RGBColor(200, 220, 240)
+    p_sub.text = "A Bilingual Healthcare Guidance & Autonomous Multi-Tier Fact-Checking Conversational Agent with Geospatial Syndromic Surveillance"
+    p_sub.font.size = Pt(14.5)
+    p_sub.font.color.rgb = RGBColor(190, 215, 240)
     p_sub.space_before = Pt(6)
+
+    # Cloud Live status badge
+    p_live = tf1.add_paragraph()
+    p_live.text = "● LIVE SYSTEM DEPLOYED ON ORACLE CLOUD INFRASTRUCTURE (OCI)"
+    p_live.font.size = Pt(10.5)
+    p_live.font.bold = True
+    p_live.font.color.rgb = RGBColor(46, 204, 113)
+    p_live.space_before = Pt(12)
 
     p_team_h = tf1.add_paragraph()
     p_team_h.text = "PROJECT TEAM MEMBERS:"
     p_team_h.font.size = Pt(11)
     p_team_h.font.bold = True
     p_team_h.font.color.rgb = c_teal
-    p_team_h.space_before = Pt(28)
+    p_team_h.space_before = Pt(16)
 
     p_team = tf1.add_paragraph()
-    p_team.text = "• Salman Mohammad Khan  (Enrollment / Roll No: 00520815723)\n• Dhairya Summi                  (Enrollment / Roll No: 00420815723)\n• Siddharth Singh                (Enrollment / Roll No: 01820815723)"
-    p_team.font.size = Pt(13)
+    p_team.text = "• Salman Mohammad Khan  (Enrollment: 00520815723)\n• Dhairya Summi                  (Enrollment: 00420815723)\n• Siddharth Singh                (Enrollment: 01820815723)"
+    p_team.font.size = Pt(12.5)
     p_team.font.color.rgb = c_white
     p_team.space_before = Pt(4)
 
     p_dept = tf1.add_paragraph()
     p_dept.text = "Department of Computer Science & Engineering (Data Science)\nBachelor of Technology (B.Tech) | Evaluation Date: September 14, 2026"
-    p_dept.font.size = Pt(11)
+    p_dept.font.size = Pt(10.5)
     p_dept.font.italic = True
-    p_dept.font.color.rgb = RGBColor(170, 185, 205)
-    p_dept.space_before = Pt(16)
+    p_dept.font.color.rgb = RGBColor(160, 180, 200)
+    p_dept.space_before = Pt(14)
 
-    # -------------------------------------------------------------
-    # SLIDE 2: BACKGROUND & MOTIVATION
-    # -------------------------------------------------------------
+    # Right Column: Hero Graphic Emblem
+    add_fitted_image(s1, "docs/ppt_assets/hero_emblem.png", 8.8, 1.2, 3.8, 3.8)
+
+    # Pill badge below emblem
+    badge_box = s1.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(8.8), Inches(5.2), Inches(3.8), Inches(1.2))
+    badge_box.fill.solid()
+    badge_box.fill.fore_color.rgb = RGBColor(20, 45, 90)
+    badge_box.line.color.rgb = c_teal
+    badge_box.line.width = Pt(1.5)
+
+    tx_b = s1.shapes.add_textbox(Inches(8.9), Inches(5.3), Inches(3.6), Inches(1.0))
+    tf_b = tx_b.text_frame
+    tf_b.word_wrap = True
+    p = tf_b.paragraphs[0]
+    p.text = "CORE ENGINEERING HIGHLIGHTS"
+    p.font.size = Pt(10)
+    p.font.bold = True
+    p.font.color.rgb = c_gold
+    p = tf_b.add_paragraph()
+    p.text = "✓ Dual-Model Local Edge Stack (Qwen + LaBSE)\n✓ 100% Free: $0 API Billing, Zero API Keys\n✓ Real-Time 7-Day Rolling Outbreak Anomaly Math"
+    p.font.size = Pt(9.5)
+    p.font.color.rgb = c_white
+    p.space_before = Pt(4)
+
+    # =============================================================
+    # SLIDE 2: BACKGROUND & MOTIVATION (WITH 3-PART INFOGRAPHIC)
+    # =============================================================
     s2 = prs.slides.add_slide(blank_layout)
-    add_header(s2, "Background & Problem Motivation")
+    add_header(s2, "Background & Problem Motivation: The Rural Infodemic Crisis")
     add_footer(s2)
 
-    # 3 Cards
+    # Top: Visual Infographic
+    add_fitted_image(s2, "docs/ppt_assets/motivation_infographic.png", 0.8, 1.4, 11.733, 2.7)
+
+    # Bottom: 3 Matching Analytical Cards
     cards_data = [
-        ("Severe Healthcare Accessibility Divide", 
-         "• India's doctor-to-population ratio is 1:1456, falling far below the WHO norm of 1:1000.\n• Rural PHCs suffer chronic diagnostic backlogs; over 70% of citizens rely on informal health conduits.\n• Citizens need instant, culturally aligned preventive health awareness in their native tongue.",
+        ("1. Severe Clinical Deficit", 
+         "• 1:1456 Doctor-to-citizen ratio in India vs 1:1000 WHO benchmark.\n• 70%+ rural population depends on unverified informal conduits.\n• Critical need for instant, culturally aligned preventive triage.",
          "#FDEDEC", "#C0392B"),
-        ("The Medical Infodemic on Social Media", 
-         "• Unverified, pseudoscientific health advice spreads virally on WhatsApp and Telegram groups.\n• Baseless rumours cause pediatric immunization hesitancy (e.g. false polio infertility myths).\n• Lethal first-aid practices (cutting snakebites, chilli powder on dog bites) cause severe tissue necrosis.",
+        ("2. Lethal Social Infodemic", 
+         "• WhatsApp/Telegram rumors cause pediatric vaccine hesitancy.\n• Dangerous first-aid (chilli on dog bites, cutting snakebites) causes catastrophic necrosis.\n• General LLMs hallucinate pharmacology.",
          "#FEF9E7", "#D4AC0D"),
-        ("14-21 Day Surveillance Lag in IDSP", 
-         "• Traditional centralized surveillance (IDSP) depends on clinical laboratory confirmation registries.\n• By the time an outbreak is officially recorded, community transmission has peaked.\n• Lack of localized, real-time syndromic signal capture at the postal pincode level.",
-         "#EBF5FB", "#2980B9")
+        ("3. 14-21 Day Surveillance Lag", 
+         "• Centralized IDSP relies on physical laboratory registries.\n• Outbreaks peak before municipal health authorities are notified.\n• Zero real-time localized syndromic signal capture.",
+         "#E8F8F5", "#16A085")
     ]
 
     for idx, (head, body, bg_col, bdr_col) in enumerate(cards_data):
-        x = Inches(0.8 + idx * 3.95)
-        card = s2.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, x, Inches(1.6), Inches(3.8), Inches(5.1))
+        x = 0.8 + idx * 3.95
+        card = s2.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(x), Inches(4.3), Inches(3.8), Inches(2.55))
         card.fill.solid()
         card.fill.fore_color.rgb = RGBColor.from_string(bg_col.replace("#", ""))
         card.line.color.rgb = RGBColor.from_string(bdr_col.replace("#", ""))
         card.line.width = Pt(1.5)
 
-        tx = s2.shapes.add_textbox(x + Inches(0.15), Inches(1.75), Inches(3.5), Inches(4.8))
+        tx = s2.shapes.add_textbox(Inches(x + 0.15), Inches(4.35), Inches(3.5), Inches(2.45))
         tf = tx.text_frame
         tf.word_wrap = True
         
         p = tf.paragraphs[0]
         p.text = head
-        p.font.size = Pt(14)
+        p.font.size = Pt(13)
         p.font.bold = True
         p.font.color.rgb = RGBColor.from_string(bdr_col.replace("#", ""))
         
         p2 = tf.add_paragraph()
         p2.text = body
-        p2.font.size = Pt(11)
+        p2.font.size = Pt(9.5)
         p2.font.color.rgb = c_dark
-        p2.space_before = Pt(12)
+        p2.space_before = Pt(6)
 
-    # -------------------------------------------------------------
-    # SLIDE 3: PROBLEM STATEMENT & OBJECTIVES
-    # -------------------------------------------------------------
+    # =============================================================
+    # SLIDE 3: PROBLEM STATEMENT & CORE OBJECTIVES
+    # =============================================================
     s3 = prs.slides.add_slide(blank_layout)
     add_header(s3, "Problem Statement & Project Objectives")
     add_footer(s3)
 
-    # Left: Problem Statement
-    box_l = s3.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.6), Inches(5.6), Inches(5.1))
-    box_l.fill.solid()
-    box_l.fill.fore_color.rgb = c_card_bg
-    box_l.line.color.rgb = c_navy
-    box_l.line.width = Pt(1.5)
+    # Top: Problem Statement Hero Box
+    box_ps = s3.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.4), Inches(11.733), Inches(1.6))
+    box_ps.fill.solid()
+    box_ps.fill.fore_color.rgb = c_card_bg
+    box_ps.line.color.rgb = c_navy
+    box_ps.line.width = Pt(1.8)
 
-    tx_l = s3.shapes.add_textbox(Inches(1.0), Inches(1.75), Inches(5.2), Inches(4.8))
-    tf_l = tx_l.text_frame
-    tf_l.word_wrap = True
-    p = tf_l.paragraphs[0]
-    p.text = "Formal Problem Statement"
-    p.font.size = Pt(16)
+    tx_ps = s3.shapes.add_textbox(Inches(1.0), Inches(1.45), Inches(11.333), Inches(1.5))
+    tf_ps = tx_ps.text_frame
+    tf_ps.word_wrap = True
+    p = tf_ps.paragraphs[0]
+    p.text = "FORMAL PROBLEM STATEMENT"
+    p.font.size = Pt(12)
     p.font.bold = True
     p.font.color.rgb = c_navy
-
-    p = tf_l.add_paragraph()
-    p.text = "To design, develop, and deploy an autonomous, zero-cost, multilingual conversational public health agent that delivers verified preventive healthcare education, deterministic emergency triage escalation, autonomous rumor fact-checking without third-party API dependencies, and proactive community syndromic surveillance across rural and semi-urban Indian populations."
-    p.font.size = Pt(11.5)
+    p = tf_ps.add_paragraph()
+    p.text = "\"To design, develop, and deploy an autonomous, zero-cost, multilingual public health conversational agent that delivers verified preventive healthcare education, deterministic emergency triage escalation, autonomous rumor fact-checking without third-party API dependencies, and proactive community syndromic surveillance across rural and semi-urban Indian populations.\""
+    p.font.size = Pt(11)
     p.font.color.rgb = c_dark
-    p.space_before = Pt(10)
+    p.font.italic = True
+    p.space_before = Pt(4)
 
-    # Right: Objectives
-    box_r = s3.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.8), Inches(1.6), Inches(5.7), Inches(5.1))
-    box_r.fill.solid()
-    box_r.fill.fore_color.rgb = RGBColor(232, 248, 245)
-    box_r.line.color.rgb = c_teal
-    box_r.line.width = Pt(1.5)
-
-    tx_r = s3.shapes.add_textbox(Inches(7.0), Inches(1.75), Inches(5.3), Inches(4.8))
-    tf_r = tx_r.text_frame
-    tf_r.word_wrap = True
-    p = tf_r.paragraphs[0]
-    p.text = "Primary Research Objectives"
-    p.font.size = Pt(16)
-    p.font.bold = True
-    p.font.color.rgb = c_teal
-
-    objectives = [
-        "1. Multilingual Semantic Grounding: Integrate Google LaBSE to map English, Hindi, and Hinglish queries into a unified 768-dimensional metric space.",
-        "2. Zero-Hallucination RAG: Constrain an open-weights Small Language Model (Qwen3-1.7B-Instruct) to strictly verified WHO/MoHFW context.",
-        "3. Deterministic Safety Boundaries: Enforce sub-10ms triage escalation for life-threatening medical emergencies (108/112 ambulance prompt).",
-        "4. Autonomous Fact-Checking: Develop a 4-tier verification engine combining local lexical coverage and open-web news evidence synthesis ($0 API cost).",
-        "5. Community Syndromic Surveillance: Establish automated spatial anomaly detection (7-day rolling baseline vs 24h count) across 6-digit Indian PIN codes."
+    # Bottom: 4 Objective Pillar Cards
+    pillars = [
+        ("1. Bilingual Grounding", "Google LaBSE mapping English, Hindi, and colloquial Hinglish into a shared 768-dim metric space.", "#EBF5FB", "#2980B9"),
+        ("2. Deterministic Safety", "Sub-10ms bypass routing acute emergencies (chest pain, snakebites) directly to 108/112 ambulance.", "#FDEDEC", "#C0392B"),
+        ("3. Autonomous Fact-Check", "4-Tier verification engine combining local semantic FAISS + open-web news consensus at $0 cost.", "#FEF9E7", "#D4AC0D"),
+        ("4. Syndromic Surveillance", "Pincode-level outbreak anomaly detection using 7-day rolling baselines (Delta >= 2.0x, N >= 3).", "#E8F8F5", "#16A085")
     ]
-    for obj in objectives:
-        p = tf_r.add_paragraph()
-        p.text = obj
+
+    for idx, (p_title, p_desc, bg_col, bdr_col) in enumerate(pillars):
+        x = 0.8 + idx * 2.98
+        box_p = s3.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(x), Inches(3.2), Inches(2.82), Inches(3.6))
+        box_p.fill.solid()
+        box_p.fill.fore_color.rgb = RGBColor.from_string(bg_col.replace("#", ""))
+        box_p.line.color.rgb = RGBColor.from_string(bdr_col.replace("#", ""))
+        box_p.line.width = Pt(1.5)
+
+        tx = s3.shapes.add_textbox(Inches(x + 0.12), Inches(3.3), Inches(2.58), Inches(3.4))
+        tf = tx.text_frame
+        tf.word_wrap = True
+        p = tf.paragraphs[0]
+        p.text = p_title
+        p.font.size = Pt(13)
+        p.font.bold = True
+        p.font.color.rgb = RGBColor.from_string(bdr_col.replace("#", ""))
+        p = tf.add_paragraph()
+        p.text = p_desc
         p.font.size = Pt(10.5)
         p.font.color.rgb = c_dark
-        p.space_before = Pt(6)
+        p.space_before = Pt(8)
 
-    # -------------------------------------------------------------
+    # =============================================================
     # SLIDE 4: LITERATURE SURVEY & GAP ANALYSIS
-    # -------------------------------------------------------------
+    # =============================================================
     s4 = prs.slides.add_slide(blank_layout)
     add_header(s4, "Literature Survey & Critical Gap Analysis")
     add_footer(s4)
 
     lit_data = [
-        ("Existing Solution", "Methodology / Approach", "Critical Gap / Vulnerability", "AarogyaSathi Advantage"),
-        ("Ada Health / Babylon Health", "Proprietary Bayesian nets & clinical decision trees", "Closed-source, high licensing cost, no Hinglish/Indic support, legal liability in self-diagnosis", "Open-source, non-diagnostic awareness framing, native Hindi/Hinglish NLP"),
-        ("CoWIN / Aarogya Setu", "Centralized transactional databases (Bluetooth, OTP)", "Static registries without interactive symptom exploration, triage, or myth-busting capabilities", "Multi-turn empathetic symptom clarification & autonomous fact-checking"),
-        ("Google Fact Check Tools API", "ClaimReview structured JSON schema aggregation", "Index sparsity for village health rumors; commercial billing/card restrictions in Global South", "Autonomous multi-tier engine: local semantic corpus + live open-web/news synthesis ($0 cost)"),
-        ("Google Flu Trends (GFT)", "Correlating aggregated search engine keywords", "Prone to panic-induced search spikes; lacks clinical symptom parsing or geocoded triage", "Pincode-level geocoded symptom event logging with rolling 7-day baseline anomaly regression")
+        ("Prior System / Study", "Core Methodology", "Critical Vulnerabilities / Gaps", "AarogyaSathi Innovation"),
+        ("Ada Health / Babylon Health (2020)", "Proprietary Bayesian nets & clinical decision trees", "Closed-source, high licensing cost, no Hinglish/Indic support, legal liability in self-diagnosis", "Open-source, non-diagnostic awareness framing, native Hindi/Hinglish NLP"),
+        ("CoWIN / Aarogya Setu (2021)", "Centralized transactional databases (Bluetooth, OTP)", "Static registries without interactive symptom exploration, triage, or myth-busting capabilities", "Multi-turn empathetic symptom clarification & autonomous fact-checking"),
+        ("Google Fact Check API (2022)", "ClaimReview structured JSON schema aggregation", "Index sparsity for village health rumors; commercial billing/card restrictions in Global South", "Autonomous multi-tier engine: local semantic corpus + live open-web/news synthesis ($0 cost)"),
+        ("Google Flu Trends (GFT) (2015)", "Correlating aggregated search engine keywords", "Prone to panic-induced search spikes; lacks clinical symptom parsing or geocoded triage", "Pincode-level geocoded symptom event logging with rolling 7-day baseline anomaly regression")
     ]
 
-    # Create Table on slide
-    rows = len(lit_data)
-    cols = 4
-    t = s4.shapes.add_table(rows, cols, Inches(0.8), Inches(1.5), Inches(11.733), Inches(5.1)).table
+    t = s4.shapes.add_table(5, 4, Inches(0.8), Inches(1.4), Inches(11.733), Inches(5.3)).table
     t.columns[0].width = Inches(2.2)
     t.columns[1].width = Inches(2.8)
     t.columns[2].width = Inches(3.4)
@@ -270,314 +321,322 @@ def build_presentation():
                 p.font.size = Pt(9.5)
                 p.font.color.rgb = c_dark
                 cell.fill.solid()
-                cell.fill.fore_color.rgb = RGBColor(245, 248, 250) if r_idx % 2 == 0 else c_white
+                cell.fill.fore_color.rgb = RGBColor(245, 248, 252) if r_idx % 2 == 0 else c_white
 
-    # -------------------------------------------------------------
-    # SLIDE 5: SYSTEM ARCHITECTURE
-    # -------------------------------------------------------------
+    # =============================================================
+    # SLIDE 5: SYSTEM ARCHITECTURE (PRESERVED NATURAL ASPECT RATIO)
+    # =============================================================
     s5 = prs.slides.add_slide(blank_layout)
-    add_header(s5, "End-to-End System Architecture")
+    add_header(s5, "End-to-End System Architecture & Dataflow")
     add_footer(s5)
 
-    if os.path.exists("docs/fig1_architecture.png"):
-        s5.shapes.add_picture("docs/fig1_architecture.png", Inches(0.8), Inches(1.4), Inches(11.733), Inches(5.3))
+    # Left: Architecture Diagram with exact native aspect ratio
+    add_fitted_image(s5, "docs/fig1_architecture.png", 0.8, 1.35, 8.4, 5.4, center=True)
 
-    # -------------------------------------------------------------
-    # SLIDE 6: CORE NLP & CROSS-LINGUAL RETRIEVAL
-    # -------------------------------------------------------------
-    s6 = prs.slides.add_slide(blank_layout)
-    add_header(s6, "Core Methodology: Multilingual NLP & LaBSE Retrieval")
-    add_footer(s6)
+    # Right: Key Architectural Highlights
+    box_arch = s5.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(9.4), Inches(1.35), Inches(3.133), Inches(5.4))
+    box_arch.fill.solid()
+    box_arch.fill.fore_color.rgb = c_card_bg
+    box_arch.line.color.rgb = c_navy
+    box_arch.line.width = Pt(1.5)
 
-    # 2-column layout
-    tx_a = s6.shapes.add_textbox(Inches(0.8), Inches(1.5), Inches(5.6), Inches(5.2))
-    tf_a = tx_a.text_frame
-    tf_a.word_wrap = True
-    p = tf_a.paragraphs[0]
-    p.text = "1. Language ID & Intent Classification"
-    p.font.size = Pt(15)
+    tx_ar = s5.shapes.add_textbox(Inches(9.55), Inches(1.45), Inches(2.833), Inches(5.2))
+    tf_ar = tx_ar.text_frame
+    tf_ar.word_wrap = True
+    p = tf_ar.paragraphs[0]
+    p.text = "PIPELINE HIGHLIGHTS"
+    p.font.size = Pt(13)
     p.font.bold = True
     p.font.color.rgb = c_navy
 
-    points_a = [
-        "• Language Identification: fastText (lid.176) hierarchically classifies inputs across 176 languages; transliteration heuristics detect romanized Hinglish.",
-        "• Intent Classifier: TF-IDF feature extraction (unigram/bigram, sublinear scaling) + L2-regularized Logistic Regression.",
-        "• 13 Public Health Classes: emergency, fact_check, disease_info, symptom_check, prevention, vaccination, outbreak, greeting, help, etc.",
-        "• Macro F1-Score: 0.942 across validation benchmarks with 1.000 precision on safety-critical red-flag emergency detection.",
-        "• Entity Extraction: Regex and dictionary ontologies extract 14 diseases, 42 symptoms, 12 vaccines, and age milestones."
+    ar_pts = [
+        ("Deterministic Safety", "Sub-10ms regex red-flag interceptor directly dials 108/112 ambulance services."),
+        ("Dual-Model Stack", "Qwen3-1.7B (4-bit quantized SLM) + Google LaBSE on local VM."),
+        ("Zero Hallucination", "Strict RAG grounding in WHO, MoHFW, and ICMR repositories with negative constraints."),
+        ("Real-Time Surveillance", "Anonymized symptom events stream into rolling 7-day anomaly detector by postal code.")
     ]
-    for pt in points_a:
-        p = tf_a.add_paragraph()
-        p.text = pt
+    for h, b in ar_pts:
+        p = tf_ar.add_paragraph()
+        p.text = "• " + h
         p.font.size = Pt(10.5)
+        p.font.bold = True
+        p.font.color.rgb = c_teal
+        p.space_before = Pt(8)
+        p = tf_ar.add_paragraph()
+        p.text = b
+        p.font.size = Pt(9.5)
         p.font.color.rgb = c_dark
-        p.space_before = Pt(6)
+        p.space_before = Pt(2)
 
-    tx_b = s6.shapes.add_textbox(Inches(6.8), Inches(1.5), Inches(5.7), Inches(5.2))
-    tf_b = tx_b.text_frame
-    tf_b.word_wrap = True
-    p = tf_b.paragraphs[0]
-    p.text = "2. Cross-Lingual LaBSE Embedding Metric"
-    p.font.size = Pt(15)
+    # =============================================================
+    # SLIDE 6: CORE METHODOLOGY: BILINGUAL NLP & LABSE CONVERGENCE
+    # =============================================================
+    s6 = prs.slides.add_slide(blank_layout)
+    add_header(s6, "Core Methodology: Cross-Lingual Semantic Retrieval")
+    add_footer(s6)
+
+    # Top: Visual LaBSE Convergence Graphic
+    add_fitted_image(s6, "docs/ppt_assets/labse_concept.png", 0.8, 1.35, 11.733, 2.7)
+
+    # Bottom: 2 In-Depth Cards
+    tx_a = s6.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(4.2), Inches(5.7), Inches(2.65))
+    tx_a.fill.solid()
+    tx_a.fill.fore_color.rgb = RGBColor(245, 248, 252)
+    tx_a.line.color.rgb = c_navy
+    tx_a.line.width = Pt(1.5)
+
+    tx_at = s6.shapes.add_textbox(Inches(0.95), Inches(4.25), Inches(5.4), Inches(2.55))
+    tf_at = tx_at.text_frame
+    tf_at.word_wrap = True
+    p = tf_at.paragraphs[0]
+    p.text = "1. Language ID & Intent Classifier"
+    p.font.size = Pt(13)
+    p.font.bold = True
+    p.font.color.rgb = c_navy
+    p = tf_at.add_paragraph()
+    p.text = "• fastText (lid.176) hierarchically detects 176 languages + code-mixed Hinglish.\n• TF-IDF feature extraction (unigram/bigram) + L2 Logistic Regression.\n• 13 Intent Classes: emergency, fact_check, disease_info, vaccination, etc.\n• Macro F1 = 0.942 with 1.000 precision on safety-critical red-flag emergency detection."
+    p.font.size = Pt(9.5)
+    p.font.color.rgb = c_dark
+    p.space_before = Pt(4)
+
+    tx_b = s6.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.8), Inches(4.2), Inches(5.733), Inches(2.65))
+    tx_b.fill.solid()
+    tx_b.fill.fore_color.rgb = RGBColor(232, 248, 245)
+    tx_b.line.color.rgb = c_teal
+    tx_b.line.width = Pt(1.5)
+
+    tx_bt = s6.shapes.add_textbox(Inches(6.95), Inches(4.25), Inches(5.4), Inches(2.55))
+    tf_bt = tx_bt.text_frame
+    tf_bt.word_wrap = True
+    p = tf_bt.paragraphs[0]
+    p.text = "2. Mathematical Formulation (LaBSE Metric)"
+    p.font.size = Pt(13)
     p.font.bold = True
     p.font.color.rgb = c_teal
+    p = tf_bt.add_paragraph()
+    p.text = "• Dense Mean-Pooling & L2 Normalization into 768-dimensional Hilbert space:\n    vq = MeanPool(LaBSE(q)) / ||MeanPool(LaBSE(q))||2\n• Cosine Similarity over Pre-Indexed Knowledge Base:\n    S(q, ci) = vq · vci = SUM_{k=1}^{768} (vq,k * vci,k)\n• Sub-second lookup: <0.10s via pre-computed memory-mapped NumPy arrays."
+    p.font.size = Pt(9.5)
+    p.font.color.rgb = c_dark
+    p.space_before = Pt(4)
 
-    points_b = [
-        "• Google LaBSE (Language-Agnostic BERT Sentence Embeddings): Dual-encoder contrastive learning across 109 languages.",
-        "• Unified Latent Space: Projects Hindi, English, and Hinglish queries into a shared 768-dimensional Hilbert space.",
-        "• Metric Formula: Dense vector mean-pooling and L2 normalization:",
-        "    vq = MeanPool(LaBSE(q)) / ||MeanPool(LaBSE(q))||2",
-        "• Cosine Similarity Distance over pre-computed matrix:",
-        "    S(q, ci) = vq · vci = SUM_{k=1}^{768} (vq,k * vci,k)",
-        "• Pre-Cached Matrices: Pre-indexed memory-mapped NumPy arrays with SHA-256 cache keys provide instant <0.10s lookup."
-    ]
-    for pt in points_b:
-        p = tf_b.add_paragraph()
-        p.text = pt
-        p.font.size = Pt(10.5)
-        p.font.color.rgb = c_dark
-        p.space_before = Pt(5)
-
-    # -------------------------------------------------------------
+    # =============================================================
     # SLIDE 7: GROUNDED RAG & SMALL LANGUAGE MODELS
-    # -------------------------------------------------------------
+    # =============================================================
     s7 = prs.slides.add_slide(blank_layout)
     add_header(s7, "Retrieval-Augmented Generation & Edge SLM Reasoning")
     add_footer(s7)
 
-    # 3 horizontal steps
     rag_steps = [
         ("Step 1: Curated Knowledge Retrieval",
-         "• Strict factual grounding in Tier-1 national and international repositories: WHO, MoHFW, ICMR, NHM.\n• 14 Comprehensive Disease Profiles (Dengue, Malaria, TB, Rabies...).\n• National Immunization Schedule (UIP) from birth to pregnancy.\n• Zero ungrounded clinical hallucination.",
+         "• Strict factual grounding in Tier-1 repositories: WHO, MoHFW, ICMR, NHM.\n• 14 Comprehensive Disease Profiles (Dengue, Malaria, TB, Rabies...).\n• National Immunization Schedule (UIP) from birth to pregnancy.\n• Negative retrieval filter guarantees zero clinical hallucination.",
          "#EBF5FB", "#2980B9"),
         ("Step 2: Edge-Quantized SLM (Qwen3-1.7B)",
          "• Runs locally via Ollama with 4-bit quantization (Q4_K_M GGUF).\n• Memory footprint: only 1.6GB RAM/VRAM — runs smoothly on 4GB instances.\n• High-speed generation without sending citizen data to external third-party servers.\n• Automatic circuit breaker fallback to template answers if Ollama is unreachable.",
          "#FEF9E7", "#D4AC0D"),
         ("Step 3: Negative Prompt Constraints",
-         "• Enforces strict negative operational boundaries:\n  1. Answer strictly and only from retrieved context.\n  2. Hard constraint: response must be under 70 words.\n  3. Never prescribe medicines or deliver clinical diagnosis.\n  4. Append validated WHO/MoHFW source citation and medical disclaimer.",
+         "• Enforces strict negative operational boundaries:\n  1. Answer strictly and only from retrieved context.\n  2. Hard constraint: response must be concise (<70 words).\n  3. Never prescribe medicines or deliver clinical diagnosis.\n  4. Append validated WHO/MoHFW source citation and medical disclaimer.",
          "#E8F8F5", "#16A085")
     ]
 
     for idx, (head, body, bg_col, bdr_col) in enumerate(rag_steps):
-        x = Inches(0.8 + idx * 3.95)
-        card = s7.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, x, Inches(1.6), Inches(3.8), Inches(5.1))
+        x = 0.8 + idx * 3.95
+        card = s7.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(x), Inches(1.4), Inches(3.8), Inches(5.3))
         card.fill.solid()
         card.fill.fore_color.rgb = RGBColor.from_string(bg_col.replace("#", ""))
         card.line.color.rgb = RGBColor.from_string(bdr_col.replace("#", ""))
         card.line.width = Pt(1.5)
 
-        tx = s7.shapes.add_textbox(x + Inches(0.15), Inches(1.75), Inches(3.5), Inches(4.8))
+        tx = s7.shapes.add_textbox(Inches(x + 0.15), Inches(1.55), Inches(3.5), Inches(5.0))
         tf = tx.text_frame
         tf.word_wrap = True
         
         p = tf.paragraphs[0]
         p.text = head
-        p.font.size = Pt(13)
+        p.font.size = Pt(13.5)
         p.font.bold = True
         p.font.color.rgb = RGBColor.from_string(bdr_col.replace("#", ""))
         
         p2 = tf.add_paragraph()
         p2.text = body
-        p2.font.size = Pt(10.5)
+        p2.font.size = Pt(10)
         p2.font.color.rgb = c_dark
         p2.space_before = Pt(10)
 
-    # -------------------------------------------------------------
-    # SLIDE 8: AUTONOMOUS FACT-CHECKING ENGINE
-    # -------------------------------------------------------------
+    # =============================================================
+    # SLIDE 8: AUTONOMOUS FACT-CHECKING ENGINE FLOWCHART ($0 COST)
+    # =============================================================
     s8 = prs.slides.add_slide(blank_layout)
     add_header(s8, "Autonomous Multi-Tier Fact-Checking Engine ($0 Cost)")
     add_footer(s8)
 
-    tx_fc = s8.shapes.add_textbox(Inches(0.8), Inches(1.5), Inches(11.733), Inches(5.3))
-    tf_fc = tx_fc.text_frame
-    tf_fc.word_wrap = True
+    # Top: Visual 4-Tier Flowchart
+    add_fitted_image(s8, "docs/ppt_assets/factcheck_flowchart.png", 0.8, 1.35, 11.733, 2.7)
 
-    p = tf_fc.paragraphs[0]
-    p.text = "Why We Replaced Google Fact Check API with Our Own Autonomous Engine:"
-    p.font.size = Pt(14)
+    # Bottom: 2 Comparative Analytical Boxes
+    tx_w = s8.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(4.2), Inches(5.7), Inches(2.65))
+    tx_w.fill.solid()
+    tx_w.fill.fore_color.rgb = RGBColor(253, 237, 236)
+    tx_w.line.color.rgb = c_red
+    tx_w.line.width = Pt(1.5)
+
+    tx_wt = s8.shapes.add_textbox(Inches(0.95), Inches(4.25), Inches(5.4), Inches(2.55))
+    tf_wt = tx_wt.text_frame
+    tf_wt.word_wrap = True
+    p = tf_wt.paragraphs[0]
+    p.text = "Why Google Fact Check API Failed Our Needs"
+    p.font.size = Pt(13)
     p.font.bold = True
-    p.font.color.rgb = c_navy
-
-    p = tf_fc.add_paragraph()
-    p.text = "• Google's API mandates linked Cloud Billing Accounts (which fail across Indian students/developers due to RBI e-mandate rules) and returns 404 on uncatalogued regional claims.\n• Our custom engine operates 100% autonomously with ZERO external API keys and $0 cloud billing."
-    p.font.size = Pt(10.5)
+    p.font.color.rgb = c_red
+    p = tf_wt.add_paragraph()
+    p.text = "• Google's API mandates linked Cloud Billing Accounts (which fail across Indian developers due to RBI e-mandate credit card regulations).\n• High index sparsity: Returns 404/Empty on regional Indian rumors.\n• High network latency and strict rate-limiting quotas."
+    p.font.size = Pt(9.5)
     p.font.color.rgb = c_dark
-    p.space_before = Pt(3)
+    p.space_before = Pt(6)
 
-    tiers_data = [
-        ("Tier 0: Dangerous First-Aid Fast Guard (0.01s)", "Sub-10ms regex interceptor for lethal first-aid advice (sucking snakebite, red chilli on dog bite, butter on burns) returning instant critical MYTH with life-saving WHO protocols."),
-        ("Tier 1: Semantic Matching + Dual-Metric Lexical Coverage (0.10s)", "Eliminates positive/negative myth collisions (e.g. polio drops protect vs cause infertility) using composite token coverage: Omega = min(Dice(q, ci), Cov(q, ci)) >= 0.35. Ensures true immunization facts never get marked as myths."),
-        ("Tier 2: Real-Time Multi-Strategy Open Web Evidence Retrieval", "Decoupled web evidence harvesting using DuckDuckGo News protocol, Wikipedia MediaWiki REST API (EN + Hindi), and whitelisted domain filtering (who.int, mohfw.gov.in, cdc.gov, mayoclinic.org)."),
-        ("Tier 3: Grounded LLM Evidence Synthesis", "Local SLM reads harvested snippets, evaluates consensus, and emits structured JSON verdict: VERIFIED / MYTH / PARTLY TRUE / UNVERIFIABLE with calibrated confidence % and live source URLs.")
-    ]
+    tx_o = s8.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.8), Inches(4.2), Inches(5.733), Inches(2.65))
+    tx_o.fill.solid()
+    tx_o.fill.fore_color.rgb = RGBColor(232, 248, 245)
+    tx_o.line.color.rgb = c_teal
+    tx_o.line.width = Pt(1.5)
 
-    for t_head, t_body in tiers_data:
-        p_th = tf_fc.add_paragraph()
-        p_th.text = "• " + t_head
-        p_th.font.size = Pt(11.5)
-        p_th.font.bold = True
-        p_th.font.color.rgb = c_teal
-        p_th.space_before = Pt(6)
+    tx_ot = s8.shapes.add_textbox(Inches(6.95), Inches(4.25), Inches(5.4), Inches(2.55))
+    tf_ot = tx_ot.text_frame
+    tf_ot.word_wrap = True
+    p = tf_ot.paragraphs[0]
+    p.text = "Our Autonomous Multi-Tier Advantage ($0 Cost)"
+    p.font.size = Pt(13)
+    p.font.bold = True
+    p.font.color.rgb = c_teal
+    p = tf_ot.add_paragraph()
+    p.text = "• 100% Autonomous: ZERO external API keys, $0 monthly cloud billing.\n• Sub-second local response (<0.15s) for vetted clinical claims.\n• Real-time open web consensus harvesting (DuckDuckGo + PubMed/WHO/MoHFW) for newly emerging viral rumors.\n• Structured verdict badging with calibrated confidence scores."
+    p.font.size = Pt(9.5)
+    p.font.color.rgb = c_dark
+    p.space_before = Pt(6)
 
-        p_tb = tf_fc.add_paragraph()
-        p_tb.text = "    " + t_body
-        p_tb.font.size = Pt(10)
-        p_tb.font.color.rgb = c_dark
-        p_tb.space_before = Pt(1)
-
-    # -------------------------------------------------------------
-    # SLIDE 9: PINCODE SURVEILLANCE & EARLY WARNING
-    # -------------------------------------------------------------
+    # =============================================================
+    # SLIDE 9: SYNDROMIC SURVEILLANCE & OUTBREAK ANOMALY DETECTION
+    # =============================================================
     s9 = prs.slides.add_slide(blank_layout)
-    add_header(s9, "Community Syndromic Surveillance (Early Warning)")
+    add_header(s9, "Community Syndromic Surveillance (Outbreak Early Warning)")
     add_footer(s9)
 
-    tx_s9 = s9.shapes.add_textbox(Inches(0.8), Inches(1.5), Inches(5.6), Inches(5.2))
-    tf_s9 = tx_s9.text_frame
-    tf_s9.word_wrap = True
+    # Left: Outbreak Math & Detection Curve
+    add_fitted_image(s9, "docs/ppt_assets/surveillance_chart.png", 0.8, 1.4, 5.6, 5.3)
 
-    p = tf_s9.paragraphs[0]
-    p.text = "Surveillance Mathematical Formulation"
-    p.font.size = Pt(15)
-    p.font.bold = True
-    p.font.color.rgb = c_navy
+    # Right: Live Admin Dashboard Screenshot (Preserved aspect ratio)
+    add_fitted_image(s9, "docs/fig3_surveillance_dashboard.png", 6.8, 1.4, 5.733, 5.3)
 
-    surv_pts = [
-        "• Citizen-Driven Signal Capture: Symptom inquiries tagged with pincodes are logged as anonymized tuples e = (pincode, symptom, lang, ts) in SQLite.",
-        "• Rolling 7-Day Baseline Formulation:",
-        "    B_{p,s} = (1/7) * SUM_{d=1}^{7} N_{p,s}(t - d)",
-        "• Spatio-Temporal Anomaly Threshold:",
-        "    If C_{24h} >= 6 and C_{24h} >= 3.0 * B_{p,s} -> [MEDIUM SPIKE ALERT]",
-        "    If C_{24h} >= 6 and C_{24h} >= 5.0 * B_{p,s} -> [HIGH SPIKE ALERT]",
-        "• Outbreak Mitigation: Detects clusters 10-14 days before clinical hospital registries update.",
-        "• Admin Dashboard: Live web dashboard at /admin for municipal Chief Medical Officers (CMOs)."
-    ]
-    for pt in surv_pts:
-        p = tf_s9.add_paragraph()
-        p.text = pt
-        p.font.size = Pt(10.5)
-        p.font.color.rgb = c_dark
-        p.space_before = Pt(4)
-
-    if os.path.exists("docs/fig3_surveillance_dashboard.png"):
-        s9.shapes.add_picture("docs/fig3_surveillance_dashboard.png", Inches(6.8), Inches(1.6), Inches(5.733), Inches(5.0))
-
-    # -------------------------------------------------------------
-    # SLIDE 10: RESULTS & EMPIRICAL BENCHMARKS
-    # -------------------------------------------------------------
+    # =============================================================
+    # SLIDE 10: RESULTS & EMPIRICAL BENCHMARKS (15/15 PASSED)
+    # =============================================================
     s10 = prs.slides.add_slide(blank_layout)
-    add_header(s10, "Empirical Results: 100% Fact-Check Success (15/15)")
+    add_header(s10, "Empirical Results: 100% Fact-Check Success Rate (15/15)")
     add_footer(s10)
 
-    # Left: Summary stats
-    tx_s10 = s10.shapes.add_textbox(Inches(0.8), Inches(1.5), Inches(4.5), Inches(5.2))
-    tf_s10 = tx_s10.text_frame
-    tf_s10.word_wrap = True
+    # Top: Scorecard KPI Graphic
+    add_fitted_image(s10, "docs/ppt_assets/results_scorecard.png", 0.8, 1.35, 11.733, 2.3)
 
-    p = tf_s10.paragraphs[0]
-    p.text = "Evaluation Highlights"
-    p.font.size = Pt(15)
+    # Bottom Left: Test Breakdown Table / Text
+    tx_bl = s10.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(3.8), Inches(5.6), Inches(3.0))
+    tx_bl.fill.solid()
+    tx_bl.fill.fore_color.rgb = c_card_bg
+    tx_bl.line.color.rgb = c_navy
+    tx_bl.line.width = Pt(1.5)
+
+    tx_blt = s10.shapes.add_textbox(Inches(0.95), Inches(3.85), Inches(5.3), Inches(2.9))
+    tf_blt = tx_blt.text_frame
+    tf_blt.word_wrap = True
+    p = tf_blt.paragraphs[0]
+    p.text = "15/15 Claim Typology Highlights"
+    p.font.size = Pt(12.5)
     p.font.bold = True
     p.font.color.rgb = c_navy
+    p = tf_blt.add_paragraph()
+    p.text = "• Vaccine autism myth -> [MYTH] (95% confidence)\n• Toothpaste on burns -> [MYTH] (95% confidence)\n• Paracetamol Machupo hoax -> [MYTH] (85% confidence)\n• Ripe papaya causes abortion -> [MYTH] (95% confidence)\n• Female Aedes aegypti causes dengue -> [VERIFIED] (94%)\n• Polio drops prevent paralysis -> [VERIFIED] (89%)\n• 10 blue marbles cure cancer -> [UNVERIFIABLE] (30%)"
+    p.font.size = Pt(9)
+    p.font.color.rgb = c_dark
+    p.space_before = Pt(4)
 
-    eval_highlights = [
-        "• 15-Claim Comprehensive Suite: Tested live on Oracle VM across 15 distinct health claim typologies.",
-        "• 15 / 15 Passed (100% Success Rate):",
-        "  - Vaccine autism myth -> MYTH (95%)",
-        "  - Toothpaste on burns -> MYTH (95%)",
-        "  - Paracetamol Machupo hoax -> MYTH (85%)",
-        "  - Ripe papaya pregnancy -> MYTH (95%)",
-        "  - Cow urine cancer cure -> MYTH (84%)",
-        "  - 5G COVID-19 conspiracy -> MYTH (93%)",
-        "  - Female Aedes dengue -> VERIFIED (94%)",
-        "  - Polio drops prevent paralysis -> VERIFIED (89%)",
-        "  - 10 blue marbles -> UNVERIFIABLE (30%)",
-        "• Sub-second Latency: <0.15s for local knowledge base matches; 5–7s for dynamic open-web evidence synthesis."
-    ]
-    for eh in eval_highlights:
-        p = tf_s10.add_paragraph()
-        p.text = eh
-        p.font.size = Pt(9.5)
-        p.font.color.rgb = c_dark
-        p.space_before = Pt(3)
+    # Bottom Right: Empirical Latency Chart (Preserved natural aspect ratio)
+    add_fitted_image(s10, "docs/fig4_benchmark_latency.png", 6.6, 3.8, 5.933, 3.0)
 
-    if os.path.exists("docs/fig4_benchmark_latency.png"):
-        s10.shapes.add_picture("docs/fig4_benchmark_latency.png", Inches(5.5), Inches(1.6), Inches(7.0), Inches(4.9))
-
-    # -------------------------------------------------------------
-    # SLIDE 11: LIVE DEMO & PRODUCTION DEPLOYMENT
-    # -------------------------------------------------------------
+    # =============================================================
+    # SLIDE 11: LIVE PRODUCTION DEPLOYMENT & CHAT UI
+    # =============================================================
     s11 = prs.slides.add_slide(blank_layout)
     add_header(s11, "Live Production Deployment on Oracle Cloud Infrastructure")
     add_footer(s11)
 
-    tx_dep = s11.shapes.add_textbox(Inches(0.8), Inches(1.5), Inches(5.6), Inches(5.2))
-    tf_dep = tx_dep.text_frame
-    tf_dep.word_wrap = True
+    # Left: Infrastructure Specifications
+    tx_dep = s11.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.4), Inches(5.6), Inches(5.3))
+    tx_dep.fill.solid()
+    tx_dep.fill.fore_color.rgb = c_card_bg
+    tx_dep.line.color.rgb = c_navy
+    tx_dep.line.width = Pt(1.5)
 
-    p = tf_dep.paragraphs[0]
-    p.text = "Hosting Specs & Production Status"
-    p.font.size = Pt(15)
+    tx_dept = s11.shapes.add_textbox(Inches(0.95), Inches(1.5), Inches(5.3), Inches(5.1))
+    tf_dept = tx_dept.text_frame
+    tf_dept.word_wrap = True
+    p = tf_dept.paragraphs[0]
+    p.text = "Cloud Infrastructure & Production Status"
+    p.font.size = Pt(14)
     p.font.bold = True
     p.font.color.rgb = c_navy
 
     dep_points = [
-        "• Cloud Server: Oracle Cloud Infrastructure (OCI)",
-        "• Compute Specification: 2 vCPU AMD EPYC, 4GB RAM",
-        "• Operating System: Ubuntu 24.04 LTS",
-        "• Systemd Service: healthbot.service (auto-restart on failure, enabled on system boot)",
-        "• Memory Footprint: ~3.05GB aggregate (LaBSE: 1.05GB, Qwen 1.7B Q4: 1.62GB, FastAPI: 0.38GB)",
-        "• Live Public Endpoints:",
-        "   👉 Web App: http://130.210.56.87:8000/",
-        "   👉 Admin Dashboard: http://130.210.56.87:8000/admin",
-        "   👉 Interactive API Docs: http://130.210.56.87:8000/docs",
-        "• Git Repository: Synced with origin/main on GitHub"
+        ("Cloud Provider", "Oracle Cloud Infrastructure (OCI) Always-Free Tier"),
+        ("Server Specs", "2 vCPU AMD EPYC, 4GB RAM, Ubuntu 24.04 LTS"),
+        ("Systemd Daemon", "healthbot.service (Auto-restart, active systemd service)"),
+        ("RAM Footprint", "3.05GB aggregate (LaBSE: 1.05GB, Qwen 1.7B: 1.62GB, FastAPI: 0.38GB)"),
+        ("Live Web App", "http://130.210.56.87:8000/"),
+        ("Admin Portal", "http://130.210.56.87:8000/admin"),
+        ("Interactive Docs", "http://130.210.56.87:8000/docs"),
+        ("Version Control", "Synced with GitHub (salman-mohammad-khan/AarogyaSathi)")
     ]
-    for dp in dep_points:
-        p = tf_dep.add_paragraph()
-        p.text = dp
-        p.font.size = Pt(10)
+    for h, b in dep_points:
+        p = tf_dept.add_paragraph()
+        p.text = f"• {h}: {b}"
+        p.font.size = Pt(9.5)
         p.font.color.rgb = c_dark
-        p.space_before = Pt(3)
+        p.space_before = Pt(4)
 
-    if os.path.exists("docs/fig2_chat_interface.png"):
-        s11.shapes.add_picture("docs/fig2_chat_interface.png", Inches(6.8), Inches(1.6), Inches(5.733), Inches(5.0))
+    # Right: Live Chat UI Screenshot (Preserved aspect ratio)
+    add_fitted_image(s11, "docs/fig2_chat_interface.png", 6.8, 1.4, 5.733, 5.3)
 
-    # -------------------------------------------------------------
-    # SLIDE 12: PLANNED WORK AHEAD (ROADMAP)
-    # -------------------------------------------------------------
+    # =============================================================
+    # SLIDE 12: CLINICAL SAFETY, ETHICS & GUARDRAILS
+    # =============================================================
     s12 = prs.slides.add_slide(blank_layout)
-    add_header(s12, "Planned Work Ahead (Phase 4 Roadmap)")
+    add_header(s12, "Clinical Safety, Ethics & Non-Diagnostic Guardrails")
     add_footer(s12)
 
-    roadmap_data = [
-        ("Phase 4A: WhatsApp & SMS Integration",
-         "• Implement official Meta WhatsApp Cloud API webhooks.\n• Integrate SMS/USSD gateway for basic feature-phone users without internet access in remote hamlets.\n• Enables friction-free access without requiring app downloads.",
-         "#EBF5FB", "#2980B9"),
-        ("Phase 4B: Vernacular Voice Interface (ASR/TTS)",
-         "• Incorporate OpenAI Whisper and AI4Bharat / Bhashini speech models.\n• Voice Activity Detection (VAD) for bidirectional spoken interaction in rural dialects.\n• Empowers non-literate and elderly rural populations.",
+    safety_cards = [
+        ("1. Deterministic Triage Guard", 
+         "• Sub-10ms regex interceptor detects life-threatening keywords.\n• Red-flag symptoms (severe chest pain, snakebite, sudden hemiplegia) bypass AI.\n• Immediately displays prominent 108/112 ambulance dispatch card with one-click dial.",
+         "#FDEDEC", "#C0392B"),
+        ("2. Strict Non-Diagnostic Framing", 
+         "• System prompt explicitly forbids issuing clinical diagnoses or prescribing specific pharmaceutical dosages.\n• Injects statutory ICMR disclaimer on every turn.\n• Clarifies educational/awareness purpose only.",
          "#FEF9E7", "#D4AC0D"),
-        ("Phase 4C: Clinical Field Validation & IDSP Sync",
-         "• Conduct pilot field trials in collaboration with rural Primary Health Centres (PHCs).\n• Evaluate patient comprehension and usability metrics across ASHAs (community health workers).\n• Establish automated anonymized data pipeline feeding into district IDSP dashboards.",
+        ("3. Privacy by Design (Zero PII)", 
+         "• Syndromic event logger captures anonymized tuples: (pincode, symptom_category, timestamp).\n• No phone numbers, citizen names, or IP addresses stored.\n• Fully compliant with India Digital Personal Data Protection Act (DPDP).",
          "#E8F8F5", "#16A085")
     ]
 
-    for idx, (head, body, bg_col, bdr_col) in enumerate(roadmap_data):
-        x = Inches(0.8 + idx * 3.95)
-        card = s12.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, x, Inches(1.6), Inches(3.8), Inches(5.1))
+    for idx, (head, body, bg_col, bdr_col) in enumerate(safety_cards):
+        x = 0.8 + idx * 3.95
+        card = s12.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(x), Inches(1.4), Inches(3.8), Inches(5.3))
         card.fill.solid()
         card.fill.fore_color.rgb = RGBColor.from_string(bg_col.replace("#", ""))
         card.line.color.rgb = RGBColor.from_string(bdr_col.replace("#", ""))
         card.line.width = Pt(1.5)
 
-        tx = s12.shapes.add_textbox(x + Inches(0.15), Inches(1.75), Inches(3.5), Inches(4.8))
+        tx = s12.shapes.add_textbox(Inches(x + 0.15), Inches(1.55), Inches(3.5), Inches(5.0))
         tf = tx.text_frame
         tf.word_wrap = True
         
         p = tf.paragraphs[0]
         p.text = head
-        p.font.size = Pt(13)
+        p.font.size = Pt(13.5)
         p.font.bold = True
         p.font.color.rgb = RGBColor.from_string(bdr_col.replace("#", ""))
         
@@ -587,81 +646,120 @@ def build_presentation():
         p2.font.color.rgb = c_dark
         p2.space_before = Pt(12)
 
-    # -------------------------------------------------------------
-    # SLIDE 13: CONCLUSION & SUMMARY
-    # -------------------------------------------------------------
+    # =============================================================
+    # SLIDE 13: PLANNED WORK AHEAD (ROADMAP)
+    # =============================================================
     s13 = prs.slides.add_slide(blank_layout)
-    add_header(s13, "Conclusion & Project Summary")
+    add_header(s13, "Planned Work Ahead (Phase 4 Roadmap & Execution)")
     add_footer(s13)
 
-    box_concl = s13.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.6), Inches(11.733), Inches(5.1))
-    box_concl.fill.solid()
-    box_concl.fill.fore_color.rgb = c_card_bg
-    box_concl.line.color.rgb = c_navy
-    box_concl.line.width = Pt(1.5)
+    # Top: Visual Roadmap Timeline
+    add_fitted_image(s13, "docs/ppt_assets/roadmap_visual.png", 0.8, 1.35, 11.733, 2.4)
 
-    tx_c = s13.shapes.add_textbox(Inches(1.1), Inches(1.8), Inches(11.133), Inches(4.6))
-    tf_c = tx_c.text_frame
-    tf_c.word_wrap = True
-
-    p = tf_c.paragraphs[0]
-    p.text = "Key Deliverables Accomplished in Minor Project:"
-    p.font.size = Pt(16)
-    p.font.bold = True
-    p.font.color.rgb = c_navy
-
-    concl_pts = [
-        "1. Complete Working System: End-to-end operational public health chatbot successfully deployed on Oracle Cloud Infrastructure.",
-        "2. Deterministic Safety Guards: Sub-10ms red-flag emergency escalation to 108/112 ambulance services with zero LLM hallucination risk.",
-        "3. Cross-Lingual Metric Retrieval: Google LaBSE embedding alignment enabling seamless English, Hindi, and colloquial Hinglish interaction.",
-        "4. Autonomous Fact-Checking Engine: 100% verification success rate (15/15 test claims passed) operating with zero external API keys and $0 cost.",
-        "5. Community Syndromic Surveillance: Real-time 7-day rolling baseline anomaly detector with geocoded pincode resolution and live CMO dashboard.",
-        "6. Academic Research Paper Draft: 11-page manuscript prepared in IEEE format complete with mathematical formulations, benchmarks, and citations."
+    # Bottom: 3 Milestone Deep-Dive Cards
+    roadmap_deep = [
+        ("Phase 4A: WhatsApp & SMS Integration",
+         "• Implement official Meta WhatsApp Cloud API webhooks.\n• Integrate SMS/USSD gateway for basic feature-phone users in remote hamlets.\n• Eliminates smartphone/app download barriers.",
+         "#EBF5FB", "#2980B9"),
+        ("Phase 4B: Vernacular Voice AI (ASR/TTS)",
+         "• Incorporate Whisper and AI4Bharat / Bhashini speech models.\n• Voice Activity Detection (VAD) for bidirectional spoken interaction in rural dialects.\n• Empowers non-literate and elderly populations.",
+         "#FEF9E7", "#D4AC0D"),
+        ("Phase 4C: Clinical Pilot & IDSP Sync",
+         "• Conduct pilot field trials across rural Primary Health Centres (PHCs).\n• Evaluate usability metrics with ASHAs (community health workers).\n• Automated two-way API pipeline feeding into district IDSP dashboards.",
+         "#E8F8F5", "#16A085")
     ]
-    for cpt in concl_pts:
-        p = tf_c.add_paragraph()
-        p.text = cpt
-        p.font.size = Pt(11.5)
-        p.font.color.rgb = c_dark
-        p.space_before = Pt(6)
 
-    # -------------------------------------------------------------
-    # SLIDE 14: THANK YOU & Q&A
-    # -------------------------------------------------------------
+    for idx, (head, body, bg_col, bdr_col) in enumerate(roadmap_deep):
+        x = 0.8 + idx * 3.95
+        card = s13.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(x), Inches(3.9), Inches(3.8), Inches(2.95))
+        card.fill.solid()
+        card.fill.fore_color.rgb = RGBColor.from_string(bg_col.replace("#", ""))
+        card.line.color.rgb = RGBColor.from_string(bdr_col.replace("#", ""))
+        card.line.width = Pt(1.5)
+
+        tx = s13.shapes.add_textbox(Inches(x + 0.15), Inches(4.0), Inches(3.5), Inches(2.75))
+        tf = tx.text_frame
+        tf.word_wrap = True
+        
+        p = tf.paragraphs[0]
+        p.text = head
+        p.font.size = Pt(12)
+        p.font.bold = True
+        p.font.color.rgb = RGBColor.from_string(bdr_col.replace("#", ""))
+        
+        p2 = tf.add_paragraph()
+        p2.text = body
+        p2.font.size = Pt(9.5)
+        p2.font.color.rgb = c_dark
+        p2.space_before = Pt(8)
+
+    # =============================================================
+    # SLIDE 14: CONCLUSION & Q&A
+    # =============================================================
     s14 = prs.slides.add_slide(blank_layout)
     bg14 = s14.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, Inches(13.333), Inches(7.5))
     bg14.fill.solid()
     bg14.fill.fore_color.rgb = c_navy
     bg14.line.fill.background()
 
-    tx14 = s14.shapes.add_textbox(Inches(1.0), Inches(2.0), Inches(11.333), Inches(4.5))
+    # Left: Accomplishments Summary
+    box_c = s14.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.0), Inches(6.8), Inches(5.8))
+    box_c.fill.solid()
+    box_c.fill.fore_color.rgb = RGBColor(20, 45, 90)
+    box_c.line.color.rgb = c_teal
+    box_c.line.width = Pt(1.5)
+
+    tx_c = s14.shapes.add_textbox(Inches(1.0), Inches(1.15), Inches(6.4), Inches(5.5))
+    tf_c = tx_c.text_frame
+    tf_c.word_wrap = True
+
+    p = tf_c.paragraphs[0]
+    p.text = "Key Deliverables Accomplished (Minor Project):"
+    p.font.size = Pt(15)
+    p.font.bold = True
+    p.font.color.rgb = c_gold
+
+    concl_pts = [
+        "1. Complete Working System: Live on Oracle Cloud with auto-restart daemon.",
+        "2. Deterministic Safety Guards: Sub-10ms triage escalation to 108/112 ambulance.",
+        "3. Cross-Lingual Metric Retrieval: Google LaBSE alignment across English, Hindi & Hinglish.",
+        "4. Autonomous Fact-Checking: 100% verification success rate (15/15 passed) at $0 cost.",
+        "5. Community Syndromic Surveillance: Real-time 7-day rolling anomaly detector by postal code.",
+        "6. Academic Research Paper Draft: 11-page manuscript prepared in IEEE format."
+    ]
+    for cpt in concl_pts:
+        p = tf_c.add_paragraph()
+        p.text = cpt
+        p.font.size = Pt(10.5)
+        p.font.color.rgb = c_white
+        p.space_before = Pt(6)
+
+    # Right: Thank You & Contact
+    tx14 = s14.shapes.add_textbox(Inches(8.0), Inches(1.5), Inches(4.5), Inches(5.0))
     tf14 = tx14.text_frame
     tf14.word_wrap = True
 
     p = tf14.paragraphs[0]
-    p.alignment = PP_ALIGN.CENTER
     p.text = "Thank You!"
-    p.font.size = Pt(44)
+    p.font.size = Pt(40)
     p.font.bold = True
     p.font.color.rgb = c_white
 
     p = tf14.add_paragraph()
-    p.alignment = PP_ALIGN.CENTER
     p.text = "Questions & Discussion"
-    p.font.size = Pt(22)
+    p.font.size = Pt(20)
     p.font.color.rgb = c_teal
-    p.space_before = Pt(8)
+    p.space_before = Pt(6)
 
     p = tf14.add_paragraph()
-    p.alignment = PP_ALIGN.CENTER
-    p.text = "AarogyaSathi — AI-Driven Public Health Chatbot for Disease Awareness\nSalman Mohammad Khan (00520815723)  |  Dhairya Summi (00420815723)  |  Siddharth Singh (01820815723)\nDepartment of Computer Science & Engineering (Data Science)\n\nLive Demo: http://130.210.56.87:8000/  |  Admin Dashboard: http://130.210.56.87:8000/admin"
-    p.font.size = Pt(12)
-    p.font.color.rgb = RGBColor(180, 200, 220)
-    p.space_before = Pt(24)
+    p.text = "AarogyaSathi: Bilingual Healthcare Guidance\n\n• Salman Mohammad Khan (00520815723)\n• Dhairya Summi (00420815723)\n• Siddharth Singh (01820815723)\n\nDepartment of Computer Science & Engineering (Data Science)\n\nLive Demo: http://130.210.56.87:8000/\nAdmin Portal: http://130.210.56.87:8000/admin"
+    p.font.size = Pt(11)
+    p.font.color.rgb = RGBColor(190, 215, 240)
+    p.space_before = Pt(16)
 
     output_pptx = "docs/AarogyaSathi_1st_Defense_Presentation.pptx"
     prs.save(output_pptx)
-    print(f"Presentation PPTX saved to: {output_pptx}")
+    print(f"Presentation PPTX successfully compiled and saved to: {output_pptx}")
 
 if __name__ == "__main__":
     build_presentation()
