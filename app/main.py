@@ -12,6 +12,7 @@ from app.core import session as session_store
 from app.core.router import process_message
 from app.factcheck import verifier
 from app.surveillance import syndromic
+from app.channels.whatsapp import whatsapp_router
 
 app = FastAPI(title="AarogyaSathi - AI-Driven Public Health Chatbot", version="0.1.0")
 
@@ -23,6 +24,9 @@ app.add_middleware(
 )
 
 app.mount("/static", StaticFiles(directory=str(config.WEB_DIR)), name="static")
+app.include_router(whatsapp_router, prefix="/webhook/whatsapp", tags=["whatsapp"])
+from app.channels.whatsapp import twilio_webhook_inbound
+app.add_api_route("/webhook/twilio", twilio_webhook_inbound, methods=["POST", "GET"])
 
 
 class ChatRequest(BaseModel):

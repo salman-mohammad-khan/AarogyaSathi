@@ -64,6 +64,10 @@ RETRIEVAL_SIM_THRESHOLD = 0.52
 FACTCHECK_SIM_THRESHOLD = 0.62
 MAX_RETRIEVED = 5
 
+# Fast-path routing toggle: uses sub-5ms TF-IDF & entity matchers before LLM understanding.
+# Set to False (or ENABLE_FAST_PATH=false in .env) to revert 100% to legacy Double LLM pipeline.
+ENABLE_FAST_PATH = os.environ.get("ENABLE_FAST_PATH", "true").lower() in ("1", "true", "yes")
+
 HELPLINES = {
     "en": "National Health Helpline: 108 (Ambulance), 112 (Emergency), 104 (Health Advice).",
     "hi": "राष्ट्रीय स्वास्थ्य हेल्पलाइन: 108 (एम्बुलेंस), 112 (आपातकाल), 104 (स्वास्थ्य सलाह)।",
@@ -78,3 +82,11 @@ HELPLINES = {
     "or": "ଜାତୀୟ ସ୍ୱାସ୍ଥ୍ୟ ହେଲ୍ପଲାଇନ: 108 (ଆମ୍ବୁଲାନ୍ସ), 112 (ଜରୁରୀ), 104 (ସ୍ୱାସ୍ଥ୍ୟ ପରାମର୍ଶ).",
     "ur": "قومی صحت ہیلپ لائن: 108 (ایمبولینس)، 112 (ہنگامی)، 104 (صحت مشورہ).",
 }
+
+
+# WhatsApp Business Cloud API Configuration
+WHATSAPP_TOKEN = os.environ.get("WHATSAPP_TOKEN", "")
+WHATSAPP_PHONE_ID = os.environ.get("WHATSAPP_PHONE_ID", "")
+WHATSAPP_VERIFY_TOKEN = os.environ.get("WHATSAPP_VERIFY_TOKEN", "aarogyasathi_secret_2026")
+WHATSAPP_API_VERSION = os.environ.get("WHATSAPP_API_VERSION", "v25.0")
+WHATSAPP_APP_SECRET = os.environ.get("WHATSAPP_APP_SECRET", "")
