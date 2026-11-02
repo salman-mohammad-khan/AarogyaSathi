@@ -187,7 +187,7 @@ def add_table(doc, headers, rows, tab_num, caption_text, col_widths=None, pad_v=
     for i, title in enumerate(headers):
         hdr_cells[i].text = title
         set_cell_background(hdr_cells[i], "F1F5F9")
-        set_cell_margins(hdr_cells[i], top=80, bottom=80, left=100, right=100)
+        set_cell_margins(hdr_cells[i], top=80, bottom=80, left=(30 if len(headers) > 8 else 100), right=(30 if len(headers) > 8 else 100))
         p = hdr_cells[i].paragraphs[0]
         format_p(p, space_before=0, space_after=0, line_spacing=1.15, align=WD_ALIGN_PARAGRAPH.CENTER)
         for r in p.runs:
@@ -199,7 +199,7 @@ def add_table(doc, headers, rows, tab_num, caption_text, col_widths=None, pad_v=
         row_cells = table.rows[r_idx + 1].cells
         for c_idx, val in enumerate(row_data):
             row_cells[c_idx].text = str(val)
-            set_cell_margins(row_cells[c_idx], top=pad_v, bottom=pad_v, left=100, right=100)
+            set_cell_margins(row_cells[c_idx], top=pad_v, bottom=pad_v, left=(30 if len(headers) > 8 else 100), right=(30 if len(headers) > 8 else 100))
             p = row_cells[c_idx].paragraphs[0]
             align = WD_ALIGN_PARAGRAPH.CENTER if c_idx == 0 or len(str(val)) < 15 else WD_ALIGN_PARAGRAPH.LEFT
             format_p(p, space_before=0, space_after=0, line_spacing=1.15, align=align)
@@ -238,21 +238,20 @@ def build_complete_report():
         _st.font.name = 'Times New Roman'
         _st.element.rPr.rFonts.set(qn('w:eastAsia'), 'Times New Roman')
 
-    # SECTION 1: COVER PAGE
-    s1 = doc.sections[0]
-    s1.page_width = Mm(210)
-    s1.page_height = Mm(297)
-    s1.top_margin = Inches(1.0)
-    s1.bottom_margin = Inches(1.0)
-    s1.left_margin = Inches(1.5)
-    s1.right_margin = Inches(1.0)
-    s1.different_first_page_header_footer = True
-    
-    print("Building Cover Page...")
-    content_preliminary.add_cover_page(doc)
+    # SECTION 1: COVER PAGE (copied from the official college format, page 2)
+    print("Building Cover Page from the college template...")
+    import template_cover
+    template_cover.insert_cover(
+        doc,
+        title="AarogyaSathi: AI-Driven Public Health Chatbot for Disease Awareness",
+        students=[("SALMAN MOHAMMAD KHAN", "00520815723"), ("DHAIRYA SUMMI", "00420815723"), ("SIDHARTH SINGH", "01820815723")],
+        tight_students=60,
+        supervisor="MR. ADITYA SAM KOSHY",
+        designation="Assistant Professor, Department of CSE",
+        month_year="NOVEMBER 2026")
 
-    # SECTION 2: PRELIMINARY MATTER (Pages ii - xv)
-    s2 = doc.add_section(WD_SECTION_START.NEW_PAGE)
+    # SECTION 2: PRELIMINARY MATTER (the document's final sectPr now describes it)
+    s2 = doc.sections[-1]
     s2.page_width = Mm(210)
     s2.page_height = Mm(297)
     s2.top_margin = Inches(1.0)

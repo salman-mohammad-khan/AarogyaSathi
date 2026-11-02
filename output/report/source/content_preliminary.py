@@ -178,7 +178,7 @@ def add_institute_vision_mission(doc):
         p_pt.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         r_pt = p_pt.add_run(pt)
         r_pt.font.name = 'Times New Roman'
-        r_pt.font.size = Pt(11.5)
+        r_pt.font.size = Pt(12)
 
     p_m = doc.add_paragraph()
     p_m.alignment = WD_ALIGN_PARAGRAPH.LEFT
@@ -204,7 +204,7 @@ def add_institute_vision_mission(doc):
         p_pt.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         r_pt = p_pt.add_run(pt)
         r_pt.font.name = 'Times New Roman'
-        r_pt.font.size = Pt(11.5)
+        r_pt.font.size = Pt(12)
 
 def add_pos_cos_sdgs(doc, add_table_fn):
     p_h = doc.add_paragraph()
@@ -221,7 +221,7 @@ def add_pos_cos_sdgs(doc, add_table_fn):
     p_po.paragraph_format.space_after = Pt(4)
     r_po = p_po.add_run("PROGRAM OUTCOMES (POs)")
     r_po.font.name = 'Times New Roman'
-    r_po.font.size = Pt(11.5)
+    r_po.font.size = Pt(12)
     r_po.bold = True
 
     pos = [
@@ -241,22 +241,22 @@ def add_pos_cos_sdgs(doc, add_table_fn):
         p_item = doc.add_paragraph()
         p_item.paragraph_format.space_before = Pt(0)
         p_item.paragraph_format.space_after = Pt(2)
-        p_item.paragraph_format.line_spacing = 1.15
+        p_item.paragraph_format.line_spacing = 1.0
         p_item.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         r_c = p_item.add_run(f"{code}: ")
         r_c.font.name = 'Times New Roman'
-        r_c.font.size = Pt(10)
+        r_c.font.size = Pt(12)
         r_c.bold = True
         r_d = p_item.add_run(desc)
         r_d.font.name = 'Times New Roman'
-        r_d.font.size = Pt(10)
+        r_d.font.size = Pt(12)
 
     p_co = doc.add_paragraph()
     p_co.paragraph_format.space_before = Pt(6)
     p_co.paragraph_format.space_after = Pt(4)
     r_co = p_co.add_run("COURSE OUTCOMES (COs) - MINOR PROJECT (ES-451)")
     r_co.font.name = 'Times New Roman'
-    r_co.font.size = Pt(11.5)
+    r_co.font.size = Pt(12)
     r_co.bold = True
 
     cos = [
@@ -269,15 +269,15 @@ def add_pos_cos_sdgs(doc, add_table_fn):
         p_item = doc.add_paragraph()
         p_item.paragraph_format.space_before = Pt(0)
         p_item.paragraph_format.space_after = Pt(2)
-        p_item.paragraph_format.line_spacing = 1.15
+        p_item.paragraph_format.line_spacing = 1.0
         p_item.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         r_c = p_item.add_run(f"{code}: ")
         r_c.font.name = 'Times New Roman'
-        r_c.font.size = Pt(10)
+        r_c.font.size = Pt(12)
         r_c.bold = True
         r_d = p_item.add_run(desc)
         r_d.font.name = 'Times New Roman'
-        r_d.font.size = Pt(10)
+        r_d.font.size = Pt(12)
 
 def add_department_vision_mission(doc):
     p_h = doc.add_paragraph()
@@ -300,14 +300,14 @@ def add_department_vision_mission(doc):
     p_vt = doc.add_paragraph()
     p_vt.paragraph_format.space_before = Pt(0)
     p_vt.paragraph_format.space_after = Pt(6)
-    p_vt.paragraph_format.line_spacing = 1.3
+    p_vt.paragraph_format.line_spacing = 1.0
     p_vt.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r_vt = p_vt.add_run(
         "To be a leading centre of excellence in the field of Computer Science Engineering in the realms of Data Science education, "
         "research, and innovation, committed to empowering students to lead data-driven decision-making for the betterment of society."
     )
     r_vt.font.name = 'Times New Roman'
-    r_vt.font.size = Pt(11)
+    r_vt.font.size = Pt(12)
 
     p_m = doc.add_paragraph()
     p_m.paragraph_format.space_before = Pt(8)
@@ -328,11 +328,11 @@ def add_department_vision_mission(doc):
         p_pt = doc.add_paragraph(style='List Bullet')
         p_pt.paragraph_format.space_before = Pt(0)
         p_pt.paragraph_format.space_after = Pt(3)
-        p_pt.paragraph_format.line_spacing = 1.25
+        p_pt.paragraph_format.line_spacing = 1.0
         p_pt.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         r_pt = p_pt.add_run(dm)
         r_pt.font.name = 'Times New Roman'
-        r_pt.font.size = Pt(10.5)
+        r_pt.font.size = Pt(12)
 
     p_peo = doc.add_paragraph()
     p_peo.paragraph_format.space_before = Pt(8)
@@ -351,15 +351,15 @@ def add_department_vision_mission(doc):
         p_pt = doc.add_paragraph()
         p_pt.paragraph_format.space_before = Pt(0)
         p_pt.paragraph_format.space_after = Pt(2)
-        p_pt.paragraph_format.line_spacing = 1.15
+        p_pt.paragraph_format.line_spacing = 1.0
         p_pt.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         r_c = p_pt.add_run(f"{code}: ")
         r_c.font.name = 'Times New Roman'
-        r_c.font.size = Pt(10)
+        r_c.font.size = Pt(12)
         r_c.bold = True
         r_d = p_pt.add_run(desc)
         r_d.font.name = 'Times New Roman'
-        r_d.font.size = Pt(10)
+        r_d.font.size = Pt(12)
 
     p_pso = doc.add_paragraph()
     p_pso.paragraph_format.space_before = Pt(8)
@@ -378,15 +378,15 @@ def add_department_vision_mission(doc):
         p_pt = doc.add_paragraph()
         p_pt.paragraph_format.space_before = Pt(0)
         p_pt.paragraph_format.space_after = Pt(2)
-        p_pt.paragraph_format.line_spacing = 1.15
+        p_pt.paragraph_format.line_spacing = 1.0
         p_pt.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         r_c = p_pt.add_run(f"{code}: ")
         r_c.font.name = 'Times New Roman'
-        r_c.font.size = Pt(10)
+        r_c.font.size = Pt(12)
         r_c.bold = True
         r_d = p_pt.add_run(desc)
         r_d.font.name = 'Times New Roman'
-        r_d.font.size = Pt(10)
+        r_d.font.size = Pt(12)
 
 def add_co_po_mapping(doc, add_table_fn):
     p_h = doc.add_paragraph()
@@ -406,7 +406,7 @@ def add_co_po_mapping(doc, add_table_fn):
         ["CO3", "1", "2", "1", "1", "2", "0", "0", "1", "2", "3", "1"],
         ["CO4", "0", "0", "0", "0", "0", "3", "3", "3", "2", "1", "1"]
     ]
-    col_w = [0.6, 0.45, 0.45, 0.45, 0.45, 0.45, 0.45, 0.45, 0.45, 0.45, 0.45, 0.45]
+    col_w = [0.55] + [0.47] * 11
     add_table_fn(doc, headers, rows, "1", "CO–PO Correlation Matrix for Minor Project", col_w)
 
     p_just = doc.add_paragraph()
@@ -414,7 +414,7 @@ def add_co_po_mapping(doc, add_table_fn):
     p_just.paragraph_format.space_after = Pt(4)
     r_j = p_just.add_run("Project-Specific Justification for CO–PO Mapping:")
     r_j.font.name = 'Times New Roman'
-    r_j.font.size = Pt(11)
+    r_j.font.size = Pt(12)
     r_j.bold = True
 
     justifications = [
@@ -435,11 +435,11 @@ def add_co_po_mapping(doc, add_table_fn):
         p_pt.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         r_t = p_pt.add_run(f"• {title}: ")
         r_t.font.name = 'Times New Roman'
-        r_t.font.size = Pt(9.5)
+        r_t.font.size = Pt(12)
         r_t.bold = True
         r_d = p_pt.add_run(text)
         r_d.font.name = 'Times New Roman'
-        r_d.font.size = Pt(9.5)
+        r_d.font.size = Pt(12)
 
     doc.add_page_break()
 
@@ -468,7 +468,7 @@ def add_co_po_mapping(doc, add_table_fn):
     p_pso_just.paragraph_format.space_after = Pt(4)
     r_pj = p_pso_just.add_run("Project-Specific Justification for CO–PSO Mapping:")
     r_pj.font.name = 'Times New Roman'
-    r_pj.font.size = Pt(11)
+    r_pj.font.size = Pt(12)
     r_pj.bold = True
 
     pso_justifications = [
@@ -485,11 +485,11 @@ def add_co_po_mapping(doc, add_table_fn):
         p_pt.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         r_t = p_pt.add_run(f"• {title}: ")
         r_t.font.name = 'Times New Roman'
-        r_t.font.size = Pt(10)
+        r_t.font.size = Pt(12)
         r_t.bold = True
         r_d = p_pt.add_run(text)
         r_d.font.name = 'Times New Roman'
-        r_d.font.size = Pt(10)
+        r_d.font.size = Pt(12)
 
 def add_project_to_sdg_mapping(doc, add_table_fn):
     p_h = doc.add_paragraph()
@@ -506,7 +506,7 @@ def add_project_to_sdg_mapping(doc, add_table_fn):
     p_t.paragraph_format.space_after = Pt(8)
     r_t = p_t.add_run("PROJECT TITLE: AarogyaSathi: AI-Driven Public Health Chatbot for Disease Awareness")
     r_t.font.name = 'Times New Roman'
-    r_t.font.size = Pt(11.5)
+    r_t.font.size = Pt(12)
     r_t.bold = True
 
     sdg_headers = ["Mapped Sustainable Development Goals", "Relevance Level"]
@@ -522,7 +522,7 @@ def add_project_to_sdg_mapping(doc, add_table_fn):
     p_j.paragraph_format.space_after = Pt(6)
     r_j = p_j.add_run("Justification for SDG Mapping:")
     r_j.font.name = 'Times New Roman'
-    r_j.font.size = Pt(11.5)
+    r_j.font.size = Pt(12)
     r_j.bold = True
 
     sdg_justifications = [
@@ -541,11 +541,11 @@ def add_project_to_sdg_mapping(doc, add_table_fn):
         p_pt.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         r_t = p_pt.add_run(f"• {title}: ")
         r_t.font.name = 'Times New Roman'
-        r_t.font.size = Pt(10.5)
+        r_t.font.size = Pt(12)
         r_t.bold = True
         r_d = p_pt.add_run(text)
         r_d.font.name = 'Times New Roman'
-        r_d.font.size = Pt(10.5)
+        r_d.font.size = Pt(12)
 
 def add_declaration(doc):
     p_h = doc.add_paragraph()
@@ -772,7 +772,7 @@ def add_abstract_page(doc):
         "tunnel, and accessible via a lightweight responsive web portal and a Meta WhatsApp Cloud API test-number channel (outbound API v25.0)."
     )
     r1.font.name = 'Times New Roman'
-    r1.font.size = Pt(11)
+    r1.font.size = Pt(12)
 
     p2 = doc.add_paragraph()
     p2.paragraph_format.space_before = Pt(2)
@@ -790,7 +790,7 @@ def add_abstract_page(doc):
         "feasibility of a low-cost public health information service on free-tier cloud infrastructure while establishing transparent boundaries for clinical safety, negation handling, and verified data linkage."
     )
     r2.font.name = 'Times New Roman'
-    r2.font.size = Pt(11)
+    r2.font.size = Pt(12)
 
     p_kw = doc.add_paragraph()
     p_kw.paragraph_format.space_before = Pt(6)
@@ -799,11 +799,11 @@ def add_abstract_page(doc):
     p_kw.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r_kwh = p_kw.add_run("Keywords: ")
     r_kwh.font.name = 'Times New Roman'
-    r_kwh.font.size = Pt(11)
+    r_kwh.font.size = Pt(12)
     r_kwh.bold = True
     r_kwt = p_kw.add_run("Public Health Informatics, Multilingual Conversational Agents, Retrieval-Augmented Generation (RAG), LaBSE Dense Embeddings, Health Misinformation Verification, Meta WhatsApp Cloud API, Syndromic Surveillance.")
     r_kwt.font.name = 'Times New Roman'
-    r_kwt.font.size = Pt(11)
+    r_kwt.font.size = Pt(12)
     r_kwt.italic = True
 
 def add_table_of_contents(doc):
@@ -931,7 +931,7 @@ def add_list_of_figures(doc):
         ("Figure 5.1", "Web Chat Landing View and Disease-Information Answer (Dengue)", "28"),
         ("Figure 5.2", "Fact-Check Verdict (MYTH) and Hindi Answer for a Malaria Query", "29"),
         ("Figure 5.3", "Administrative Syndromic Surveillance Dashboard Populated with Demonstration Data", "30"),
-        ("Figure 5.4", "Meta Developer Console Webhook Fields Showing the Subscribed Messages Field", "31")
+        ("Figure 5.4", "WhatsApp Exchange on an Approved Test Recipient's Phone: Greeting, Dengue Symptoms and Fact-Check Verdict", "31")
     ]
 
     for f_id, f_title, f_pg in figures:

@@ -148,7 +148,7 @@ def add_chapter_4(doc, add_body_p, add_bullet_p, add_chapter_title, add_heading_
 
     add_heading_1(doc, "4.7 Multi-Tier Triage, Fast-Path Heuristics, and Routing Flow")
     add_body_p(doc,
-        "To satisfy the critical latency requirement of under 4 seconds while ensuring absolute clinical safety, AarogyaSathi executes a multi-tier triage "
+        "To keep responses fast while giving clinical safety checks priority, AarogyaSathi executes a multi-tier triage "
         "decision tree. Figure 4.3 illustrates the routing lifecycle of every incoming message:"
     )
 
@@ -372,13 +372,15 @@ def add_chapter_5(doc, add_body_p, add_bullet_p, add_chapter_title, add_heading_
                "Administrative Syndromic Surveillance Dashboard Populated with Demonstration Data.",
                width_inches=4.7)
 
-    add_heading_2(doc, "5.7.5 Meta WhatsApp Channel Subscription and Verification")
+    add_heading_2(doc, "5.7.5 WhatsApp Channel Exchange")
     add_body_p(doc,
-        "Figure 5.4 shows the Meta developer console listing the webhook subscription fields for the application. The callback URL is served over the Cloudflare "
-        "HTTPS tunnel and the messages field is subscribed, as recorded in the verification described in Section 6.6."
+        "Figure 5.4 shows the three test messages as they appeared on the phone of an approved test recipient: a greeting, the dengue-symptoms question and the "
+        "claim check 'Fact check: garlic cures dengue'. Each message was answered through the Meta WhatsApp Cloud API and the Cloudflare HTTPS tunnel "
+        "described in Section 4.10; the verification steps are summarized in Section 6.6. In panel (b) the welcome text appears first because it was the first "
+        "message of a new session, followed by the dengue answer."
     )
-    add_figure(doc, "whatsapp-messages-subscribed.png", "5.4",
-               "Meta Developer Console Webhook Fields Showing the Subscribed Messages Field.",
-               width_inches=4.3)
+    add_figure(doc, "fig54_whatsapp.png", "5.4",
+               "WhatsApp Exchange on an Approved Test Recipient's Phone: (a) Greeting; (b) Dengue Symptoms; (c) Fact-Check Verdict.",
+               width_inches=5.6)
 
 print("Chapters 4-5 generator module defined successfully.")
