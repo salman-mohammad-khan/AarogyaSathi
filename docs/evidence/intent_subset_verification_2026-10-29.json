@@ -1,0 +1,257 @@
+{
+  "verification_date": "2026-10-29",
+  "kind": "read-only isolated-process reproduction; no service changes",
+  "threshold": 0.45,
+  "python": "3.12.3",
+  "scikit_learn": "1.9.0",
+  "all_correct": 30,
+  "all_total": 30,
+  "nonduplicate_correct": 16,
+  "nonduplicate_total": 16,
+  "exact_duplicate_count": 14,
+  "intent_source_sha256": "e4c322cb722db1b8d199defb689b3c2a06395a5c94efd478db706042425dd0a0",
+  "evaluation_sha256": "5b743516a17b0d68bc72eba9e44651bc71429ac9da25e87b26cf780bf6ba94da",
+  "training_sha256": "77c6773d2d069bbfafe3d39c0fe6433b2fb89287f57a9b5179d5df7383b027d6",
+  "predictions": [
+    {
+      "text": "salaam ji",
+      "expected": "greeting",
+      "predicted": "greeting",
+      "confidence": 0.80336501,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "good evening",
+      "expected": "greeting",
+      "predicted": "greeting",
+      "confidence": 0.70114189,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "kya kar sakte ho batao",
+      "expected": "help",
+      "predicted": "help",
+      "confidence": 0.74630145,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "what are the options",
+      "expected": "help",
+      "predicted": "help",
+      "confidence": 0.45521677,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "dengue ke lakshan batao",
+      "expected": "disease_info",
+      "predicted": "disease_info",
+      "confidence": 0.6075299,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "what is typhoid",
+      "expected": "disease_info",
+      "predicted": "disease_info",
+      "confidence": 0.80609724,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "टीबी क्या है",
+      "expected": "disease_info",
+      "predicted": "disease_info",
+      "confidence": 0.79576667,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "corona ke baare mein jaankari do",
+      "expected": "disease_info",
+      "predicted": "disease_info",
+      "confidence": 0.73181032,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "mujhe khaansi aur bukhar hai",
+      "expected": "symptom_check",
+      "predicted": "symptom_check",
+      "confidence": 0.66266981,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "i am feeling weak and dizzy",
+      "expected": "symptom_check",
+      "predicted": "symptom_check",
+      "confidence": 0.72269847,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "पेट में दर्द और उल्टी हो रही है",
+      "expected": "symptom_check",
+      "predicted": "symptom_check",
+      "confidence": 0.57194748,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "malaria se kaise bache",
+      "expected": "prevention",
+      "predicted": "prevention",
+      "confidence": 0.83642093,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "how can I protect my family from dengue",
+      "expected": "prevention",
+      "predicted": "prevention",
+      "confidence": 0.74849017,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "बच्चों के टीकों की सूची",
+      "expected": "vaccination",
+      "predicted": "vaccination",
+      "confidence": 0.72819287,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "when should i get polio drops for my baby",
+      "expected": "vaccination",
+      "predicted": "vaccination",
+      "confidence": 0.75489366,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "mr vaccine kab lagta hai",
+      "expected": "vaccination",
+      "predicted": "vaccination",
+      "confidence": 0.94510914,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "check this forward",
+      "expected": "fact_check",
+      "predicted": "fact_check",
+      "confidence": 0.78523275,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "ye message sahi hai kya",
+      "expected": "fact_check",
+      "predicted": "fact_check",
+      "confidence": 0.66916957,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "is this claim real",
+      "expected": "fact_check",
+      "predicted": "fact_check",
+      "confidence": 0.57599159,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "kya area me koi bimari faili hai",
+      "expected": "outbreak",
+      "predicted": "outbreak",
+      "confidence": 0.59262972,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "any health alerts",
+      "expected": "outbreak",
+      "predicted": "outbreak",
+      "confidence": 0.8620563,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "healthy khana kya khaana chahiye",
+      "expected": "nutrition",
+      "predicted": "nutrition",
+      "confidence": 0.86511664,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "garbhavati mahila ko kya khana chahiye",
+      "expected": "nutrition",
+      "predicted": "nutrition",
+      "confidence": 0.57939391,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "haath dhone ka sahi tarika",
+      "expected": "hygiene",
+      "predicted": "hygiene",
+      "confidence": 0.65440116,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "pani ko saaf kaise kare",
+      "expected": "hygiene",
+      "predicted": "hygiene",
+      "confidence": 0.77904348,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "thank you so much",
+      "expected": "thanks",
+      "predicted": "thanks",
+      "confidence": 0.50976403,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "bahut dhanyavaad",
+      "expected": "thanks",
+      "predicted": "thanks",
+      "confidence": 0.64099408,
+      "training_duplicate": false,
+      "correct": true
+    },
+    {
+      "text": "meri chhati me dard ho raha hai",
+      "expected": "emergency",
+      "predicted": "emergency",
+      "confidence": 0.76576275,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "saans lene me takleef hai",
+      "expected": "emergency",
+      "predicted": "emergency",
+      "confidence": 0.77861041,
+      "training_duplicate": true,
+      "correct": true
+    },
+    {
+      "text": "tamil me baat karo",
+      "expected": "language_switch",
+      "predicted": "language_switch",
+      "confidence": 0.79898938,
+      "training_duplicate": true,
+      "correct": true
+    }
+  ]
+}

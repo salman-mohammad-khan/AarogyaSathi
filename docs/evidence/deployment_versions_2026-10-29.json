@@ -1,0 +1,38 @@
+{
+  "verification_date": "2026-10-29",
+  "method": "Read-only Oracle SSH inspection of installed package metadata, whitelisted model configuration, Ollama model listing, and cached Hugging Face ref",
+  "not_a_complete_historical_environment_manifest": true,
+  "local_model_tag": "qwen3:1.7b",
+  "hosted_model_tag": "gpt-oss:20b",
+  "ollama_version": "0.32.15",
+  "ollama_local_display_id": "8f68893c685c",
+  "hosted_weight_revision": "not exposed by the inspected configuration",
+  "python": "3.12.3",
+  "packages": {
+    "scikit-learn": "1.9.0",
+    "transformers": "5.15.1",
+    "torch": "2.6.0",
+    "numpy": "1.26.4",
+    "tokenizers": "0.22.2",
+    "huggingface-hub": "1.28.0"
+  },
+  "package_metadata_modification_times_utc": {
+    "scikit-learn": "2026-08-23T19:28:21.705734+00:00",
+    "transformers": "2026-08-23T19:28:30.192790+00:00",
+    "torch": "2026-08-23T19:28:12.950122+00:00",
+    "numpy": "2026-08-23T19:28:03.833235+00:00",
+    "tokenizers": "2026-08-23T19:28:28.669091+00:00",
+    "huggingface-hub": "2026-08-23T19:28:27.138936+00:00"
+  },
+  "embedding_checkpoint": "sentence-transformers/LaBSE",
+  "cached_main_revision": "836121a0533e5664b21c7aacc5d22951f2b8b25b",
+  "embedding_api": "transformers.AutoTokenizer and transformers.AutoModel, project mean pooling; not the SentenceTransformer wrapper",
+  "remote_sha256": {
+    "app/config.py": "e1b21db7ffdca1151f48c26f40a184b36e465a5dd6b79256c89573cf72b93cf5",
+    "app/core/intent.py": "e4c322cb722db1b8d199defb689b3c2a06395a5c94efd478db706042425dd0a0",
+    "app/core/embeddings.py": "f9c5340ecfa98cf587be70bb2450b01c8155c247ca8f1601e7f4906696b109f8",
+    "data/training/eval.json": "5b743516a17b0d68bc72eba9e44651bc71429ac9da25e87b26cf780bf6ba94da",
+    "data/training/intents.json": "77c6773d2d069bbfafe3d39c0fe6433b2fb89287f57a9b5179d5df7383b027d6"
+  },
+  "limitation": "These versions were verified on 29 October 2026. Metadata predates the original checks but does not independently prove the complete 26 October environment or the hosted weight revision that served each response."
+}

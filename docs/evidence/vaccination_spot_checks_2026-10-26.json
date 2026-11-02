@@ -1,0 +1,18 @@
+{
+  "test_date": "2026-10-26",
+  "recovered_from": "Original tool output in this same task history",
+  "source_event_timestamp_utc": "2026-10-26T15:37:26.379Z",
+  "not_a_new_test": true,
+  "responses": [
+    {
+      "Question": "Vaccines for my 2 month old baby",
+      "Intent": "vaccination",
+      "Reply": "Hi, I'm AarogyaSathi - your health companion.\n\nI give verified health information (based on WHO/MoHFW) in your language. I can help with:\n1. Disease and symptom information\n2. Prevention and hygiene tips\n3. Vaccination schedules\n4. Outbreak alerts near your pincode\n5. Checking whether a health message is true or false\n\nTo fact-check a forwarded message, start it with: fact check: <message>\n(Example: fact check: garlic cures dengue)\n\nHow can I help you today?\n\nI don’t have verified information for a 2‑month‑old baby in the context. Please check official sources such as mohfw.gov.in or who.int for the correct vaccination schedule.\nSources: UIP, MoHFW\n I provide health AWARENESS information from verified sources only. I am not a doctor and cannot diagnose. If symptoms are severe, persistent or worsening, consult a qualified healthcare professional."
+    },
+    {
+      "Question": "Which vaccines are due for a 1 year old child?",
+      "Intent": "vaccination",
+      "Reply": "Hi, I'm AarogyaSathi - your health companion.\n\nI give verified health information (based on WHO/MoHFW) in your language. I can help with:\n1. Disease and symptom information\n2. Prevention and hygiene tips\n3. Vaccination schedules\n4. Outbreak alerts near your pincode\n5. Checking whether a health message is true or false\n\nTo fact-check a forwarded message, start it with: fact check: <message>\n(Example: fact check: garlic cures dengue)\n\nHow can I help you today?\n\nI do not have verified information. Please check official sources such as mohfw.gov.in or who.int.\nSources: UIP, MoHFW\n I provide health AWARENESS information from verified sources only. I am not a doctor and cannot diagnose. If symptoms are severe, persistent or worsening, consult a qualified healthcare professional."
+    }
+  ]
+}
