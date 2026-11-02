@@ -563,7 +563,7 @@ def build_pdf():
         body_style
     ))
     story.append(Paragraph(
-        "Phase 4 development will focus on three key expansions: (i) integrating official Meta WhatsApp Cloud API webhooks and SMS gateways to achieve friction-free access on basic mobile devices; (ii) incorporating automated speech recognition (ASR) via OpenAI Whisper and Indian speech models (Bhashini) with Voice Activity Detection (VAD) to serve non-literate rural populations; and (iii) conducting real-world clinical validation trials in collaboration with rural Primary Health Centres across selected districts in Northern and Southern India.",
+        "Phase 4 development will focus on three targeted engineering milestones: (i) deploying official Meta WhatsApp Cloud API webhooks with strict adherence to WhatsApp Health Policy (strictly non-diagnostic preventive education) to reach rural demographics without app installation hurdles; (ii) integrating native WhatsApp voice note ingestion (.ogg/Opus) and vernacular speech synthesis using faster-whisper and Indian speech models (Bhashini) to remove literacy barriers for elderly citizens; and (iii) performing extensive model optimization via 4-bit/8-bit GGUF quantization and ONNX Runtime acceleration to achieve sub-500ms response latencies while enhancing clinical reasoning empathy on constrained edge servers.",
         body_style
     ))
 

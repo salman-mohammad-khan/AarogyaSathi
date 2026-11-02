@@ -656,16 +656,15 @@ def build_presentation():
     # Top: Visual Roadmap Timeline
     add_fitted_image(s13, "docs/ppt_assets/roadmap_visual.png", 0.8, 1.35, 11.733, 2.4)
 
-    # Bottom: 3 Milestone Deep-Dive Cards
     roadmap_deep = [
-        ("Phase 4A: WhatsApp & SMS Integration",
-         "• Implement official Meta WhatsApp Cloud API webhooks.\n• Integrate SMS/USSD gateway for basic feature-phone users in remote hamlets.\n• Eliminates smartphone/app download barriers.",
+        ("Phase 4A: WhatsApp Bot & Webhook",
+         "• Implement official Meta WhatsApp Cloud API webhooks.\n• Full compliance with WhatsApp Health Policy (strictly non-diagnostic preventive education).\n• Reaches 500M+ rural users without requiring app downloads.",
          "#EBF5FB", "#2980B9"),
-        ("Phase 4B: Vernacular Voice AI (ASR/TTS)",
-         "• Incorporate Whisper and AI4Bharat / Bhashini speech models.\n• Voice Activity Detection (VAD) for bidirectional spoken interaction in rural dialects.\n• Empowers non-literate and elderly populations.",
+        ("Phase 4B: Voice Note Ingestion (Speech AI)",
+         "• Process native WhatsApp audio notes (.ogg/Opus) directly via faster-whisper / Bhashini.\n• Bidirectional vernacular voice notes (ASR + TTS) in Hindi & regional dialects.\n• Removes smartphone keyboard & literacy barriers for elderly citizens.",
          "#FEF9E7", "#D4AC0D"),
-        ("Phase 4C: Clinical Pilot & IDSP Sync",
-         "• Conduct pilot field trials across rural Primary Health Centres (PHCs).\n• Evaluate usability metrics with ASHAs (community health workers).\n• Automated two-way API pipeline feeding into district IDSP dashboards.",
+        ("Phase 4C: Model Optimization & Low-Latency Edge",
+         "• 4-bit / 8-bit GGUF quantization & ONNX Runtime optimization.\n• Sub-500ms response time with KV-cache prefix acceleration.\n• Enhanced clinical empathy & accuracy with zero cloud billing overhead.",
          "#E8F8F5", "#16A085")
     ]
 

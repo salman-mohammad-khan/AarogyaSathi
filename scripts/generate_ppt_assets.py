@@ -345,14 +345,14 @@ def generate_roadmap_visual():
             ha='center', fontsize=13.5, fontweight='bold', color=C_NAVY)
 
     phases = [
-        ("Phase 4A", "WhatsApp & SMS Gateway", "Months 1 - 2", 
-         "• Meta WhatsApp Cloud API\n• SMS / USSD fallback\n• Reaches 500M+ rural users\n  without downloading apps", 
+        ("Phase 4A", "WhatsApp Bot & Webhook", "Months 1 - 2", 
+         "• Meta WhatsApp Cloud API\n• 100% Policy-compliant triage\n• 500M+ user reach without\n  installing mobile apps", 
          "#EBF5FB", "#2980B9", 0.05),
-        ("Phase 4B", "Vernacular Speech AI", "Months 3 - 4", 
-         "• IndicWav2Vec / Bhashini\n• Whisper Voice Activity Det.\n• Dual-way Voice UI\n• Eliminates literacy barrier", 
+        ("Phase 4B", "Voice Note Processing", "Months 3 - 4", 
+         "• Native WhatsApp audio notes\n• faster-whisper / Bhashini\n• Bidirectional voice response\n• Overcomes literacy barrier", 
          "#FEF9E7", C_GOLD, 0.38),
-        ("Phase 4C", "ASHA Pilot & Edge TPU", "Months 5 - 6", 
-         "• Clinical pilot at rural PHCs\n• Direct IDSP API sync\n• 4-bit Edge-TPU APK\n• Offline district operation", 
+        ("Phase 4C", "Model Optimization", "Months 5 - 6", 
+         "• 4-bit GGUF / ONNX Runtime\n• Sub-500ms response latency\n• Enhanced clinical accuracy\n• Low-RAM edge deployment", 
          "#E8F8F5", C_TEAL, 0.71),
     ]
 
