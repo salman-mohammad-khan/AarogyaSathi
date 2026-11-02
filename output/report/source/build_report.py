@@ -238,6 +238,12 @@ def build_complete_report():
         _st.font.name = 'Times New Roman'
         _st.element.rPr.rFonts.set(qn('w:eastAsia'), 'Times New Roman')
 
+    _cp = doc.core_properties
+    _cp.author = "Salman Mohammad Khan, Dhairya Summi, Sidharth Singh"
+    _cp.last_modified_by = _cp.author
+    _cp.title = "AarogyaSathi: AI-Driven Public Health Chatbot for Disease Awareness - Minor Project Report"
+    _cp.comments = ""
+
     # SECTION 1: COVER PAGE (copied from the official college format, page 2)
     print("Building Cover Page from the college template...")
     import template_cover

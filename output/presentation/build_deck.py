@@ -398,5 +398,6 @@ text(s, 0.8, 7.0, 11, 0.3, "Research paper (6 pages) and final project report (5
 
 prs.core_properties.title = "AarogyaSathi - Second Defense Presentation"
 prs.core_properties.author = "Salman Mohammad Khan, Dhairya Summi, Sidharth Singh"
+prs.core_properties.last_modified_by = prs.core_properties.author
 prs.save(OUT)
 print("saved", OUT, "slides:", len(prs.slides))
