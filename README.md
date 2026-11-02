@@ -20,7 +20,7 @@ over WhatsApp/SMS, built for rural and semi-urban India.
 | Vaccination | UIP schedule lookups by age/pregnancy + individual vaccine info |
 | Fact check | Paste/forward any health message → verdict `VERIFIED / MYTH / PARTLY TRUE / UNVERIFIABLE` with confidence %, explanation, sources, and fear-mongering flag |
 | Safety | Red-flag detection (chest pain, snake bite, seizure...) → immediate 108/112 escalation; disclaimer on every answer |
-| Channels | Web chat demo UI now; WhatsApp Cloud API + SMS integration next (Phase 4) |
+| Channels | Web chat UI; Meta WhatsApp Cloud API webhook (signature-verified, demonstrated on a Meta test number); Twilio adapter included, SMS delivery not verified |
 | Surveillance | Syndromic early-warning module (pincode-tagged query spikes) — Phase 3 |
 
 ## Architecture
@@ -100,25 +100,46 @@ Swagger: http://127.0.0.1:8000/docs
 
 ```powershell
 python scripts/eval.py      # benchmark report
-python -m pytest tests -q   # 20 unit/ML tests
+python -m pytest tests -q   # 42 automated tests
 ```
 
-Latest benchmark (held-out set, `data/training/eval.json`):
+Benchmark on the supplied development sets (`data/training/eval.json`):
 
-| Suite | Accuracy |
+| Suite | Result |
 |---|---|
-| Intent classification (30 queries, EN/HI/Hinglish) | 100% |
-| Cross-lingual retrieval (15 queries) | 100% |
-| Health-claim fact check (34 claims) | 100% |
-| SIH target | >= 80% |
+| Intent classification (30 queries, EN/HI/Hinglish) | 30/30 |
+| Cross-lingual retrieval (15 queries) | 15/15 |
+| Health-claim fact check (34 claims) | 34/34 |
+
+These sets were written by the project team: 14 of the 30 intent queries also appear in the
+training data, and the benchmark thresholds differ from the production settings. Read them as
+component checks, not as an estimate of real-world accuracy or clinical correctness.
+
+## WhatsApp channel
+
+`app/channels/whatsapp.py` implements the Meta WhatsApp Cloud API webhook: verification
+challenge, HMAC-SHA256 signature check, immediate acknowledgement with background processing,
+duplicate suppression and reply splitting. It was demonstrated end to end with a Meta test
+number and an approved test recipient. Configure it with `WHATSAPP_TOKEN`, `WHATSAPP_PHONE_ID`,
+`WHATSAPP_VERIFY_TOKEN` and `WHATSAPP_APP_SECRET` in your private `.env` (see `.env.example`).
+Never commit these values. `scripts/configure_meta_whatsapp.py` helps with the subscription setup.
+
+## Final deliverables
+
+| Item | Location |
+|---|---|
+| Final project report (DOCX and PDF) | `output/report/` (builder in `output/report/source/`) |
+| Second-defense presentation | `output/presentation/` |
+| Research paper (final version) | `output/research/AarogyaSathi_Full_Paper_Revised_v8.*` |
+| Dated verification evidence | `docs/evidence/` |
 
 ## Project layout
 
 ```
 app/core/      NLP: language, embeddings, intent, entities, retriever, safety, router
 app/factcheck/ myth-vs-fact verifier (verity scores, source tiers)
-app/channels/  WhatsApp / SMS integration (Phase 4)
-app/surveillance/ syndromic early-warning (Phase 3)
+app/channels/  Meta WhatsApp Cloud API webhook, Twilio adapter, simulator endpoint
+app/surveillance/ syndromic early-warning (pincode symptom counts vs a 7-day baseline)
 data/kb/       curated knowledge base (diseases, vaccines, faq, myths, alerts, messages)
 data/training/ intent training examples + held-out eval set
 web/           WhatsApp-style demo UI
@@ -127,7 +148,7 @@ scripts/       setup (model download), eval, smoke tests
 
 ## Deployment
 
-- **Recommended: Oracle Cloud Always Free** (2 vCPU/12GB, $0 forever) — full step-by-step
+- **Used for the demo: an Oracle Cloud Arm VM** (2 OCPU / 12 GiB; free-tier eligible) — full step-by-step
   guide in `docs/ORACLE_DEPLOY.md`, one-shot setup script in `scripts/oracle_setup.sh`,
   systemd unit in `scripts/healthbot.service`.
 - Docker: `docker compose up -d`

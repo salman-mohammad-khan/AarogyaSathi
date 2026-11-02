@@ -63,3 +63,37 @@ desktop.ini
 # External / Non-project directories
 jsub-autopilot/
 se-autopilot/
+
+# Working files that are not part of the project deliverable
+tmp/
+REPORT_AGENT_HANDOFF_PROMPT.md
+Thoughts2Binary_QA_Drive.pdf
+/AarogyaSathi_Research_Paper_Draft.pdf
+*.odt
+meta-support-*
+whatsapp-*.png
+whatsapp-*.txt
+docs/WHATSAPP_DEMO_SETUP_*.md
+docs/WHATSAPP_PIPELINE_VERIFICATION_*.md
+docs/AarogyaSathi_Originality_Review_*.md
+docs/AarogyaSathi_Placeholder_Resolutions_*.md
+docs/AarogyaSathi_Revised_Paper_Review_*.md
+docs/AarogyaSathi_Defense_Revision_Master_Guide.pdf
+
+# Only the final paper version is kept under output/research
+output/research/*
+!output/research/AarogyaSathi_Full_Paper_Revised_v8.docx
+!output/research/AarogyaSathi_Full_Paper_Revised_v8.pdf
+output/report/source/__pycache__/
+output/report/source/assets_orig/
+output/presentation/render/
+scripts/build_revised_paper_v*.py
+scripts/build_ieee_style_manuscript.py
+scripts/build_journal_docx.py
+scripts/build_manuscript_v3.py
+scripts/build_research_paper_review.py
+scripts/review_manuscript_originality.py
+scripts/build_defense_guide_pdf.py
+.~lock.*
+output/report/source/patch_content*.py
+docs/AarogyaSathi_Audit_*.md
