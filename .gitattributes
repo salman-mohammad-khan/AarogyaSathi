@@ -6,3 +6,6 @@
 *.jpg binary
 *.jpeg binary
 *.npy binary
+
+# Shell scripts must keep Unix line endings or they fail on Linux (": command not found").
+*.sh text eol=lf
