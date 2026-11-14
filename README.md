@@ -1,3 +1,5 @@
+> **Archived college submission (ES-451, SIH-25049).** This repository is kept as submitted for the college project. The maintained, standalone version is [aarogyasathi-rag](https://github.com/salman-mohammad-khan/aarogyasathi-rag).
+
 # AarogyaSathi
 
 **A multilingual, retrieval-augmented health-awareness chatbot with built-in claim verification, for WhatsApp and the web.**
