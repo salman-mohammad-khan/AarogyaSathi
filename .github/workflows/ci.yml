@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      # The default Linux torch wheel pulls in CUDA libraries (about 2 GB). CI has no GPU, so install the CPU build
+      # first; requirements.txt then sees torch as already satisfied.
+      - name: Install CPU-only torch
+        run: pip install "torch>=2.2,<2.7" --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest
+
+      # LaBSE (about 1.8 GB) lives in the Hugging Face cache; the language-id model lives in data/models.
+      - name: Cache models
+        id: models
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            data/models
+          key: models-${{ runner.os }}-${{ hashFiles('scripts/setup.py', 'app/config.py') }}
+
+      - name: Download models
+        if: steps.models.outputs.cache-hit != 'true'
+        run: python scripts/setup.py
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+
+      - name: Run tests
+        run: python -m pytest tests -q
+        env:
+          PYTHONPATH: ${{ github.workspace }}
