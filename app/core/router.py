@@ -35,11 +35,28 @@ def _build_disease_symptom_map():
     return mapping
 
 
+# A number plus a time unit is only treated as a vaccination age when the message is about vaccines, a baby or a
+# child, and the number is not a duration ("cough for 2 years").
+AGE_CONTEXT = re.compile(
+    r"\b(vaccin\w*|immuni[sz]\w*|tika\w*|teeka\w*|baby|babies|child\w*|kid|kids|infant|newborn|toddler|"
+    r"bachch\w*|bachh\w*|shishu|son|daughter|beta|beti|bete|old)\b"
+)
+AGE_CONTEXT_DEVANAGARI = ("टीका", "टीके", "टीकाकरण", "बच्च", "शिशु")
+DURATION_CUE = re.compile(r"(?:\bfor|\bsince|\blast|\bpast|\bpichle|\bpichhle|से)\s*$")
+
+
 def _age_to_milestones(text):
     lower = text.lower()
     if any(w in lower for w in PREGNANCY_WORDS):
         return "pregnancy"
-    match = AGE_PATTERN.search(lower)
+    if not (AGE_CONTEXT.search(lower) or any(w in lower for w in AGE_CONTEXT_DEVANAGARI)):
+        return None
+    match = None
+    for candidate in AGE_PATTERN.finditer(lower):
+        if DURATION_CUE.search(lower[max(0, candidate.start() - 12):candidate.start()]):
+            continue
+        match = candidate
+        break
     if not match:
         return None
     n = int(match.group(1))
@@ -688,20 +705,28 @@ def _process_message_core(text, pincode=None, session=None):
 
     lower = text.lower()
 
+    # Safety first: an emergency or self-harm message is answered before anything else, including fact-check
+    # triggers. If the message also asks for a fact-check, the reply tells the user how to resend the claim.
+    red_flags = safety.check_red_flags(text)
+    if red_flags:
+        session.clear()
+        if safety.is_self_harm(red_flags):
+            reply = safety.self_harm_response(lang)
+        else:
+            reply = safety.emergency_response(lang)
+            if any(t in lower for t in FACT_TRIGGERS):
+                reply += "\n\n" + safety.fact_check_note(lang)
+        return {
+            "text": reply,
+            "meta": {"intent": "emergency", "red_flags": red_flags, "lang": lang},
+        }
+
     if any(t in lower for t in FACT_TRIGGERS):
         session.clear()
         result = verifier.verify_claim(text, lang)
         return {
             "text": verifier.format_verdict(result, lang),
             "meta": {"intent": "fact_check", "verdict": result["verdict"], "lang": lang, "factcheck": result},
-        }
-
-    red_flags = safety.check_red_flags(text)
-    if red_flags:
-        session.clear()
-        return {
-            "text": safety.emergency_response(lang),
-            "meta": {"intent": "emergency", "red_flags": red_flags, "lang": lang},
         }
 
     if text.strip().lower() in ("hi", "hello", "hey", "namaste", "namaskar", "नमस्ते", "नमस्कार", "हैलो", "हाय"):

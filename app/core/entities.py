@@ -1,3 +1,6 @@
+import re
+import unicodedata
+
 SYMPTOM_LEXICON = {
     "fever": ["fever", "bukhar", "बुखार", "ज्वर", "high temperature", "tapman"],
     "headache": ["headache", "sar dard", "sir dard", "सिरदर्द", "सिर में दर्द", "head pain", "headake", "hedache", "head ache", "sar dardh"],
@@ -44,9 +47,16 @@ RED_FLAG_LEXICON = {
     "rabid_animal": ["dog bite", "kutta kaat", "कुत्ते ने काट", "monkey bite", "bandar ne kaat", "बंदर ने काट"],
     "poison": ["poison", "zahar", "ज़हर", "जहर", "consumed poison", "jahar kha liya"],
     "stroke": ["stroke", "paralysis", "lakwa", "लकवा", "face drooping", "slurred speech"],
-    "suicide": ["suicide", "khudkushi", "आत्महत्या", "self harm", "kill myself", "jeena nahi"],
+    "suicide": [
+        "suicide", "khudkushi", "आत्महत्या", "self harm", "self-harm", "kill myself", "jeena nahi",
+        "end my life", "ending my life", "end it all", "want to die", "wanna die", "take my own life",
+        "don't want to live", "dont want to live", "no reason to live",
+        "marna chahta", "marna chahti", "mar jana chahta", "mar jaana chahta", "mar jana chahti",
+        "jeene ka mann nahi", "jine ka mann nahi", "zindagi khatam",
+        "मरना चाहता", "मरना चाहती", "जीने का मन नहीं", "जिंदगी खत्म", "ज़िंदगी खत्म",
+    ],
     "pregnancy_bleed": ["pregnancy bleeding", "garbhavati ko khoon", "गर्भावस्था में खून"],
-    "severe_burn": ["severe burn", "burned badly", "jala hua", "जल गया", "burnt"],
+    "severe_burn": ["severe burn", "burned badly", "jala hua", "जल गया"],
 }
 
 DISEASE_ALIASES = {
@@ -86,6 +96,52 @@ VACCINE_ALIASES = {
 NEGATION_WORDS = ["no", "not", "nahi", "nhi", "nahin", "कोई नहीं", "नहीं", "without", "koi nahi", "nahi hai"]
 
 
+# Phrases that contain a red-flag word but are information topics, not emergencies.
+RED_FLAG_CONTEXT_STRIPS = ("food poisoning",)
+
+_SUFFIX_RE = re.compile(r"(?:s|es|ed|d|ing)(?![a-z0-9])")
+
+
+def _ascii_alnum(ch):
+    return ch.isascii() and ch.isalnum()
+
+
+def _letter_like(ch):
+    return unicodedata.category(ch)[0] in ("L", "M", "N")
+
+
+def find_alias(text_lower, alias):
+    """Return the index of `alias` in `text_lower` as a standalone term, or -1.
+
+    English and Hinglish (ASCII) aliases must not touch an ASCII letter or digit, so "tb" does not match
+    inside "outbreak", "fits" not inside "benefits" and "flu" not inside "influence". Aliases of five or more
+    letters may take a plural or verb ending ("headaches", "coughing"). Very short non-ASCII aliases must not
+    touch any letter or combining mark. Longer non-ASCII aliases keep plain substring matching, because
+    Devanagari word forms are inflected and Python's word-boundary rules do not handle vowel marks.
+    """
+    ascii_alias = alias.isascii()
+    if not ascii_alias and len(alias) > 3:
+        return text_lower.find(alias)
+    touches = _ascii_alnum if ascii_alias else _letter_like
+    pos = text_lower.find(alias)
+    while pos != -1:
+        before = text_lower[pos - 1] if pos > 0 else ""
+        rest = text_lower[pos + len(alias):]
+        after = rest[:1]
+        left_ok = not (before and touches(before))
+        right_ok = not (after and touches(after))
+        if not right_ok and ascii_alias and len(alias) >= 5 and _SUFFIX_RE.match(rest):
+            right_ok = True
+        if left_ok and right_ok:
+            return pos
+        pos = text_lower.find(alias, pos + 1)
+    return -1
+
+
+def contains_alias(text_lower, alias):
+    return find_alias(text_lower, alias) != -1
+
+
 def _is_negated(text_lower, pos):
     prefix = text_lower[max(0, pos - 30) : pos]
     words = prefix.replace(",", " ").replace(".", " ").split()
@@ -97,22 +153,21 @@ def find_symptoms(text):
     found = []
     for symptom, aliases in SYMPTOM_LEXICON.items():
         for alias in aliases:
-            if alias in text_lower:
-                pos = text_lower.find(alias)
-                if not _is_negated(text_lower, pos):
-                    found.append(symptom)
-                    break
+            pos = find_alias(text_lower, alias)
+            if pos != -1 and not _is_negated(text_lower, pos):
+                found.append(symptom)
+                break
     return found
 
 
 def find_red_flags(text):
     text_lower = text.lower()
+    for phrase in RED_FLAG_CONTEXT_STRIPS:
+        text_lower = text_lower.replace(phrase, " ")
     flags = []
     for flag, aliases in RED_FLAG_LEXICON.items():
-        for alias in aliases:
-            if alias in text_lower:
-                flags.append(flag)
-                break
+        if any(contains_alias(text_lower, alias) for alias in aliases):
+            flags.append(flag)
     return flags
 
 
@@ -120,7 +175,7 @@ def find_disease(text):
     text_lower = text.lower()
     for disease, aliases in DISEASE_ALIASES.items():
         for alias in aliases:
-            if alias in text_lower:
+            if contains_alias(text_lower, alias):
                 return disease
     return None
 
@@ -129,6 +184,6 @@ def find_vaccine(text):
     text_lower = text.lower()
     for vaccine, aliases in VACCINE_ALIASES.items():
         for alias in aliases:
-            if alias in text_lower:
+            if contains_alias(text_lower, alias):
                 return vaccine
     return None
