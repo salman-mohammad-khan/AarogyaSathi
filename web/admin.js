@@ -1,6 +1,38 @@
+// The dashboard data needs the server's ADMIN_TOKEN. It is asked for once per browser tab and kept in sessionStorage.
+let adminToken = sessionStorage.getItem("adminToken") || "";
+let refreshTimer = null;
+
+function askToken(message) {
+  const entered = window.prompt(message || "Enter the admin token");
+  if (!entered) return false;
+  adminToken = entered.trim();
+  sessionStorage.setItem("adminToken", adminToken);
+  return true;
+}
+
+async function api(url, options = {}) {
+  if (!adminToken && !askToken()) throw new Error("No admin token");
+  const res = await fetch(url, {
+    ...options,
+    headers: { ...(options.headers || {}), Authorization: "Bearer " + adminToken },
+  });
+  if (res.status === 401) {
+    adminToken = "";
+    sessionStorage.removeItem("adminToken");
+    if (askToken("That token was not accepted. Enter the admin token")) return api(url, options);
+    throw new Error("Unauthorized");
+  }
+  if (res.status === 503) throw new Error("Admin access is disabled on the server (ADMIN_TOKEN is not set)");
+  return res;
+}
+
 async function getJSON(url) {
-  const res = await fetch(url);
-  return res.json();
+  return (await api(url)).json();
+}
+
+function showBlocked(message) {
+  clearInterval(refreshTimer);
+  document.querySelector("header p").textContent = message + " Reload the page to try again.";
 }
 
 function fillTable(tbodyId, rows, keyName, valName, transform) {
@@ -54,22 +86,23 @@ async function refresh() {
     });
   } catch (e) {
     console.error(e);
+    showBlocked(e.message);
   }
 }
 
 document.getElementById("seedBtn").addEventListener("click", async () => {
-  const r = await fetch("/api/surveillance/seed", { method: "POST" });
+  await api("/api/surveillance/seed", { method: "POST" });
   await refresh();
 });
 document.getElementById("runBtn").addEventListener("click", async () => {
-  const r = await fetch("/api/surveillance/run", { method: "POST" });
+  await api("/api/surveillance/run", { method: "POST" });
   await refresh();
 });
 document.getElementById("clearBtn").addEventListener("click", async () => {
   if (!confirm("Delete all surveillance data?")) return;
-  await fetch("/api/surveillance/clear", { method: "POST" });
+  await api("/api/surveillance/clear", { method: "POST" });
   await refresh();
 });
 
 refresh();
-setInterval(refresh, 15000);
+refreshTimer = setInterval(refresh, 15000);

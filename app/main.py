@@ -1,12 +1,13 @@
 import time
 
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from app import config
+from app.admin_auth import require_admin
 from app.core import embeddings, generator, intent, kb, language, retriever
 from app.core import session as session_store
 from app.core.router import process_message
@@ -176,12 +177,12 @@ def intents_debug():
     return {"available": True}
 
 
-@app.get("/api/stats")
+@app.get("/api/stats", dependencies=[Depends(require_admin)])
 def stats():
     return syndromic.stats()
 
 
-@app.get("/api/surveillance/alerts")
+@app.get("/api/surveillance/alerts", dependencies=[Depends(require_admin)])
 def surveillance_alerts():
     db_alerts = syndromic.active_alerts()
     kb_items = []
@@ -197,17 +198,17 @@ def surveillance_alerts():
     return {"spike_alerts": db_alerts, "official_advisories": kb_items}
 
 
-@app.post("/api/surveillance/run")
+@app.post("/api/surveillance/run", dependencies=[Depends(require_admin)])
 def surveillance_run():
     return {"new_alerts": syndromic.run_detection()}
 
 
-@app.post("/api/surveillance/seed")
+@app.post("/api/surveillance/seed", dependencies=[Depends(require_admin)])
 def surveillance_seed():
     return {"new_alerts": syndromic.seed_demo()}
 
 
-@app.post("/api/surveillance/clear")
+@app.post("/api/surveillance/clear", dependencies=[Depends(require_admin)])
 def surveillance_clear():
     syndromic.clear_all()
     return {"status": "cleared"}

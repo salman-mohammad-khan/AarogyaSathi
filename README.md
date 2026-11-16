@@ -1,4 +1,6 @@
 > **Archived college submission (ES-451, SIH-25049).** This repository is kept as submitted for the college project. The maintained, standalone version is [aarogyasathi-rag](https://github.com/salman-mohammad-khan/aarogyasathi-rag).
+>
+> The code in this repository is the version running the college demo at http://130.210.56.87:8000 (it matches the `minor-project-final` tag of aarogyasathi-rag, commit `b271140`). Later changes are made only in aarogyasathi-rag.
 
 # AarogyaSathi
 

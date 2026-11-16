@@ -59,6 +59,39 @@ RED_FLAG_LEXICON = {
     "severe_burn": ["severe burn", "burned badly", "jala hua", "जल गया"],
 }
 
+# Natural phrasings that a fixed phrase list cannot cover ("a snake just bit my brother", "seene mein dard ho raha
+# hai"). Each pattern joins two cue words with at most three other words and no sentence punctuation between them, so
+# "is that snake poisonous" and "snake sightings in my village" stay information questions. Plain regex, no model.
+_GAP = r"(?:\s+[^\s.,;:!?]+){0,3}?"
+_BITE = (
+    r"(?:bit|bite|bites|biting|bitten|kaat|kaata|kaati|kaatna|kaatne|kata|dasa|daans|dans|"
+    r"काट|काटा|काटी|डस|डसा|डसी)"
+)
+_SNAKE = r"(?:snakes?|cobra|viper|krait|saap|saanp|sanp|sap|साँप|सांप|सर्प)"
+_ANIMAL = r"(?:dogs?|puppy|monkeys?|kutta|kutte|bandar|कुत्ता|कुत्ते|बंदर)"
+_CHEST = r"(?:chest|seene|seena|sine|sina|chhati|chhaati|chati|chaati|सीने|सीना|छाती)"
+_CHEST_SYMPTOM = (
+    r"(?:pains?|hurt|hurts|hurting|ache|aching|tight|tightness|heavy|heaviness|pressure|crushing|burning|squeez\w*|"
+    r"dard|dardh|dabav|bhaari|bhari|jalan|jakdan|दर्द|जलन|भारीपन|दबाव|जकड़न)"
+)
+_ASCII_WORD = r"(?<![a-z0-9])"  # left edge: do not start in the middle of an ASCII word
+_ASCII_END = r"(?![a-z0-9])"
+
+RED_FLAG_PATTERNS = {
+    "snake_bite": [
+        re.compile(rf"{_ASCII_WORD}{_SNAKE}{_GAP}\s+{_BITE}{_ASCII_END}"),
+        re.compile(rf"{_ASCII_WORD}{_BITE}{_GAP}\s+{_SNAKE}{_ASCII_END}"),
+    ],
+    "rabid_animal": [
+        re.compile(rf"{_ASCII_WORD}{_ANIMAL}{_GAP}\s+(?:bit|bites|bitten|kaat|kaata|kaati|काट|काटा|काटी){_ASCII_END}"),
+        re.compile(rf"{_ASCII_WORD}(?:bit|bitten){_GAP}\s+(?:by\s+)?(?:an?\s+|the\s+)?{_ANIMAL}{_ASCII_END}"),
+    ],
+    "chest_pain": [
+        re.compile(rf"{_ASCII_WORD}{_CHEST}{_GAP}\s+{_CHEST_SYMPTOM}{_ASCII_END}"),
+        re.compile(rf"{_ASCII_WORD}{_CHEST_SYMPTOM}\s+(?:in|on|around)\s+(?:my\s+|his\s+|her\s+|the\s+)?chest{_ASCII_END}"),
+    ],
+}
+
 DISEASE_ALIASES = {
     "dengue": ["dengue", "डेंगू", "dengu", "breakbone fever"],
     "malaria": ["malaria", "मलेरिया", "maleriya"],
@@ -166,7 +199,9 @@ def find_red_flags(text):
         text_lower = text_lower.replace(phrase, " ")
     flags = []
     for flag, aliases in RED_FLAG_LEXICON.items():
-        if any(contains_alias(text_lower, alias) for alias in aliases):
+        if any(contains_alias(text_lower, alias) for alias in aliases) or any(
+            pattern.search(text_lower) for pattern in RED_FLAG_PATTERNS.get(flag, ())
+        ):
             flags.append(flag)
     return flags
 
