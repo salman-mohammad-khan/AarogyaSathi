@@ -518,6 +518,7 @@ def _try_fast_path(text, lang, session, pincode):
     # 1. High-priority safety / emergency
     if intent_name == "emergency":
         session.clear()
+        lang = safety.emergency_language(text, lang)
         return {
             "text": safety.emergency_response(lang),
             "meta": {"intent": "emergency", "lang": lang, "route": "fast_path"},
@@ -710,10 +711,11 @@ def _process_message_core(text, pincode=None, session=None):
     red_flags = safety.check_red_flags(text)
     if red_flags:
         session.clear()
+        lang = safety.emergency_language(text, lang)
         if safety.is_self_harm(red_flags):
             reply = safety.self_harm_response(lang)
         else:
-            reply = safety.emergency_response(lang)
+            reply = safety.emergency_response(lang, red_flags)
             if any(t in lower for t in FACT_TRIGGERS):
                 reply += "\n\n" + safety.fact_check_note(lang)
         return {
@@ -772,6 +774,7 @@ def _process_message_core(text, pincode=None, session=None):
 
     if intent_name == "emergency":
         session.clear()
+        lang = safety.emergency_language(text, lang)
         return {
             "text": safety.emergency_response(lang),
             "meta": {"intent": "emergency", "lang": lang},

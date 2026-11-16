@@ -90,3 +90,6 @@ WHATSAPP_PHONE_ID = os.environ.get("WHATSAPP_PHONE_ID", "")
 WHATSAPP_VERIFY_TOKEN = os.environ.get("WHATSAPP_VERIFY_TOKEN", "aarogyasathi_secret_2026")
 WHATSAPP_API_VERSION = os.environ.get("WHATSAPP_API_VERSION", "v25.0")
 WHATSAPP_APP_SECRET = os.environ.get("WHATSAPP_APP_SECRET", "")
+
+# Secret for the admin dashboard data and the surveillance write routes. Unset means those routes are disabled.
+ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN", "")

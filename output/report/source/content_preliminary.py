@@ -686,8 +686,7 @@ def add_acknowledgement(doc):
     p1.paragraph_format.line_spacing = 1.5
     p1.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r1 = p1.add_run(
-        "An endeavor is not complete and successful till the people who made it possible are given due credit for their guidance and support. "
-        "We take this opportunity to express our profound gratitude to all those who have contributed to the successful completion of this Minor Project Dissertation."
+        'A project like this is not finished by the people who write the code alone, and we would like to thank everyone who helped us complete this Minor Project Dissertation.'
     )
     r1.font.name = 'Times New Roman'
     r1.font.size = Pt(12)
@@ -698,10 +697,7 @@ def add_acknowledgement(doc):
     p2.paragraph_format.line_spacing = 1.5
     p2.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r2 = p2.add_run(
-        "At the very onset, we express our heartfelt gratitude to our faculty supervisor, Mr. Aditya Sam Koshy, Assistant Professor, "
-        "Department of Computer Science and Engineering, for providing scholarly guidance, technical direction, and continuous encouragement "
-        "throughout the formulation, implementation, and evaluation of AarogyaSathi. His profound insights into software architecture, "
-        "machine learning methodologies, and rigorous verification standards kept our work grounded in engineering reality and steered us in the right direction."
+        'First, we thank our faculty supervisor, Mr. Aditya Sam Koshy, Assistant Professor, Department of Computer Science and Engineering. His guidance, technical direction and steady encouragement helped us through the planning, implementation and evaluation of AarogyaSathi. His advice on software architecture, machine learning methods and careful verification kept our work realistic and pointed us in the right direction.'
     )
     r2.font.name = 'Times New Roman'
     r2.font.size = Pt(12)
@@ -712,9 +708,7 @@ def add_acknowledgement(doc):
     p3.paragraph_format.line_spacing = 1.5
     p3.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r3 = p3.add_run(
-        "We extend our sincere thanks to Prof. Payal Pahwa, Principal, Bhagwan Parshuram Institute of Technology, and Dr. Monika Arora, "
-        "Incharge, Department of Computer Science & Engineering - Data Science, for providing institutional infrastructure, state-of-the-art facilities, "
-        "and continuous academic encouragement to undertake challenging multidisciplinary research."
+        'We also thank Prof. Payal Pahwa, Principal, Bhagwan Parshuram Institute of Technology, and Dr. Monika Arora, Incharge, Department of Computer Science & Engineering - Data Science, for the facilities and academic support that let us take on a demanding project.'
     )
     r3.font.name = 'Times New Roman'
     r3.font.size = Pt(12)
@@ -725,8 +719,7 @@ def add_acknowledgement(doc):
     p4.paragraph_format.line_spacing = 1.5
     p4.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r4 = p4.add_run(
-        "Last but not least, we convey our deepest gratitude to our parents, family members, and peers for their unconditional moral support, "
-        "patience, and understanding throughout the course of our project work."
+        'Finally, we thank our parents, families and friends for their constant support and patience while we worked on this project.'
     )
     r4.font.name = 'Times New Roman'
     r4.font.size = Pt(12)
@@ -761,15 +754,7 @@ def add_abstract_page(doc):
     p1.paragraph_format.line_spacing = 1.25
     p1.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r1 = p1.add_run(
-        "AarogyaSathi (आरोग्यसाथी) is an AI-driven, multilingual public health conversational assistant engineered to provide verified "
-        "preventive healthcare guidance, viral health-claim verification, national immunization schedule tracking, and localized syndromic "
-        "surveillance. Developed in response to Smart India Hackathon problem statement SIH25049 under the Government of Odisha's healthcare technology theme, "
-        "the system addresses the severe infodemic of health misinformation and the acute scarcity of qualified clinical guidance in rural and semi-urban India. "
-        "AarogyaSathi implements a multi-tier hybrid architecture combining deterministic rule-based triage, rule-based fast-path intent extraction, "
-        "Language-agnostic BERT Sentence Embeddings (LaBSE) for cross-lingual dense semantic retrieval, and retrieval-augmented generation (RAG) powered by a "
-        "locally hosted Qwen3 (1.7B parameter) language model alongside Ollama runtime inference pathways. The entire pipeline is deployed on an Oracle Cloud "
-        "Infrastructure virtual machine (2 OCPUs, 12 GiB RAM, Ubuntu 24.04 ARM64) serving a FastAPI application, reached through a Cloudflare HTTPS "
-        "tunnel, and accessible via a lightweight responsive web portal and a Meta WhatsApp Cloud API test-number channel (outbound API v25.0)."
+        "AarogyaSathi (आरोग्यसाथी) is a multilingual public health chatbot. It gives checked preventive health guidance, verifies viral health claims, tracks the national immunisation schedule and watches for local symptom clusters. We built it for Smart India Hackathon problem statement SIH25049, under the Government of Odisha's healthcare technology theme. It responds to two linked problems in rural and semi-urban India: a flood of health misinformation, and too few qualified clinicians to answer people's questions. The design has several layers. Fixed safety rules handle emergencies first. Fast-path rules answer routine questions. Language-agnostic BERT Sentence Embeddings (LaBSE) provide cross-lingual semantic retrieval, and retrieval-augmented generation (RAG) uses a Qwen3 (1.7B parameter) language model hosted locally through Ollama. The system runs on an Oracle Cloud Infrastructure virtual machine (2 OCPUs, 12 GiB RAM, Ubuntu 24.04 ARM64) as a FastAPI application behind a Cloudflare HTTPS tunnel. Users reach it through a light, responsive web portal and a Meta WhatsApp Cloud API test-number channel (outbound API v25.0)."
     )
     r1.font.name = 'Times New Roman'
     r1.font.size = Pt(12)
@@ -780,14 +765,7 @@ def add_abstract_page(doc):
     p2.paragraph_format.line_spacing = 1.25
     p2.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r2 = p2.add_run(
-        "System reliability was evaluated through 37 automated unit and regression tests run on the deployment VM on 26 October 2026, covering routing, session caching, "
-        "ML classifiers and surveillance anomaly detection—all passing; five WhatsApp webhook security tests added later also passed. Component benchmark evaluations demonstrated "
-        "30/30 (100%) exact intent classification, 15/15 (100%) top-1 LaBSE retrieval accuracy, and 34/34 (100%) concordance on categorical health-claim verification "
-        "(mean latency 387 ms). However, rigorous evaluation uncovered critical engineering constraints: 14 of 30 intent test inputs duplicated training examples; "
-        "lexical red-flag matching caused a negated phrase ('no chest pain, only a mild headache') to falsely trigger emergency ambulance escalation; a month-to-year "
-        "conversion defect mapped 2-month infants to the 9–12 month vaccination schedule; and regional Odia vernacular generation dropped into a safe fallback. "
-        "A Meta WhatsApp test-number demonstration answered three test messages from an approved recipient with no sending errors recorded in the server logs. AarogyaSathi demonstrates the "
-        "feasibility of a low-cost public health information service on free-tier cloud infrastructure while establishing transparent boundaries for clinical safety, negation handling, and verified data linkage."
+        "We tested the system with 37 automated unit and regression tests on the deployment VM on 26 October 2026. They cover routing, session caching, ML classifiers and anomaly detection, and all passed. Five WhatsApp webhook security tests added later also passed. On the component benchmarks the system scored 30/30 (100%) on intent classification, 15/15 (100%) on top-1 LaBSE retrieval and 34/34 (100%) on claim verification, at a mean of 387 ms. The evaluation also showed real problems. 14 of the 30 intent test inputs were copies of training examples. Keyword matching of red flags made the negated phrase 'no chest pain, only a mild headache' trigger an emergency alert. A month-to-year conversion bug sent 2-month-old infants to the 9–12 month vaccination schedule. A query in Odia ended in a safe fallback instead of an answer. In the WhatsApp demonstration, three test messages from an approved recipient were answered, with no sending errors in the server logs. AarogyaSathi shows that a low-cost health information service can run on free-tier cloud infrastructure. It also marks clearly what still needs work: clinical safety, negation handling and links to verified data."
     )
     r2.font.name = 'Times New Roman'
     r2.font.size = Pt(12)

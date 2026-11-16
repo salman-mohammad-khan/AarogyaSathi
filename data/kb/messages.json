@@ -3,7 +3,7 @@
     "greeting": "Hi, I'm AarogyaSathi - your health companion.\n\nI give verified health information (based on WHO/MoHFW) in your language. I can help with:\n1. Disease and symptom information\n2. Prevention and hygiene tips\n3. Vaccination schedules\n4. Outbreak alerts near your pincode\n5. Checking whether a health message is true or false\n\nTo fact-check a forwarded message, start it with: fact check: <message>\n(Example: fact check: garlic cures dengue)\n\nHow can I help you today?",
     "help": "I can help with:\n1. Disease info - e.g. 'Tell me about dengue'\n2. Symptoms - e.g. 'I have fever and headache'\n3. Prevention - e.g. 'How to avoid malaria'\n4. Vaccines - e.g. 'Vaccines for a 6 week baby'\n5. Health alerts - e.g. 'Any dengue alert near me?'\n6. Fact check - paste/forward any health message, e.g. 'Fact check: garlic cures dengue'",
     "disclaimer": " I provide health AWARENESS information from verified sources only. I am not a doctor and cannot diagnose. If symptoms are severe, persistent or worsening, consult a qualified healthcare professional.",
-    "emergency": " This sounds like an emergency. Please do not wait:\n- Call 108 (Ambulance) or 112 (Emergency) NOW\n- Go to the nearest hospital/PHC immediately\nFor a snake bite: wash with soap and water, keep the limb still, and go to the hospital - anti-venom is the only treatment.\n%HELPLINES%",
+    "emergency": " This sounds like an emergency. Please do not wait:\n- Call 108 (Ambulance) or 112 (Emergency) NOW\n- Go to the nearest hospital/PHC immediately\n%HELPLINES%",
     "unknown": "I could not confidently match your question. Please try rephrasing, or type 'help' to see what I can do. You can also forward any health message for a fact check.",
     "factcheck_prompt": "I can verify health messages! Just paste or forward the message you received and I will give a verdict: VERIFIED, MYTH, PARTLY TRUE or UNVERIFIABLE, with sources.",
     "factcheck_no_claim": "That doesn't look like a health claim I can check. Please paste the actual message you received.",
@@ -17,13 +17,14 @@
     "thanks": "You are welcome! Stay healthy.",
     "warn_llm": "Note: this is general information, not from AarogyaSathi's verified corpus. Please confirm with a qualified doctor.",
     "warn_net": "Note: this answer is from an external internet source and is not verified by AarogyaSathi. Please verify with a qualified doctor.",
-    "dont_know": "I'm sorry, I don't have reliable health information about that. I'm a health assistant - ask me about symptoms, diseases, prevention, vaccines, or health messages (e.g. 'fact check: ...')."
+    "dont_know": "I'm sorry, I don't have reliable health information about that. I'm a health assistant - ask me about symptoms, diseases, prevention, vaccines, or health messages (e.g. 'fact check: ...').",
+    "emergency_snake_bite": "For a snake bite: wash with soap and water, keep the limb still, and go to the hospital - anti-venom is the only treatment."
   },
   "hi": {
     "greeting": "नमस्ते, मैं आरोग्यसाथी हूँ - आपका स्वास्थ्य साथी।\n\nमैं सत्यापित स्वास्थ्य जानकारी (WHO/MoHFW आधारित) आपकी भाषा में देता हूँ। मैं इनमें मदद कर सकता हूँ:\n1. बीमारी और लक्षणों की जानकारी\n2. बचाव और स्वच्छता के उपाय\n3. टीकाकरण कार्यक्रम\n4. आपके पिनकोड के पास बीमारी की चेतावनी\n5. स्वास्थ्य संदेश की सच्चाई जाँचना\n\nफॉरवर्ड किए संदेश की जाँच के लिए शुरू में लिखें: fact check: <संदेश>\n(उदाहरण: fact check: लहसुन से डेंगू ठीक होता है)\n\nआज मैं आपकी क्या मदद करूँ?",
     "help": "मैं इनमें मदद कर सकता हूँ:\n1. बीमारी की जानकारी - जैसे 'डेंगू के बारे में बताओ'\n2. लक्षण - जैसे 'मुझे बुखार और सिरदर्द है'\n3. बचाव - जैसे 'मलेरिया से कैसे बचें'\n4. टीके - जैसे '6 हफ्ते के बच्चे के टीके'\n5. स्वास्थ्य चेतावनी - जैसे 'पास में डेंगू की कोई चेतावनी?'\n6. फैक्ट चेक - कोई भी स्वास्थ्य संदेश भेजें, जैसे 'फैक्ट चेक: लहसुन से डेंगू ठीक होता है'",
     "disclaimer": " मैं केवल सत्यापित स्रोतों से स्वास्थ्य जागरूकता की जानकारी देता हूँ। मैं डॉक्टर नहीं हूँ और निदान नहीं कर सकता। लक्षण गंभीर हों, बने रहें या बढ़ें तो योग्य चिकित्सक से परामर्श लें।",
-    "emergency": " यह आपातकाल जैसा लगता है। कृपया देर न करें:\n- तुरंत 108 (एम्बुलेंस) या 112 (आपातकाल) पर कॉल करें\n- नज़दीकी अस्पताल/PHC तुरंत जाएँ\nसाँप काटने पर: साबुन-पानी से धोएँ, अंग स्थिर रखें, अस्पताल जाएँ - एंटी-वेनम ही एकमात्र इलाज है।\n%HELPLINES%",
+    "emergency": " यह आपातकाल जैसा लगता है। कृपया देर न करें:\n- तुरंत 108 (एम्बुलेंस) या 112 (आपातकाल) पर कॉल करें\n- नज़दीकी अस्पताल/PHC तुरंत जाएँ\n%HELPLINES%",
     "unknown": "मैं आपके प्रश्न का निश्चित उत्तर नहीं दे पाया। कृपया दोबारा दूसरे शब्दों में पूछें, या 'help' लिखें। आप किसी भी स्वास्थ्य संदेश को फैक्ट चेक के लिए भी भेज सकते हैं।",
     "factcheck_prompt": "मैं स्वास्थ्य संदेशों की जाँच कर सकता हूँ! आपको मिला संदेश यहाँ पेस्ट/भेजें और मैं स्रोतों के साथ फैसला बताऊँगा: सत्य, भ्रांति, आंशिक सत्य या पुष्टि असंभव।",
     "factcheck_no_claim": "यह कोई स्वास्थ्य दावा नहीं लगता जिसे मैं जाँच सकूँ। कृपया वही संदेश पेस्ट करें जो आपको मिला है।",
@@ -37,7 +38,8 @@
     "thanks": "आपका स्वागत है! स्वस्थ रहें।",
     "warn_llm": "नोट: यह सामान्य जानकारी है, आरोग्यसाथी के सत्यापित संग्रह से नहीं। कृपया योग्य डॉक्टर से पुष्टि करें।",
     "warn_net": "नोट: यह उत्तर बाहरी इंटरनेट स्रोत से है और आरोग्यसाथी द्वारा सत्यापित नहीं है। कृपया योग्य डॉक्टर से पुष्टि करें।",
-    "dont_know": "क्षमा करें, मेरे पास इसके बारे में विश्वसनीय स्वास्थ्य जानकारी नहीं है। मैं एक स्वास्थ्य सहायक हूँ - लक्षणों, बीमारियों, बचाव, टीकों या स्वास्थ्य संदेशों के बारे में पूछें (जैसे 'fact check: ...')।"
+    "dont_know": "क्षमा करें, मेरे पास इसके बारे में विश्वसनीय स्वास्थ्य जानकारी नहीं है। मैं एक स्वास्थ्य सहायक हूँ - लक्षणों, बीमारियों, बचाव, टीकों या स्वास्थ्य संदेशों के बारे में पूछें (जैसे 'fact check: ...')।",
+    "emergency_snake_bite": "साँप काटने पर: साबुन-पानी से धोएँ, अंग स्थिर रखें, अस्पताल जाएँ - एंटी-वेनम ही एकमात्र इलाज है।"
   },
   "bn": {
     "greeting": "নমস্কার, আমি আরোগ্যসাথী - আপনার স্বাস্থ্য সঙ্গী। আমি রোগ-লক্ষণ, প্রতিরোধ, টিকা, এলাকার রোগ-সতর্কতা এবং স্বাস্থ্য বার্তার সত্যতা যাচাই করি।\n\nফরওয়ার্ড করা বার্তা যাচাই করতে শুরুতে লিখুন: fact check: <বার্তা>\n(যেমন: fact check: রসুনে ডেঙ্গু সারে)",
